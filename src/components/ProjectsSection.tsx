@@ -8,7 +8,7 @@ const ProjectsSection = () => {
       title: "Alumni Association Platform",
       description: "A comprehensive platform for alumni networking developed during Smart India Hackathon 2024. Our team ranked in the Top 20!",
       technologies: ["React", "Node.js", "MongoDB", "Express"],
-      image: "/public/lovable-uploads/d65bf920-17f9-48b8-96a5-70de467c9f58.png",
+      image: "/placeholder.svg",
       githubLink: "#",
       liveLink: "#",
     },
@@ -58,13 +58,6 @@ const ProjectsSection = () => {
         <div className="mt-12 text-center">
           <h3 className="text-xl font-bold mb-4">Smart India Hackathon 2024</h3>
           <div className="bg-card border rounded-lg p-6 max-w-3xl mx-auto">
-            <div className="mb-4">
-              <img 
-                src="/public/lovable-uploads/d65bf920-17f9-48b8-96a5-70de467c9f58.png" 
-                alt="Smart India Hackathon Certificate" 
-                className="rounded-md shadow-sm mx-auto"
-              />
-            </div>
             <p className="text-muted-foreground">
               I'm thrilled to share that Team Nemysis qualified for the next round of Smart India Hackathon 2024, ranking among the Top 20! 
               Our challenge was designing an Alumni Association platform under Smart Education. 
