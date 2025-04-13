@@ -1,9 +1,6 @@
 
 import React from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -17,15 +14,15 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="space-y-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="space-y-6 bg-card p-8 rounded-lg shadow-md border">
             <h3 className="text-2xl font-bold gradient-text">Contact Information</h3>
             <p className="text-muted-foreground">
               I'm currently looking for new opportunities in software development. 
               Whether you have a question or just want to say hi, I'll try my best to get back to you!
             </p>
             
-            <div className="space-y-4">
+            <div className="space-y-6 md:space-y-4">
               <div className="flex items-start gap-4">
                 <div className="p-2 bg-primary/10 rounded-full text-primary">
                   <Mail size={20} />
@@ -71,7 +68,7 @@ const ContactSection = () => {
               <h4 className="font-medium mb-2">Connect with me:</h4>
               <div className="flex space-x-4">
                 <a 
-                  href="https://github.com/" 
+                  href="https://github.com/Yaminam" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-2 bg-muted rounded-full hover:bg-muted/80 transition-colors"
@@ -94,49 +91,6 @@ const ContactSection = () => {
                 </a>
               </div>
             </div>
-          </div>
-
-          <div className="bg-card p-6 rounded-lg shadow-md border">
-            <h3 className="text-xl font-bold mb-6">Send Me a Message</h3>
-            <form className="space-y-4">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="name" className="block mb-1 text-sm">Name</label>
-                  <Input 
-                    type="text" 
-                    id="name" 
-                    placeholder="Your name" 
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block mb-1 text-sm">Email</label>
-                  <Input 
-                    type="email" 
-                    id="email" 
-                    placeholder="Your email" 
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="subject" className="block mb-1 text-sm">Subject</label>
-                <Input 
-                  type="text" 
-                  id="subject" 
-                  placeholder="Subject" 
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block mb-1 text-sm">Message</label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Your message" 
-                  rows={5}
-                />
-              </div>
-              <Button className="w-full" type="submit">
-                <Send size={16} className="mr-2" /> Send Message
-              </Button>
-            </form>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ const ProjectsSection = () => {
       description: "A comprehensive platform for alumni networking developed during Smart India Hackathon 2024. Our team ranked in the Top 20!",
       technologies: ["React", "Node.js", "MongoDB", "Express"],
       image: "/placeholder.svg",
-      githubLink: "#",
+      githubLink: "https://github.com/Yaminam",
       liveLink: "#",
     },
     {
@@ -17,7 +17,7 @@ const ProjectsSection = () => {
       description: "A productivity application for managing tasks with features including drag-and-drop organization and priority labeling.",
       technologies: ["React", "Context API", "Node.js", "MongoDB"],
       image: "/placeholder.svg",
-      githubLink: "#",
+      githubLink: "https://github.com/Yaminam",
       liveLink: "#",
     },
     {
@@ -25,7 +25,7 @@ const ProjectsSection = () => {
       description: "A personal portfolio website (this one!) to showcase my skills, projects, and experiences.",
       technologies: ["React", "Tailwind CSS", "TypeScript"],
       image: "/placeholder.svg",
-      githubLink: "#",
+      githubLink: "https://github.com/Yaminam",
       liveLink: "#",
     },
   ];

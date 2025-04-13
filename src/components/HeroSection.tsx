@@ -40,7 +40,7 @@ const HeroSection = () => {
             </div>
             <div className="mt-8 flex space-x-6 opacity-0 animate-fade-in-delay-3">
               <a
-                href="https://github.com/"
+                href="https://github.com/Yaminam"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground"
