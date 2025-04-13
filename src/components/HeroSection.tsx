@@ -1,6 +1,7 @@
 
 import React from "react";
 import { ArrowDown, Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const HeroSection = () => {
   return (
@@ -49,7 +50,7 @@ const HeroSection = () => {
                 <Github size={20} />
               </a>
               <a
-                href="https://linkedin.com/in/"
+                href="https://www.linkedin.com/in/shreyash-tripathi-96570a251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-portfolio-blue hover:text-portfolio-blue/80"
@@ -76,9 +77,10 @@ const HeroSection = () => {
           <div className="hidden md:flex justify-center items-center">
             <div className="bg-gradient-to-br from-portfolio-blue to-portfolio-teal rounded-full p-1">
               <div className="bg-background rounded-full p-1">
-                <div className="w-64 h-64 rounded-full bg-muted flex items-center justify-center">
-                  <span className="text-6xl">👨‍💻</span>
-                </div>
+                <Avatar className="w-64 h-64">
+                  <AvatarImage src="/lovable-uploads/8d28073e-3b63-4fb9-9b45-388b886280cb.png" alt="Shreyash Tripathi" />
+                  <AvatarFallback className="text-6xl">👨‍💻</AvatarFallback>
+                </Avatar>
               </div>
             </div>
           </div>

@@ -79,7 +79,7 @@ const ContactSection = () => {
                   </svg>
                 </a>
                 <a 
-                  href="https://linkedin.com/in/" 
+                  href="https://www.linkedin.com/in/shreyash-tripathi-96570a251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-2 bg-muted rounded-full hover:bg-muted/80 transition-colors"
