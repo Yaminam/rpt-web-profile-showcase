@@ -8,7 +8,6 @@ import ProjectsSection from "@/components/ProjectsSection";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import MessageDialog from "@/components/MessageDialog";
 import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
@@ -24,7 +23,6 @@ const Index = () => {
         <ContactSection />
       </main>
       <Footer />
-      <MessageDialog />
       <Toaster />
     </div>
   );

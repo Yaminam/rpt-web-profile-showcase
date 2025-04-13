@@ -13,14 +13,6 @@ const ProjectsSection = () => {
       liveLink: "#",
     },
     {
-      title: "E-commerce Website",
-      description: "A full-stack e-commerce platform with user authentication, product browsing, cart functionality, and payment integration.",
-      technologies: ["MERN Stack", "Redux", "JWT", "Stripe"],
-      image: "/placeholder.svg",
-      githubLink: "#",
-      liveLink: "#",
-    },
-    {
       title: "Task Management App",
       description: "A productivity application for managing tasks with features including drag-and-drop organization and priority labeling.",
       technologies: ["React", "Context API", "Node.js", "MongoDB"],
