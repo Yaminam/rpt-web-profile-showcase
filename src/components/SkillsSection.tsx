@@ -1,98 +1,73 @@
-
 import React from "react";
+import SectionHeading from "@/components/SectionHeading";
+import Reveal from "@/components/Reveal";
+import { skillGroups } from "@/data/portfolio";
 
 const SkillsSection = () => {
-  const skills = {
-    frontend: ["React.js", "HTML5", "CSS3", "JavaScript", "Responsive Design", "Tailwind CSS"],
-    backend: ["Node.js", "Express.js", "MongoDB", "SQL", "RESTful APIs"],
-    programming: ["JavaScript", "Java", "TypeScript"],
-    tools: ["Git", "GitHub", "VS Code", "Postman", "npm"]
-  };
-
   return (
-    <section id="skills" className="section-padding bg-muted">
+    <section id="skills" className="section-padding">
       <div className="container mx-auto">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold mb-2">My Skills</h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            As a MERN Stack enthusiast, I've developed proficiency in various technologies
-            and continue to expand my skillset.
-          </p>
-        </div>
+        <Reveal>
+          <SectionHeading
+            index="03."
+            command="ls ./skills"
+            title="Tech Stack & Skills"
+            subtitle="The tools I reach for to design, build and ship."
+          />
+        </Reveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <SkillCard title="Frontend Development" skills={skills.frontend} />
-          <SkillCard title="Backend Development" skills={skills.backend} />
-          <SkillCard title="Programming Languages" skills={skills.programming} />
-          <SkillCard title="Tools & Technologies" skills={skills.tools} />
-        </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {skillGroups.map((group, i) => (
+            <Reveal key={group.label} delay={i * 90}>
+              <div className="terminal-window h-full">
+                <div className="terminal-bar">
+                  <span className="terminal-dot bg-red-500/70" />
+                  <span className="terminal-dot bg-yellow-400/70" />
+                  <span className="terminal-dot bg-green-500/70" />
+                  <span className="ml-2 font-mono text-[11px] text-muted-foreground">
+                    {group.label.toLowerCase()}.sh
+                  </span>
+                </div>
+                <div className="p-5 font-mono text-sm">
+                  <p className="mb-3 text-muted-foreground">
+                    <span className="text-neon-green">$</span> {group.prompt}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {group.items.map((item) => (
+                      <span key={item} className="chip">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="mt-4 text-xs text-muted-foreground">
+                    <span className="text-neon-cyan">✓</span> {group.items.length} loaded
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
 
-        <div className="mt-16 bg-card rounded-lg border p-8 shadow-md">
-          <h3 className="text-2xl font-bold mb-6 text-center gradient-text">MERN Stack Expertise</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <TechItem name="MongoDB" icon="M" color="bg-green-600" />
-            <TechItem name="Express.js" icon="E" color="bg-gray-700" />
-            <TechItem name="React.js" icon="R" color="bg-blue-500" />
-            <TechItem name="Node.js" icon="N" color="bg-green-700" />
-          </div>
-          <div className="mt-8">
-            <h4 className="text-lg font-semibold mb-2">Currently Learning</h4>
-            <div className="flex flex-wrap gap-2">
-              <span className="skill-badge">Advanced DSA</span>
-              <span className="skill-badge">System Design</span>
-              <span className="skill-badge">Next.js</span>
-              <span className="skill-badge">TypeScript</span>
+          {/* Currently learning card */}
+          <Reveal delay={skillGroups.length * 90}>
+            <div className="cyber-card flex h-full flex-col justify-center p-6">
+              <p className="mb-3 font-mono text-xs uppercase tracking-widest text-neon-magenta">
+                ./currently-learning
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["Advanced DSA", "System Design", "AI / LLMs", "Cloud Deploy"].map((s) => (
+                  <span key={s} className="chip-magenta">
+                    {s}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-4 font-mono text-xs text-muted-foreground">
+                <span className="text-neon-green">while</span>(alive) {"{"} keepLearning(); {"}"}
+              </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
-  );
-};
-
-const SkillCard = ({
-  title,
-  skills,
-}: {
-  title: string;
-  skills: string[];
-}) => {
-  return (
-    <div className="bg-card rounded-lg overflow-hidden shadow-md border h-full">
-      <div className="bg-gradient-to-r from-primary to-accent p-4">
-        <h3 className="text-xl font-bold text-white">{title}</h3>
-      </div>
-      <div className="p-6">
-        <ul className="space-y-2">
-          {skills.map((skill) => (
-            <li key={skill} className="flex items-center">
-              <span className="text-primary mr-2">✓</span>
-              <span>{skill}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const TechItem = ({
-  name,
-  icon,
-  color,
-}: {
-  name: string;
-  icon: string;
-  color: string;
-}) => {
-  return (
-    <div className="flex flex-col items-center">
-      <div className={`w-16 h-16 ${color} rounded-full flex items-center justify-center mb-2`}>
-        <span className="text-2xl font-bold text-white">{icon}</span>
-      </div>
-      <p className="font-medium">{name}</p>
-    </div>
   );
 };
 

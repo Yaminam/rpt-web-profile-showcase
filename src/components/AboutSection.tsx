@@ -1,83 +1,137 @@
-
 import React from "react";
+import { Code2, Cpu, Rocket, MapPin, GraduationCap, Briefcase } from "lucide-react";
+import SectionHeading from "@/components/SectionHeading";
+import Reveal from "@/components/Reveal";
+import CountUp from "@/components/CountUp";
+import { profile, stats, strengths } from "@/data/portfolio";
+
+const parseStat = (value: string) => {
+  const num = parseInt(value, 10) || 0;
+  const suffix = value.replace(/[0-9]/g, "");
+  return { num, suffix };
+};
+
+const highlights = [
+  {
+    icon: Code2,
+    title: "Full-Stack Engineering",
+    text: "End-to-end MERN & Next.js apps — typed frontends, REST APIs and clean data layers.",
+  },
+  {
+    icon: Cpu,
+    title: "AI & Automation",
+    text: "Building AI-powered features and workflow pipelines that cut manual work.",
+  },
+  {
+    icon: Rocket,
+    title: "Ships Real Products",
+    text: "From hackathon finalist to production deploys — focused on impact, not just code.",
+  },
+];
+
+const facts = [
+  { icon: MapPin, label: "Based in", value: profile.location },
+  { icon: GraduationCap, label: "Studying", value: "B.Tech CSE, JECRC University" },
+  { icon: Briefcase, label: "Currently", value: "AI Trainee @ Garage Productions" },
+];
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section-padding bg-background">
+    <section id="about" className="section-padding">
       <div className="container mx-auto">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold mb-2">About Me</h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
-        </div>
+        <Reveal>
+          <SectionHeading
+            index="01."
+            command="cat about.md"
+            title="About Me"
+            subtitle="Computer Science student and builder who turns ideas into clean, scalable products."
+          />
+        </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold mb-3 gradient-text">Who am I?</h3>
-              <p className="text-muted-foreground mb-4">
-                I am Shreyash Tripathi, a dedicated and passionate software developer currently pursuing my Bachelor's degree at JECRC University in Jaipur, Rajasthan, India.
-              </p>
-              <p className="text-muted-foreground">
-                With a strong foundation in the MERN stack (MongoDB, Express.js, React.js, Node.js), SQL, HTML, CSS, Java, and JavaScript, I am currently deepening my understanding of Data Structures and Algorithms (DSA). I am eager to contribute to innovative projects and grow in the field of software development.
+        <div className="grid gap-8 lg:grid-cols-[1.3fr_1fr]">
+          {/* Bio + highlights */}
+          <Reveal className="space-y-6">
+            <div className="cyber-card p-6 md:p-8">
+              <p className="font-mono text-sm leading-relaxed text-muted-foreground">
+                <span className="text-neon-green">/**</span>
+                <br />
+                <span className="text-neon-cyan"> * </span>
+                {profile.summary}
+                <br />
+                <span className="text-neon-cyan"> * </span>I enjoy real-time systems,
+                thoughtful UI, and shipping features that people actually use.
+                <br />
+                <span className="text-neon-green"> */</span>
               </p>
             </div>
 
-            <div>
-              <h3 className="text-2xl font-bold mb-3 gradient-text">What drives me?</h3>
-              <p className="text-muted-foreground mb-4">
-                I'm passionate about building user-friendly web applications and solving real-world problems through technology. Recently, I participated in the Smart India Hackathon 2024 with Team Nemysis, where we ranked among the Top 20 teams.
-              </p>
-              <p className="text-muted-foreground">
-                Our challenge was designing an Alumni Association platform under Smart Education, which was an unforgettable experience that taught me the true meaning of teamwork.
-              </p>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {highlights.map((h) => (
+                <div key={h.title} className="cyber-card p-5">
+                  <h.icon className="mb-3 h-6 w-6 text-neon-cyan" />
+                  <h3 className="mb-1 font-display text-sm font-bold text-foreground">
+                    {h.title}
+                  </h3>
+                  <p className="text-xs leading-relaxed text-muted-foreground">{h.text}</p>
+                </div>
+              ))}
             </div>
-          </div>
 
-          <div className="space-y-6">
-            <div className="bg-card p-6 rounded-lg shadow-md border border-border">
-              <h3 className="text-xl font-bold mb-3 text-primary">Professional Goals</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">►</span>
-                  <span>Develop scalable, efficient web applications</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">►</span>
-                  <span>Master full-stack development with MERN</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">►</span>
-                  <span>Become proficient in data structures and algorithms</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">►</span>
-                  <span>Contribute to open source projects</span>
-                </li>
+            <div className="cyber-card p-6">
+              <h3 className="mb-4 font-mono text-xs uppercase tracking-widest text-neon-magenta">
+                ./strengths
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {strengths.map((s) => (
+                  <span key={s} className="chip-magenta">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Quick facts + stats */}
+          <Reveal delay={120} className="space-y-6">
+            <div className="cyber-card p-6">
+              <h3 className="mb-4 font-mono text-xs uppercase tracking-widest text-neon-magenta">
+                ./quick-facts
+              </h3>
+              <ul className="space-y-4">
+                {facts.map((f) => (
+                  <li key={f.label} className="flex items-start gap-3">
+                    <span className="mt-0.5 rounded-md border border-neon-cyan/30 bg-neon-cyan/5 p-1.5 text-neon-cyan">
+                      <f.icon className="h-4 w-4" />
+                    </span>
+                    <div>
+                      <p className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+                        {f.label}
+                      </p>
+                      <p className="text-sm text-foreground">{f.value}</p>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            <div className="bg-card p-6 rounded-lg shadow-md border border-border">
-              <h3 className="text-xl font-bold mb-3 text-primary">Quick Facts</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">►</span>
-                  <span>Based in Jaipur, Rajasthan, India</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">►</span>
-                  <span>BTech in Computer Science (JECRC University)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">►</span>
-                  <span>Smart India Hackathon 2024 participant</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">►</span>
-                  <span>Open to software engineering roles</span>
-                </li>
-              </ul>
+            <div className="grid grid-cols-2 gap-3">
+              {stats.map((s) => {
+                const { num, suffix } = parseStat(s.value);
+                return (
+                  <div key={s.label} className="cyber-card p-4 text-center">
+                    <CountUp
+                      end={num}
+                      suffix={suffix}
+                      className="gradient-text font-display text-2xl font-extrabold"
+                    />
+                    <p className="mt-1 text-[11px] leading-tight text-muted-foreground">
+                      {s.label}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

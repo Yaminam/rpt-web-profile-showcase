@@ -1,29 +1,38 @@
-
 import React from "react";
+import BootScreen from "@/components/BootScreen";
+import ScrollProgress from "@/components/ScrollProgress";
+import Spotlight from "@/components/Spotlight";
+import CyberBackground from "@/components/CyberBackground";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import TechMarquee from "@/components/TechMarquee";
 import AboutSection from "@/components/AboutSection";
+import ExperienceSection from "@/components/ExperienceSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen text-foreground">
+      <BootScreen />
+      <ScrollProgress />
+      <Spotlight />
+      <CyberBackground />
       <Navbar />
       <main>
         <HeroSection />
+        <TechMarquee />
         <AboutSection />
+        <ExperienceSection />
         <SkillsSection />
         <ProjectsSection />
         <EducationSection />
         <ContactSection />
       </main>
       <Footer />
-      <Toaster />
     </div>
   );
 };

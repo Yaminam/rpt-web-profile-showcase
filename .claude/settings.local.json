@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -f src/components/MessageDialog.tsx)",
+      "Bash(npm run *)",
+      "Read(//c/Program Files \\(x86\\)/Microsoft/Edge/Application/**)",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Bash(node *)",
+      "Bash(rm -rf .edge-shot)",
+      "Bash(file shot-cdp.png)",
+      "Bash(npm install *)"
+    ]
+  }
+}
