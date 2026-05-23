@@ -167,6 +167,27 @@ export default {
 				'bounce-x': {
 					'0%, 100%': { transform: 'translateX(0)' },
 					'50%': { transform: 'translateX(6px)' }
+				},
+				'aurora': {
+					'0%, 100%': { transform: 'translate3d(0,0,0) scale(1)', filter: 'hue-rotate(0deg)' },
+					'50%': { transform: 'translate3d(24px,-28px,0) scale(1.18)', filter: 'hue-rotate(45deg)' }
+				},
+				'scan-y': {
+					'0%': { transform: 'translateY(-130%)', opacity: '0' },
+					'10%, 90%': { opacity: '1' },
+					'100%': { transform: 'translateY(130%)', opacity: '0' }
+				},
+				'orbit': {
+					from: { transform: 'rotate(0deg) translateX(var(--orbit-r, 160px)) rotate(0deg)' },
+					to: { transform: 'rotate(360deg) translateX(var(--orbit-r, 160px)) rotate(-360deg)' }
+				},
+				'orbit-rev': {
+					from: { transform: 'rotate(0deg) translateX(var(--orbit-r, 160px)) rotate(0deg)' },
+					to: { transform: 'rotate(-360deg) translateX(var(--orbit-r, 160px)) rotate(360deg)' }
+				},
+				'count-tick': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.85' }
 				}
 			},
 			animation: {
@@ -190,7 +211,11 @@ export default {
 				'shimmer': 'shimmer 2.5s linear infinite',
 				'glow-pulse': 'glow-pulse 2.5s ease-in-out infinite',
 				'tilt': 'tilt 6s ease-in-out infinite',
-				'bounce-x': 'bounce-x 1s ease-in-out infinite'
+				'bounce-x': 'bounce-x 1s ease-in-out infinite',
+				'aurora': 'aurora 16s ease-in-out infinite',
+				'scan-y': 'scan-y 3.6s ease-in-out infinite',
+				'orbit': 'orbit 22s linear infinite',
+				'orbit-rev': 'orbit-rev 28s linear infinite'
 			}
 		}
 	},

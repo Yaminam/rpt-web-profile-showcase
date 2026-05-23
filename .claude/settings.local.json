@@ -8,7 +8,11 @@
       "Bash(node *)",
       "Bash(rm -rf .edge-shot)",
       "Bash(file shot-cdp.png)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(awk '{printf \"%8.1f kB  %s\\\\n\", $5/1024, $9}')"
     ]
   }
 }

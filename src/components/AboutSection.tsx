@@ -1,5 +1,16 @@
 import React from "react";
-import { Code2, Cpu, Rocket, MapPin, GraduationCap, Briefcase } from "lucide-react";
+import {
+  Code2,
+  Cpu,
+  Rocket,
+  MapPin,
+  GraduationCap,
+  Briefcase,
+  Clock,
+  Zap,
+  Wrench,
+  Package,
+} from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
@@ -11,19 +22,33 @@ const parseStat = (value: string) => {
   return { num, suffix };
 };
 
+const accentText: Record<string, string> = {
+  cyan: "text-neon-cyan",
+  magenta: "text-neon-magenta",
+  green: "text-neon-green",
+};
+const accentBar: Record<string, string> = {
+  cyan: "from-neon-cyan",
+  magenta: "from-neon-magenta",
+  green: "from-neon-green",
+};
+
 const highlights = [
   {
     icon: Code2,
+    accent: "cyan",
     title: "Full-Stack Engineering",
     text: "End-to-end MERN & Next.js apps — typed frontends, REST APIs and clean data layers.",
   },
   {
     icon: Cpu,
+    accent: "magenta",
     title: "AI & Automation",
     text: "Building AI-powered features and workflow pipelines that cut manual work.",
   },
   {
     icon: Rocket,
+    accent: "green",
     title: "Ships Real Products",
     text: "From hackathon finalist to production deploys — focused on impact, not just code.",
   },
@@ -33,6 +58,14 @@ const facts = [
   { icon: MapPin, label: "Based in", value: profile.location },
   { icon: GraduationCap, label: "Studying", value: "B.Tech CSE, JECRC University" },
   { icon: Briefcase, label: "Currently", value: "AI Trainee @ Garage Productions" },
+];
+
+// icon + accent per stat (matched to portfolio.ts order)
+const statMeta = [
+  { icon: Clock, accent: "cyan" },
+  { icon: Zap, accent: "magenta" },
+  { icon: Wrench, accent: "green" },
+  { icon: Package, accent: "cyan" },
 ];
 
 const AboutSection = () => {
@@ -68,7 +101,11 @@ const AboutSection = () => {
             <div className="grid gap-4 sm:grid-cols-3">
               {highlights.map((h) => (
                 <div key={h.title} className="cyber-card p-5">
-                  <h.icon className="mb-3 h-6 w-6 text-neon-cyan" />
+                  <span
+                    className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-muted/40 ${accentText[h.accent]}`}
+                  >
+                    <h.icon className="h-5 w-5" />
+                  </span>
                   <h3 className="mb-1 font-display text-sm font-bold text-foreground">
                     {h.title}
                   </h3>
@@ -115,14 +152,24 @@ const AboutSection = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-3">
-              {stats.map((s) => {
+              {stats.map((s, i) => {
                 const { num, suffix } = parseStat(s.value);
+                const meta = statMeta[i % statMeta.length];
                 return (
-                  <div key={s.label} className="cyber-card p-4 text-center">
+                  <div
+                    key={s.label}
+                    className="cyber-card relative overflow-hidden p-4 text-center"
+                  >
+                    <span
+                      className={`absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r ${accentBar[meta.accent]} to-transparent opacity-60`}
+                    />
+                    <meta.icon
+                      className={`mx-auto mb-1.5 h-4 w-4 ${accentText[meta.accent]}`}
+                    />
                     <CountUp
                       end={num}
                       suffix={suffix}
-                      className="gradient-text font-display text-2xl font-extrabold"
+                      className="gradient-text font-display text-3xl font-extrabold"
                     />
                     <p className="mt-1 text-[11px] leading-tight text-muted-foreground">
                       {s.label}

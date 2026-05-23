@@ -192,6 +192,16 @@ export const skillGroups: SkillGroup[] = [
   },
 ];
 
+/** Self-rated proficiency per domain (0–100) for the radar chart. */
+export const skillRadar = [
+  { axis: "Frontend", level: 90 },
+  { axis: "Backend", level: 82 },
+  { axis: "Languages", level: 86 },
+  { axis: "AI / ML", level: 72 },
+  { axis: "Databases", level: 78 },
+  { axis: "Tools", level: 84 },
+];
+
 export type Education = {
   school: string;
   location: string;

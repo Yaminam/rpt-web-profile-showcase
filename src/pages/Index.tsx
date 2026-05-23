@@ -13,6 +13,14 @@ import ProjectsSection from "@/components/ProjectsSection";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import CommandTerminal from "@/components/CommandTerminal";
+import AchievementsHud from "@/components/AchievementsHud";
+import CyberOverlay from "@/components/CyberOverlay";
+import CursorFX from "@/components/fx/CursorFX";
+import ConfettiFX from "@/components/fx/ConfettiFX";
+import CrtMode from "@/components/CrtMode";
+import WelcomeHint from "@/components/WelcomeHint";
+import HelpOverlay from "@/components/HelpOverlay";
 
 const Index = () => {
   return (
@@ -33,6 +41,16 @@ const Index = () => {
         <ContactSection />
       </main>
       <Footer />
+
+      {/* Interactive / gamified layer */}
+      <CommandTerminal />
+      <AchievementsHud />
+      <CyberOverlay />
+      <CursorFX />
+      <ConfettiFX />
+      <CrtMode />
+      <WelcomeHint />
+      <HelpOverlay />
     </div>
   );
 };

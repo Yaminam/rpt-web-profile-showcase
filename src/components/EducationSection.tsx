@@ -1,8 +1,19 @@
 import React from "react";
-import { GraduationCap, Trophy, Calendar, MapPin } from "lucide-react";
+import { GraduationCap, Trophy, Calendar, MapPin, Medal, Award, BadgeCheck, type LucideIcon } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { education, coursework, achievements } from "@/data/portfolio";
+import { highlightMetrics } from "@/lib/highlight";
+
+type TagMeta = { icon: LucideIcon; ring: string; text: string; hover: string };
+
+const tagMeta: Record<string, TagMeta> = {
+  National: { icon: Trophy, ring: "border-neon-yellow/40 bg-neon-yellow/10", text: "text-neon-yellow", hover: "hover:border-neon-yellow/50" },
+  Finalist: { icon: Medal, ring: "border-neon-cyan/40 bg-neon-cyan/10", text: "text-neon-cyan", hover: "hover:border-neon-cyan/50" },
+  Certified: { icon: BadgeCheck, ring: "border-neon-green/40 bg-neon-green/10", text: "text-neon-green", hover: "hover:border-neon-green/50" },
+  "IIT Guwahati": { icon: GraduationCap, ring: "border-neon-purple/40 bg-neon-purple/10", text: "text-neon-purple", hover: "hover:border-neon-purple/50" },
+};
+const defaultTag: TagMeta = { icon: Award, ring: "border-neon-magenta/40 bg-neon-magenta/10", text: "text-neon-magenta", hover: "hover:border-neon-magenta/50" };
 
 const EducationSection = () => {
   return (
@@ -82,20 +93,34 @@ const EducationSection = () => {
               </div>
 
               <ul className="space-y-3">
-                {achievements.map((a) => (
-                  <li
-                    key={a.title}
-                    className="flex items-start gap-3 rounded-md border border-border/60 bg-muted/30 p-3 transition-colors hover:border-neon-magenta/40"
-                  >
-                    <span className="mt-0.5 shrink-0 rounded border border-neon-magenta/30 bg-neon-magenta/5 px-2 py-0.5 font-mono text-[10px] text-neon-magenta">
-                      {a.tag}
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-foreground">{a.title}</p>
-                      <p className="text-xs text-muted-foreground">{a.detail}</p>
-                    </div>
-                  </li>
-                ))}
+                {achievements.map((a) => {
+                  const meta = tagMeta[a.tag] ?? defaultTag;
+                  return (
+                    <li
+                      key={a.title}
+                      className={`group flex items-start gap-3 rounded-lg border border-border/60 bg-muted/20 p-3 transition-all ${meta.hover}`}
+                    >
+                      <span
+                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border ${meta.ring} ${meta.text} transition-transform group-hover:scale-110`}
+                      >
+                        <meta.icon className="h-4 w-4" />
+                      </span>
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <p className="text-sm font-semibold text-foreground">{a.title}</p>
+                          <span
+                            className={`rounded border px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wide ${meta.ring} ${meta.text}`}
+                          >
+                            {a.tag}
+                          </span>
+                        </div>
+                        <p className="text-xs text-muted-foreground">
+                          {highlightMetrics(a.detail)}
+                        </p>
+                      </div>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </Reveal>

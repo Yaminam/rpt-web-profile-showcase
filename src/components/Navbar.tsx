@@ -48,6 +48,14 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
+          <button
+            onClick={() => window.dispatchEvent(new Event("help:open"))}
+            aria-label="Open shortcuts manual"
+            title="Shortcuts & secrets (?)"
+            className="flex h-7 w-7 items-center justify-center rounded-md border border-neon-cyan/30 font-mono text-xs text-neon-cyan transition-all hover:bg-neon-cyan/10 hover:shadow-neon-cyan"
+          >
+            ?
+          </button>
           <a href={profile.resume} download className="btn-neon py-2 text-xs">
             <FileDown className="h-4 w-4" /> resume
           </a>

@@ -24,7 +24,8 @@ const ContactSection = () => {
         </Reveal>
 
         <Reveal>
-          <div className="terminal-window animated-border mx-auto max-w-3xl">
+          <div className="terminal-window animated-border group relative mx-auto max-w-3xl overflow-hidden">
+            <span className="sheen-overlay" aria-hidden />
             <div className="terminal-bar">
               <span className="terminal-dot bg-red-500/80" />
               <span className="terminal-dot bg-yellow-400/80" />

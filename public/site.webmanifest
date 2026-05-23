@@ -1,0 +1,12 @@
+{
+  "name": "Shreyash Tripathi — Full-Stack Developer & AI Enthusiast",
+  "short_name": "Shreyash T.",
+  "description": "Interactive cyberpunk portfolio of Shreyash Tripathi — Full-Stack Developer & AI Enthusiast. MERN, Next.js, REST APIs and AI-powered automation.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05060a",
+  "theme_color": "#05060a",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

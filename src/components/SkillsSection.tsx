@@ -1,7 +1,10 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { skillGroups } from "@/data/portfolio";
+
+// recharts is heavy — load the radar chart only when this section renders
+const SkillsRadar = lazy(() => import("@/components/SkillsRadar"));
 
 const SkillsSection = () => {
   return (
@@ -17,9 +20,24 @@ const SkillsSection = () => {
         </Reveal>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <Reveal>
+            <Suspense
+              fallback={
+                <div className="terminal-window flex h-full min-h-[20rem] items-center justify-center">
+                  <span className="font-mono text-xs text-muted-foreground">
+                    loading radar<span className="animate-blink">_</span>
+                  </span>
+                </div>
+              }
+            >
+              <SkillsRadar />
+            </Suspense>
+          </Reveal>
+
           {skillGroups.map((group, i) => (
             <Reveal key={group.label} delay={i * 90}>
-              <div className="terminal-window h-full">
+              <div className="terminal-window group relative h-full overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-neon-cyan/40 hover:shadow-neon-cyan">
+                <span className="sheen-overlay" aria-hidden />
                 <div className="terminal-bar">
                   <span className="terminal-dot bg-red-500/70" />
                   <span className="terminal-dot bg-yellow-400/70" />
