@@ -1,47 +1,47 @@
 # Shreyash Tripathi
 
-> Full-Stack Developer & AI Enthusiast based in Ahmedabad, Gujarat, India. Builds full-stack web applications with the MERN stack and Next.js, designs REST APIs and role-based authentication, and develops AI-powered workflow automation. Open to full-stack developer roles and internships.
+> Frontend Developer & UI/UX Engineer based in Noida, India. Builds production UI with React, Next.js (App Router) and TypeScript, and contributes to AI-integrated SaaS platforms and marketing sites at a digital product agency. Open to interesting freelance projects and collaborations.
 
 ## Summary
 
-Shreyash Tripathi is a Computer Science Engineering student (B.Tech, JECRC University) and full-stack developer. He builds typed, production-grade web apps with React, Next.js, Node.js and Express, designs REST APIs and real-time features, and applies machine learning to make web products smarter. He is currently an AI Trainee at Garage Productions Pvt. Ltd.
+Shreyash Tripathi is a frontend-focused full-stack developer and UI/UX contributor with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. He builds UI across React, Next.js (App Router) and TypeScript codebases using Tailwind CSS, Supabase and REST APIs, and is comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration. He is currently a Junior Developer, UI/UX at Garage Collective, promoted from an AI Trainee role.
 
 ## Skills
 
-- Languages: JavaScript, TypeScript, Python, Java, C++, SQL
-- Frontend: React.js, Next.js, Tailwind CSS, Radix UI, HTML5, CSS3
-- Backend: Node.js, Express.js, REST API design
-- Databases: MongoDB, MySQL, Prisma ORM
-- AI / ML: TensorFlow, scikit-learn, Pandas, NumPy, Matplotlib, Streamlit, exploratory data analysis
-- Tools: Git, GitHub, Vercel, Postman, VS Code, Jupyter
+- Languages: TypeScript, JavaScript, Java, C++, Python, SQL
+- Frontend: React, Next.js (App Router), Vite, HTML5, CSS3, Tailwind CSS, Radix UI, shadcn/ui, Responsive Design
+- Animation & Motion: Framer Motion, GSAP, Three.js, React Three Fiber, Lenis, Lottie
+- Backend & APIs: Node.js, Express.js, Hono, REST API design
+- Databases & Auth: Supabase (Postgres, Auth, Storage, Realtime, RLS), MongoDB, PostgreSQL, Prisma ORM, Clerk
+- AI Integration: OpenAI API, Anthropic Claude SDK, AI content & automation pipelines
+- Tools & Deployment: Git, GitHub, Vercel, Turborepo, Stripe, Razorpay, Postman, VS Code
 
 ## Experience
 
-- AI Trainee — Garage Productions Pvt. Ltd. (Feb 2026 – present): builds and deploys AI-powered features and workflow automation, cutting manual intervention in repetitive processes by ~40%.
-- Web Developer Intern — EduBooks Pvt. Ltd. (Mar 2024 – Mar 2025): built reusable React components (reduced duplication ~30%), developed REST APIs with Node.js/Express, and used Prisma ORM with PostgreSQL.
+- Junior Developer, UI/UX — Garage Collective, Noida (Feb 2026 – present), promoted from AI Trainee. Ships production UI and AI-powered features across the agency's client and SaaS portfolio: analytics dashboard integrations, a 45-page school marketing site rebuild, a zero-knowledge credential management tool, a daily AI content-generation agent (~40% less manual effort), UTM auto-tagging and partner-portal tooling for a multi-tenant affiliate-marketing SaaS platform, UI theming and responsiveness work on an AI call-screening product's marketing site, dark-mode fixes on a social-listening platform, and UI/build fixes on a startup-investor marketplace and an SEO/AI-visibility platform. Broader stack exposure spans Three.js, GSAP, Framer Motion, Stripe/Razorpay, Clerk and Turborepo.
 
 ## Projects
 
-- Case Cat — custom mobile-cover e-commerce platform (Next.js, Prisma, Kinde OAuth, RBAC, REST APIs).
+- PurrCase — custom mobile-cover e-commerce platform (Next.js, Prisma, Kinde OAuth, RBAC, REST APIs).
 - SketchRace — real-time multiplayer drawing & guessing game (Socket.IO, Canvas API, Next.js 15, React 19, TypeScript).
 - MERN Job Portal — full-stack recruitment platform with JWT auth, RBAC and an admin dashboard.
-- Heart Disease EDA App — interactive ML data-exploration app (Python, Pandas, Streamlit).
 - Portfolio Website — this interactive, SEO-optimized cyberpunk-themed personal site.
 
 ## Education
 
-- B.Tech, Computer Science Engineering — JECRC University, Jaipur (2022 – present).
+- B.Tech, Computer Science Engineering — JECRC University, Jaipur (2022 – 2026), CGPA 8.1.
 
 ## Achievements
 
 - Top 10 of 200+ teams at the national Smart India Hackathon (SIH).
 - Top 10 finalist in a university Ideathon.
-- Certified in Data Structures & Algorithms (Java) and AI/ML Foundations.
-- Member, Consulting & Analytics Club, IIT Guwahati (Summer Analytics 2024).
+- Certificate of Completion, Apna College's Alpha program (DSA with Java).
+- Active member, Consulting & Analytics Club, IIT Guwahati, since Aug 2024 (Summer Analytics 2024).
 
 ## Contact
 
 - Email: tshreyash024@gmail.com
+- Phone: +91 81608 90957
 - GitHub: https://github.com/Yaminam
-- LinkedIn: https://www.linkedin.com/in/shreyash-tripathi-96570a251
-- Location: Ahmedabad, Gujarat, India
+- LinkedIn: https://www.linkedin.com/in/shreyashtripathi9
+- Location: Noida, India

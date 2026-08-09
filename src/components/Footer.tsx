@@ -4,16 +4,18 @@ import { profile, navItems } from "@/data/portfolio";
 import { useTypewriter } from "@/hooks/use-typewriter";
 import MatrixRain from "@/components/MatrixRain";
 
+const openMail = () => window.dispatchEvent(new Event("mail:open"));
+
 const Footer = () => {
   const typed = useTypewriter(
-    ["thanks for scrolling :)", "let's build something", "open to opportunities"],
+    ["thanks for scrolling :)", "let's build something", "let's collaborate"],
     { typeSpeed: 65, deleteSpeed: 30, pause: 1800 }
   );
 
   const socials = [
     { icon: Github, href: profile.github, label: "GitHub" },
     { icon: Linkedin, href: profile.linkedin, label: "LinkedIn" },
-    { icon: Mail, href: `mailto:${profile.email}`, label: "Email" },
+    { icon: Mail, onClick: openMail, label: "Email" },
     { icon: Phone, href: `tel:${profile.phoneHref}`, label: "Phone" },
   ];
 
@@ -38,9 +40,9 @@ const Footer = () => {
             "
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <a href={`mailto:${profile.email}`} className="btn-neon">
+            <button type="button" onClick={openMail} className="btn-neon">
               <Mail className="h-4 w-4" /> say_hello
-            </a>
+            </button>
             <a href={profile.resume} download className="btn-ghost">
               <FileDown className="h-4 w-4" /> resume.pdf
             </a>
@@ -54,15 +56,15 @@ const Footer = () => {
               Shreyash <span className="text-neon-cyan">Tripathi</span>
             </a>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              {profile.role} — building clean, scalable full-stack products and exploring
-              AI/ML to make the web smarter.
+              {profile.role} — building clean, accessible interfaces across React & Next.js
+              products, with hands-on AI integration experience.
             </p>
             <div className="mt-4 inline-flex items-center gap-2 rounded-md border border-neon-green/40 bg-neon-green/5 px-3 py-1.5 font-mono text-xs text-neon-green">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-neon-green opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-neon-green" />
               </span>
-              available for work
+              building @ Garage Collective
             </div>
           </div>
 
@@ -94,9 +96,13 @@ const Footer = () => {
             <ul className="space-y-3 font-mono text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-neon-cyan" />
-                <a href={`mailto:${profile.email}`} className="break-all hover:text-neon-cyan">
+                <button
+                  type="button"
+                  onClick={openMail}
+                  className="break-all text-left hover:text-neon-cyan"
+                >
                   {profile.email}
-                </a>
+                </button>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-neon-cyan" />
@@ -111,18 +117,30 @@ const Footer = () => {
             </ul>
 
             <div className="mt-5 flex items-center gap-3">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target={s.href.startsWith("http") ? "_blank" : undefined}
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="rounded-md border border-border bg-card/40 p-2 text-muted-foreground transition-all hover:-translate-y-1 hover:border-neon-cyan hover:text-neon-cyan hover:shadow-neon-cyan"
-                >
-                  <s.icon className="h-4 w-4" />
-                </a>
-              ))}
+              {socials.map((s) =>
+                s.onClick ? (
+                  <button
+                    key={s.label}
+                    type="button"
+                    onClick={s.onClick}
+                    aria-label={s.label}
+                    className="rounded-md border border-border bg-card/40 p-2 text-muted-foreground transition-all hover:-translate-y-1 hover:border-neon-cyan hover:text-neon-cyan hover:shadow-neon-cyan"
+                  >
+                    <s.icon className="h-4 w-4" />
+                  </button>
+                ) : (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target={s.href.startsWith("http") ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    className="rounded-md border border-border bg-card/40 p-2 text-muted-foreground transition-all hover:-translate-y-1 hover:border-neon-cyan hover:text-neon-cyan hover:shadow-neon-cyan"
+                  >
+                    <s.icon className="h-4 w-4" />
+                  </a>
+                )
+              )}
             </div>
           </div>
         </div>

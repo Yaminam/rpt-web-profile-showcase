@@ -1,26 +1,29 @@
 import React from "react";
 
 const techs = [
-  "React.js",
+  "React",
   "Next.js",
   "TypeScript",
+  "Tailwind CSS",
+  "Radix UI",
+  "Framer Motion",
+  "GSAP",
+  "Three.js",
   "Node.js",
   "Express.js",
+  "Supabase",
+  "PostgreSQL",
   "MongoDB",
-  "MySQL",
   "Prisma",
-  "Tailwind CSS",
-  "Python",
-  "TensorFlow",
-  "Scikit-learn",
-  "Pandas",
+  "Clerk",
+  "OpenAI API",
+  "Anthropic Claude SDK",
   "Socket.IO",
   "Java",
-  "C++",
+  "Python",
   "Git",
   "Vercel",
   "REST API",
-  "Streamlit",
 ];
 
 /** Infinite, edge-faded scrolling strip of technologies. */

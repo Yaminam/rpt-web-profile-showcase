@@ -45,12 +45,12 @@ const FORTUNES = [
 ];
 
 const QUIZ = [
-  { q: "Which stack does Shreyash specialize in?", opts: ["LAMP", "MERN", "Rails", "Spring"], a: 1 },
+  { q: "Which framework does Shreyash build most of his UI in?", opts: ["Angular", "Next.js", "Rails", "Spring"], a: 1 },
   { q: "Which is NOT in his toolkit?", opts: ["TypeScript", "Python", "Rust", "Java"], a: 2 },
   { q: "What powers his real-time features?", opts: ["Socket.IO", "jQuery", "FTP", "SOAP"], a: 0 },
-  { q: "Where is he based?", opts: ["Mumbai", "Ahmedabad", "Delhi", "Pune"], a: 1 },
+  { q: "Where is he based?", opts: ["Mumbai", "Noida", "Delhi", "Pune"], a: 1 },
   { q: "Which ORM does he use?", opts: ["Sequelize", "Prisma", "TypeORM", "Hibernate"], a: 1 },
-  { q: "His EDA app was built with?", opts: ["Flask", "Streamlit", "Dash", "Gradio"], a: 1 },
+  { q: "Which UI primitive library pairs with Tailwind in his stack?", opts: ["Bootstrap", "Radix UI", "Bulma", "Foundation"], a: 1 },
 ];
 
 const COFFEE = `      ( (
@@ -251,9 +251,13 @@ const CommandTerminal = () => {
     <div className="space-y-0.5">
       <div>
         <span className="text-neon-cyan">email </span>
-        <a className="underline hover:text-neon-cyan" href={`mailto:${profile.email}`}>
+        <button
+          type="button"
+          className="underline hover:text-neon-cyan"
+          onClick={() => window.dispatchEvent(new Event("mail:open"))}
+        >
           {profile.email}
-        </a>
+        </button>
       </div>
       <div>
         <span className="text-neon-cyan">phone </span>
@@ -281,10 +285,10 @@ const CommandTerminal = () => {
         <p className="text-muted-foreground">-----------------</p>
         <p><Cyan>host</Cyan> shreyash-tripathi</p>
         <p><Cyan>role</Cyan> {profile.role}</p>
-        <p><Cyan>stack</Cyan> React · Next · Node · Python</p>
+        <p><Cyan>stack</Cyan> React · Next.js · TypeScript · Node</p>
         <p><Cyan>loc</Cyan> {profile.location}</p>
         <p><Cyan>achv</Cyan> {count}/{total} unlocked</p>
-        <p><Cyan>status</Cyan> <Green>open to work</Green></p>
+        <p><Cyan>status</Cyan> <Green>building @ Garage Collective</Green></p>
       </div>
     </div>
   );
@@ -452,7 +456,7 @@ const CommandTerminal = () => {
               <div>
                 <Cyan>linkedin </Cyan>
                 <a className="underline hover:text-neon-cyan" href={profile.linkedin} target="_blank" rel="noreferrer">
-                  shreyash-tripathi
+                  shreyashtripathi9
                 </a>
               </div>
             </div>

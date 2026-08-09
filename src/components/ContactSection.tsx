@@ -4,9 +4,11 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { profile } from "@/data/portfolio";
 
+const openMail = () => window.dispatchEvent(new Event("mail:open"));
+
 const ContactSection = () => {
   const channels = [
-    { icon: Mail, label: "email", value: profile.email, href: `mailto:${profile.email}` },
+    { icon: Mail, label: "email", value: profile.email, onClick: openMail },
     { icon: Phone, label: "phone", value: profile.phone, href: `tel:${profile.phoneHref}` },
     { icon: MapPin, label: "location", value: profile.location, href: undefined },
   ];
@@ -19,7 +21,7 @@ const ContactSection = () => {
             index="06."
             command="./contact --connect"
             title="Get In Touch"
-            subtitle="Open to full-stack roles, internships and interesting collaborations. Let's build something."
+            subtitle="Currently building @ Garage Collective — open to interesting freelance projects and collaborations. Let's build something."
           />
         </Reveal>
 
@@ -51,6 +53,18 @@ const ContactSection = () => {
                       <span className="break-all text-xs text-foreground">{c.value}</span>
                     </div>
                   );
+                  if (c.onClick) {
+                    return (
+                      <button
+                        key={c.label}
+                        type="button"
+                        onClick={c.onClick}
+                        className="block text-left"
+                      >
+                        {content}
+                      </button>
+                    );
+                  }
                   return c.href ? (
                     <a key={c.label} href={c.href} className="block">
                       {content}
@@ -62,9 +76,9 @@ const ContactSection = () => {
               </div>
 
               <div className="flex flex-wrap gap-3 pt-1">
-                <a href={`mailto:${profile.email}`} className="btn-neon">
+                <button type="button" onClick={openMail} className="btn-neon">
                   <Mail className="h-4 w-4" /> say_hello
-                </a>
+                </button>
                 <a href={profile.resume} download className="btn-ghost">
                   <FileDown className="h-4 w-4" /> resume.pdf
                 </a>

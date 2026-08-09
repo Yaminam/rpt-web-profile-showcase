@@ -21,6 +21,7 @@ import ConfettiFX from "@/components/fx/ConfettiFX";
 import CrtMode from "@/components/CrtMode";
 import WelcomeHint from "@/components/WelcomeHint";
 import HelpOverlay from "@/components/HelpOverlay";
+import MailModal from "@/components/MailModal";
 
 const Index = () => {
   return (
@@ -51,6 +52,7 @@ const Index = () => {
       <CrtMode />
       <WelcomeHint />
       <HelpOverlay />
+      <MailModal />
     </div>
   );
 };

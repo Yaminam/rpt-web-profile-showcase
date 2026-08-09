@@ -6,32 +6,70 @@
 export const profile = {
   name: "Shreyash Tripathi",
   handle: "shreyash",
-  role: "Full-Stack Dev & AI Enthusiast",
+  role: "Junior Frontend / UI-UX Developer",
   roles: [
-    "Full-Stack Developer",
-    "AI / ML Enthusiast",
-    "MERN Stack Engineer",
-    "Next.js Builder",
-    "REST API Designer",
+    "Junior Developer, UI/UX",
+    "Frontend Developer",
+    "UI/UX Engineer",
+    "Next.js Developer",
+    "AI-Integrated Builder",
   ],
-  location: "Ahmedabad, Gujarat, India",
+  location: "Noida, India",
   email: "tshreyash024@gmail.com",
   phone: "+91 81608 90957",
   phoneHref: "+918160890957",
   github: "https://github.com/Yaminam",
-  linkedin:
-    "https://www.linkedin.com/in/shreyash-tripathi-96570a251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  linkedin: "https://www.linkedin.com/in/shreyashtripathi9",
   resume: "/Shreyash_Tripathi_Resume.pdf",
   photo: "/shreyash-profile.png",
   summary:
-    "Results-driven Computer Science student building full-stack web apps with the MERN stack and Next.js — while diving deep into AI & Machine Learning. I design REST APIs, role-based auth and real-time features, and I'm increasingly applying ML to make modern web products smarter.",
+    "Frontend-focused full-stack developer and UI/UX contributor with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. I build UI across React, Next.js (App Router) and TypeScript codebases with Tailwind CSS, Supabase and REST APIs, and I'm comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration.",
 };
+
+export type ContactReason = {
+  id: string;
+  label: string;
+  subject: string;
+  body: string;
+};
+
+/** Pre-written email templates, keyed by why someone's reaching out. */
+export const contactReasons: ContactReason[] = [
+  {
+    id: "job",
+    label: "Job Opportunity",
+    subject: "Job opportunity for Shreyash",
+    body: "Hi Shreyash,\n\nI'm reaching out about a job opportunity I think could be a great fit for you.\n\nRole:\nCompany:\nLocation:\n\nLooking forward to hearing from you!\n",
+  },
+  {
+    id: "freelance",
+    label: "Freelance Project",
+    subject: "Freelance project inquiry",
+    body: "Hi Shreyash,\n\nI have a freelance project I'd love to discuss with you.\n\nProject:\nTimeline:\nBudget:\n\nLet me know if you're available!\n",
+  },
+  {
+    id: "collab",
+    label: "Collaboration",
+    subject: "Let's collaborate",
+    body: "Hi Shreyash,\n\nI'd like to explore collaborating on something together.\n\nWhat I have in mind:\n\n\nWould love to hear your thoughts!\n",
+  },
+  {
+    id: "hello",
+    label: "Just Saying Hi",
+    subject: "Hey from your portfolio",
+    body: "Hi Shreyash,\n\nJust came across your portfolio and wanted to say hi!\n\n\n",
+  },
+];
+
+/** Builds a mailto: link pre-filled with the subject/body for a given reason. */
+export const mailtoFor = (email: string, reason: ContactReason) =>
+  `mailto:${email}?subject=${encodeURIComponent(reason.subject)}&body=${encodeURIComponent(reason.body)}`;
 
 export const stats = [
   { value: "2+", label: "Years coding" },
   { value: "40%", label: "Manual work cut by automation" },
-  { value: "15+", label: "Tech & tools" },
-  { value: "5", label: "Projects shipped" },
+  { value: "30+", label: "Tech & tools" },
+  { value: "10+", label: "Production features shipped" },
 ];
 
 export const strengths = [
@@ -41,6 +79,7 @@ export const strengths = [
   "Team Collaboration",
   "Analytical Thinking",
   "Fast Learner",
+  "Design-System Thinking",
 ];
 
 export type Experience = {
@@ -54,24 +93,18 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
-    company: "Garage Productions Pvt. Ltd.",
-    role: "AI Trainee",
+    company: "Garage Collective",
+    role: "Junior Developer, UI/UX",
     period: "Feb 2026 — Present",
+    location: "Noida, India",
     current: true,
     points: [
-      "Assist in building and deploying AI-powered features, contributing to smarter and more automated system behavior.",
-      "Develop and test intelligent workflow automation pipelines, cutting manual intervention in repetitive processes by 40%.",
-      "Collaborate with the engineering team on AI model integration, system architecture, and production deployment.",
-    ],
-  },
-  {
-    company: "EduBooks Pvt. Ltd.",
-    role: "Web Developer Intern",
-    period: "Mar 2024 — Mar 2025",
-    points: [
-      "Created reusable UI components in React.js, reducing code duplication by 30% and improving development speed across the application.",
-      "Developed and integrated REST APIs with Node.js and Express, enabling reliable data flow between frontend and backend services.",
-      "Leveraged Prisma ORM with PostgreSQL to streamline database queries, improving maintainability and cutting query complexity significantly.",
+      "Promoted from AI Trainee to Junior Developer, UI/UX after shipping production features across the agency's client and SaaS portfolio.",
+      "Built and deployed a daily AI content-generation agent (Instagram, LinkedIn, blog), cutting manual content-creation effort by roughly 40%.",
+      "Shipped UTM auto-tagging and partner-portal link generation on a multi-tenant affiliate-marketing SaaS platform, plus a new analytics dashboard module for an internal campaign-management platform.",
+      "Rebuilt a 45-page K-12 school marketing site with a mobile-layout overhaul, fixing horizontal-scroll, tap-target and navigation issues.",
+      "Extended a zero-knowledge credential management tool with credential revocation and multi-currency vendor billing, and delivered dark-mode, responsiveness and TypeScript fixes across a social-listening platform, an AI call-screening product and a startup/investor marketplace.",
+      "Gained hands-on exposure across 20+ client and SaaS builds — from cinematic 3D/WebGL marketing sites to multi-tenant dashboards and AI content pipelines — with tools spanning Three.js, GSAP, Framer Motion, Stripe/Razorpay, Clerk, Turborepo and OpenAI/Anthropic SDKs.",
     ],
   },
 ];
@@ -87,10 +120,10 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: "Case Cat",
+    name: "PurrCase",
     tagline: "Custom Mobile Cover E-Commerce Platform",
     description:
-      "A full-stack e-commerce platform for custom phone cases with secure auth, role-based access and a polished, responsive storefront.",
+      "A full-stack e-commerce platform for custom phone cases with secure OAuth, role-based access and a polished, responsive storefront.",
     tech: ["Next.js", "Prisma ORM", "Kinde OAuth", "Tailwind CSS", "Radix UI", "REST API"],
     highlights: [
       "Engineered with Next.js + Prisma ORM and Kinde OAuth, featuring Role-Based Access Control (RBAC) and REST APIs.",
@@ -126,19 +159,6 @@ export const projects: Project[] = [
     accent: "green",
   },
   {
-    name: "Heart Disease EDA App",
-    tagline: "Interactive ML Data-Exploration App",
-    description:
-      "An interactive exploratory data analysis app that turns a raw heart-disease dataset into clear, filterable visual insights.",
-    tech: ["Python", "Pandas", "Streamlit", "Matplotlib", "Seaborn", "NumPy"],
-    highlights: [
-      "Built an interactive EDA app with Streamlit for the heart-disease dataset.",
-      "Visualized key features with charts and statistical summaries, surfacing correlations.",
-      "Enabled dynamic filtering and exploration through interactive widgets.",
-    ],
-    accent: "purple",
-  },
-  {
     name: "Portfolio Website",
     tagline: "TypeScript Personal Site",
     description:
@@ -149,7 +169,7 @@ export const projects: Project[] = [
       "Optimized for performance and SEO.",
       "Deployed on Vercel.",
     ],
-    accent: "yellow",
+    accent: "purple",
   },
 ];
 
@@ -163,42 +183,63 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Languages",
     prompt: "languages --list",
-    items: ["Java", "JavaScript", "TypeScript", "Python", "C++", "SQL"],
+    items: ["TypeScript", "JavaScript", "Java", "C++", "Python", "SQL"],
   },
   {
     label: "Frontend",
     prompt: "frontend --list",
-    items: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Radix UI"],
+    items: [
+      "React",
+      "Next.js (App Router)",
+      "Vite",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Radix UI",
+      "shadcn/ui",
+      "Responsive Design",
+    ],
   },
   {
-    label: "Backend",
+    label: "Animation & Motion",
+    prompt: "motion --list",
+    items: ["Framer Motion", "GSAP", "Three.js", "React Three Fiber", "Lenis", "Lottie"],
+  },
+  {
+    label: "Backend & APIs",
     prompt: "backend --list",
-    items: ["Node.js", "Express.js", "REST API Design"],
+    items: ["Node.js", "Express.js", "Hono", "REST API Design"],
   },
   {
-    label: "AI / ML",
-    prompt: "aiml --list",
-    items: ["TensorFlow", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Streamlit", "EDA"],
+    label: "Databases & Auth",
+    prompt: "data --list",
+    items: [
+      "Supabase (Postgres, Auth, Storage, Realtime, RLS)",
+      "MongoDB",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Clerk",
+    ],
   },
   {
-    label: "Databases",
-    prompt: "databases --list",
-    items: ["MongoDB", "MySQL", "Prisma ORM"],
+    label: "AI Integration",
+    prompt: "ai --list",
+    items: ["OpenAI API", "Anthropic Claude SDK", "AI Content & Automation Pipelines"],
   },
   {
-    label: "Tools",
+    label: "Tools & Deployment",
     prompt: "tools --list",
-    items: ["Git", "GitHub", "Vercel", "Postman", "VS Code", "Jupyter"],
+    items: ["Git", "GitHub", "Vercel", "Turborepo", "Stripe", "Razorpay", "Postman", "VS Code"],
   },
 ];
 
 /** Self-rated proficiency per domain (0–100) for the radar chart. */
 export const skillRadar = [
-  { axis: "Frontend", level: 90 },
-  { axis: "Backend", level: 82 },
-  { axis: "Languages", level: 86 },
-  { axis: "AI / ML", level: 72 },
-  { axis: "Databases", level: 78 },
+  { axis: "Frontend", level: 92 },
+  { axis: "Motion / 3D", level: 80 },
+  { axis: "Backend", level: 78 },
+  { axis: "Languages", level: 85 },
+  { axis: "Databases", level: 76 },
   { axis: "Tools", level: 84 },
 ];
 
@@ -214,9 +255,8 @@ export const education: Education[] = [
   {
     school: "JECRC University",
     location: "Jaipur, Rajasthan",
-    degree: "B.Tech — Computer Science Engineering",
-    period: "2022 — Present",
-    current: true,
+    degree: "B.Tech — Computer Science Engineering (CGPA: 8.1)",
+    period: "2022 — 2026",
   },
   {
     school: "P.P. Savani School",
@@ -246,6 +286,7 @@ export type Achievement = {
   title: string;
   detail: string;
   tag: string;
+  link?: string;
 };
 
 export const achievements: Achievement[] = [
@@ -260,13 +301,14 @@ export const achievements: Achievement[] = [
     tag: "Finalist",
   },
   {
-    title: "DSA (Java) & AI/ML Foundations",
-    detail: "Certified in Data Structures & Algorithms using Java and AI/ML Foundations.",
+    title: "DSA with Java — Apna College Alpha",
+    detail: "Certificate of Completion, Apna College's Alpha program (Data Structures & Algorithms with Java).",
     tag: "Certified",
+    link: "/certificates/apna-college-dsa-java-certificate.pdf",
   },
   {
     title: "Summer Analytics 2024",
-    detail: "Member of the Consulting & Analytics Club, IIT Guwahati.",
+    detail: "Consulting & Analytics Club, IIT Guwahati — active member since Aug 2024.",
     tag: "IIT Guwahati",
   },
 ];

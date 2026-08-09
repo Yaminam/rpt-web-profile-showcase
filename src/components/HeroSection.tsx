@@ -17,7 +17,7 @@ const Telemetry = () => {
 
   const rows = [
     { k: "session", v: `${hh}:${mm}:${ss}`, accent: "text-neon-cyan" },
-    { k: "stack", v: "MERN · Next · AI", accent: "text-foreground" },
+    { k: "stack", v: "React · Next.js · AI", accent: "text-foreground" },
     { k: "status", v: "ONLINE", accent: "text-neon-green" },
   ];
 
@@ -92,7 +92,7 @@ const HeroSection = () => {
                   </h1>
                 </div>
 
-                <p className="text-base text-muted-foreground md:text-lg">
+                <p className="min-h-[3.25rem] text-base text-muted-foreground md:min-h-[2rem] md:text-lg">
                   <span className="text-neon-cyan">&gt; role:</span>{" "}
                   <span className="font-semibold text-foreground">{typed}</span>
                   <span className="ml-0.5 inline-block h-5 w-2.5 translate-y-1 bg-neon-cyan animate-blink" />
@@ -104,7 +104,7 @@ const HeroSection = () => {
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-neon-green opacity-75" />
                       <span className="relative inline-flex h-2 w-2 rounded-full bg-neon-green" />
                     </span>
-                    status: ONLINE — open to work
+                    status: ONLINE — building @ Garage Collective
                   </span>
                   <span className="rounded-md border border-border bg-muted/40 px-2.5 py-1 text-muted-foreground">
                     📍 {profile.location}
@@ -158,13 +158,14 @@ const HeroSection = () => {
                   >
                     <Linkedin size={20} />
                   </a>
-                  <a
-                    href={`mailto:${profile.email}`}
+                  <button
+                    type="button"
+                    onClick={() => window.dispatchEvent(new Event("mail:open"))}
                     aria-label="Email"
                     className="text-muted-foreground transition-colors hover:text-neon-cyan"
                   >
                     <Mail size={20} />
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -213,7 +214,7 @@ const HeroSection = () => {
                   className="absolute animate-orbit rounded-md border border-neon-cyan/40 bg-terminal-panel/90 px-2.5 py-1 font-mono text-[11px] text-neon-cyan shadow-neon-cyan backdrop-blur"
                   style={{ ["--orbit-r" as string]: "188px" }}
                 >
-                  {"<MERN/>"}
+                  {"<React/>"}
                 </span>
                 <span
                   className="absolute animate-orbit-rev rounded-md border border-neon-magenta/40 bg-terminal-panel/90 px-2.5 py-1 font-mono text-[11px] text-neon-magenta backdrop-blur"

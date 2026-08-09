@@ -37,27 +37,27 @@ const highlights = [
   {
     icon: Code2,
     accent: "cyan",
-    title: "Full-Stack Engineering",
-    text: "End-to-end MERN & Next.js apps — typed frontends, REST APIs and clean data layers.",
+    title: "Frontend Engineering",
+    text: "Production UI across React, Next.js (App Router) and TypeScript — from responsive layout to backend integration.",
   },
   {
     icon: Cpu,
     accent: "magenta",
     title: "AI & Automation",
-    text: "Building AI-powered features and workflow pipelines that cut manual work.",
+    text: "Shipping AI-powered features and content pipelines that cut manual work by ~40%.",
   },
   {
     icon: Rocket,
     accent: "green",
     title: "Ships Real Products",
-    text: "From hackathon finalist to production deploys — focused on impact, not just code.",
+    text: "From hackathon finalist to production deploys across a live agency portfolio of client and SaaS products.",
   },
 ];
 
 const facts = [
   { icon: MapPin, label: "Based in", value: profile.location },
-  { icon: GraduationCap, label: "Studying", value: "B.Tech CSE, JECRC University" },
-  { icon: Briefcase, label: "Currently", value: "AI Trainee @ Garage Productions" },
+  { icon: GraduationCap, label: "Education", value: "B.Tech CSE, JECRC University" },
+  { icon: Briefcase, label: "Currently", value: "Junior Developer, UI/UX @ Garage Collective" },
 ];
 
 // icon + accent per stat (matched to portfolio.ts order)
@@ -77,7 +77,7 @@ const AboutSection = () => {
             index="01."
             command="cat about.md"
             title="About Me"
-            subtitle="Computer Science student and builder who turns ideas into clean, scalable products."
+            subtitle="Frontend-focused engineer and UI/UX builder who turns ideas into clean, scalable, production-ready interfaces."
           />
         </Reveal>
 
@@ -91,8 +91,8 @@ const AboutSection = () => {
                 <span className="text-neon-cyan"> * </span>
                 {profile.summary}
                 <br />
-                <span className="text-neon-cyan"> * </span>I enjoy real-time systems,
-                thoughtful UI, and shipping features that people actually use.
+                <span className="text-neon-cyan"> * </span>I enjoy thoughtful UI, clean
+                design systems, and shipping features that people actually use.
                 <br />
                 <span className="text-neon-green"> */</span>
               </p>

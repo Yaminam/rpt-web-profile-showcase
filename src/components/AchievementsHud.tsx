@@ -37,16 +37,20 @@ const AchievementsHud = () => {
     return () => observer.disconnect();
   }, [unlock, unlocked]);
 
-  // recruiter: clicking any résumé download or mailto link anywhere
+  // recruiter: clicking any résumé download, or opening the mail composer
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       const a = (e.target as HTMLElement)?.closest?.("a");
       if (!a) return;
-      const href = a.getAttribute("href") || "";
-      if (a.hasAttribute("download") || href.startsWith("mailto:")) unlock("recruiter");
+      if (a.hasAttribute("download")) unlock("recruiter");
     };
+    const onMailOpen = () => unlock("recruiter");
     document.addEventListener("click", handler);
-    return () => document.removeEventListener("click", handler);
+    window.addEventListener("mail:open", onMailOpen);
+    return () => {
+      document.removeEventListener("click", handler);
+      window.removeEventListener("mail:open", onMailOpen);
+    };
   }, [unlock]);
 
   const pct = Math.round((count / total) * 100);

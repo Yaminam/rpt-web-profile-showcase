@@ -1,5 +1,5 @@
 import React from "react";
-import { GraduationCap, Trophy, Calendar, MapPin, Medal, Award, BadgeCheck, type LucideIcon } from "lucide-react";
+import { GraduationCap, Trophy, Calendar, MapPin, Medal, Award, BadgeCheck, ExternalLink, type LucideIcon } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { education, coursework, achievements } from "@/data/portfolio";
@@ -117,6 +117,16 @@ const EducationSection = () => {
                         <p className="text-xs text-muted-foreground">
                           {highlightMetrics(a.detail)}
                         </p>
+                        {a.link && (
+                          <a
+                            href={a.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-1.5 inline-flex items-center gap-1 font-mono text-[11px] text-neon-cyan hover:underline"
+                          >
+                            <ExternalLink className="h-3 w-3" /> view certificate
+                          </a>
+                        )}
                       </div>
                     </li>
                   );
