@@ -64,4 +64,4 @@ User-agent: *
 Allow: /
 
 # Replace with your real domain after deploy
-Sitemap: https://shreyash-tripathi.vercel.app/sitemap.xml
+Sitemap: https://rpt-web-profile-showcase.vercel.app/sitemap.xml
