@@ -137,8 +137,8 @@ export default {
 					'50%': { transform: 'translateY(-12px)' }
 				},
 				'grid-pan': {
-					'0%': { backgroundPosition: '0 0' },
-					'100%': { backgroundPosition: '40px 40px' }
+					'0%': { transform: 'translate3d(0,0,0)' },
+					'100%': { transform: 'translate3d(40px,40px,0)' }
 				},
 				'spin-slow': {
 					to: { transform: 'rotate(360deg)' }

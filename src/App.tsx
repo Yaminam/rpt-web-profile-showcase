@@ -1,3 +1,4 @@
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,22 +10,33 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+/** Providers + toasters shared by the browser app and the build-time prerender (entry-server.tsx). */
+export const AppShell = ({ children }: { children: React.ReactNode }) => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <AchievementsProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+        {children}
       </AchievementsProvider>
     </TooltipProvider>
   </QueryClientProvider>
+);
+
+export const AppRoutes = () => (
+  <Routes>
+    <Route path="/" element={<Index />} />
+    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+    <Route path="*" element={<NotFound />} />
+  </Routes>
+);
+
+const App = () => (
+  <AppShell>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  </AppShell>
 );
 
 export default App;

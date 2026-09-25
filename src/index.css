@@ -238,6 +238,29 @@
   }
 }
 
+/* Photo "ping" ring: scales/fades a pseudo-element so it runs on the compositor
+   (animating box-shadow repaints every frame). */
+.pulse-ring {
+  position: relative;
+}
+.pulse-ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 6px rgba(0, 240, 255, 0.45);
+  animation: pulse-ring-fx 2s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes pulse-ring-fx {
+  0% { transform: scale(0.97); opacity: 1; }
+  70% { transform: scale(1.06); opacity: 0; }
+  100% { transform: scale(1.06); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse-ring::after { animation: none; opacity: 0; }
+}
+
 @layer utilities {
   /* Animated conic gradient border */
   @property --border-angle {

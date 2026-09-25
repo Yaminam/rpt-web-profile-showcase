@@ -19,7 +19,8 @@ export function useScramble(
   text: string,
   { speed = 30, revealEvery = 2, active = true }: ScrambleOpts = {}
 ) {
-  const [output, setOutput] = useState(active ? "" : text);
+  // Start from the real text so prerendered HTML (and crawlers) get it; the effect scrambles after mount.
+  const [output, setOutput] = useState(text);
   const timer = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {

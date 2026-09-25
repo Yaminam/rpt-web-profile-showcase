@@ -1,5 +1,4 @@
-import React from "react";
-import BootScreen from "@/components/BootScreen";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import ScrollProgress from "@/components/ScrollProgress";
 import Spotlight from "@/components/Spotlight";
 import CyberBackground from "@/components/CyberBackground";
@@ -12,21 +11,31 @@ import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
+import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
-import CommandTerminal from "@/components/CommandTerminal";
-import AchievementsHud from "@/components/AchievementsHud";
-import CyberOverlay from "@/components/CyberOverlay";
-import CursorFX from "@/components/fx/CursorFX";
-import ConfettiFX from "@/components/fx/ConfettiFX";
-import CrtMode from "@/components/CrtMode";
-import WelcomeHint from "@/components/WelcomeHint";
-import HelpOverlay from "@/components/HelpOverlay";
-import MailModal from "@/components/MailModal";
+
+const InteractiveLayer = lazy(() => import("@/components/InteractiveLayer"));
+
+/** Mount the terminal/games/FX layer only once the browser is idle (never during SSR). */
+const useIdleMount = () => {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const ric = window.requestIdleCallback;
+    if (ric) {
+      const id = ric(() => setReady(true), { timeout: 2500 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const t = setTimeout(() => setReady(true), 1200);
+    return () => clearTimeout(t);
+  }, []);
+  return ready;
+};
 
 const Index = () => {
+  const interactive = useIdleMount();
+
   return (
     <div className="relative min-h-screen text-foreground">
-      <BootScreen />
       <ScrollProgress />
       <Spotlight />
       <CyberBackground />
@@ -40,19 +49,16 @@ const Index = () => {
         <ProjectsSection />
         <EducationSection />
         <ContactSection />
+        <FaqSection />
       </main>
       <Footer />
 
       {/* Interactive / gamified layer */}
-      <CommandTerminal />
-      <AchievementsHud />
-      <CyberOverlay />
-      <CursorFX />
-      <ConfettiFX />
-      <CrtMode />
-      <WelcomeHint />
-      <HelpOverlay />
-      <MailModal />
+      {interactive && (
+        <Suspense fallback={null}>
+          <InteractiveLayer />
+        </Suspense>
+      )}
     </div>
   );
 };

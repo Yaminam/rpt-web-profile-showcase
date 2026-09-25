@@ -2,11 +2,24 @@ import React, { Suspense, lazy } from "react";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { skillGroups } from "@/data/portfolio";
+import { useReveal } from "@/hooks/use-reveal";
 
-// recharts is heavy — load the radar chart only when this section renders
+// recharts is heavy — load the radar chart only when this section nears the viewport
 const SkillsRadar = lazy(() => import("@/components/SkillsRadar"));
 
 const SkillsSection = () => {
+  const { ref: radarRef, isVisible: radarNear } = useReveal<HTMLDivElement>({
+    threshold: 0,
+    rootMargin: "400px 0px",
+  });
+  const radarFallback = (
+    <div className="terminal-window flex h-full min-h-[20rem] items-center justify-center">
+      <span className="font-mono text-xs text-muted-foreground">
+        loading radar<span className="animate-blink">_</span>
+      </span>
+    </div>
+  );
+
   return (
     <section id="skills" className="section-padding">
       <div className="container mx-auto">
@@ -21,17 +34,15 @@ const SkillsSection = () => {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Reveal>
-            <Suspense
-              fallback={
-                <div className="terminal-window flex h-full min-h-[20rem] items-center justify-center">
-                  <span className="font-mono text-xs text-muted-foreground">
-                    loading radar<span className="animate-blink">_</span>
-                  </span>
-                </div>
-              }
-            >
-              <SkillsRadar />
-            </Suspense>
+            <div ref={radarRef} className="h-full">
+              {radarNear ? (
+                <Suspense fallback={radarFallback}>
+                  <SkillsRadar />
+                </Suspense>
+              ) : (
+                radarFallback
+              )}
+            </div>
           </Reveal>
 
           {skillGroups.map((group, i) => (

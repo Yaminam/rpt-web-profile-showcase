@@ -8,10 +8,10 @@
          SEO: the site is served at https://shreyashtripathi.in -
          keep every absolute URL below pointing at that domain.
          ============================================================ -->
-    <title>Shreyash Tripathi — Frontend Developer & UI/UX Engineer | Portfolio</title>
+    <title>Shreyash Tripathi — Frontend Developer & UI/UX Engineer</title>
     <meta
       name="description"
-      content="Shreyash Tripathi is a Frontend Developer & UI/UX Engineer at Garage Collective in Noida, India. He builds React, Next.js (App Router) and TypeScript UI for AI-integrated SaaS platforms and marketing sites. Explore his projects, experience and skills."
+      content="Shreyash Tripathi — Frontend Developer & UI/UX Engineer in Noida, India. React, Next.js & TypeScript UI for AI-integrated SaaS. Projects, resume & contact."
     />
     <meta name="author" content="Shreyash Tripathi" />
     <meta
@@ -34,7 +34,7 @@
     <meta property="og:title" content="Shreyash Tripathi — Frontend Developer & UI/UX Engineer" />
     <meta
       property="og:description"
-      content="Frontend Developer & UI/UX Engineer — React, Next.js, Tailwind CSS and AI-integrated products. An interactive cyberpunk portfolio with a live terminal, mini-games and easter eggs."
+      content="Frontend Developer & UI/UX Engineer building React, Next.js and TypeScript UI for AI-integrated SaaS products. See projects, experience and resume."
     />
     <meta property="og:image" content="https://shreyashtripathi.in/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -46,134 +46,106 @@
     <meta name="twitter:title" content="Shreyash Tripathi — Frontend Developer & UI/UX Engineer" />
     <meta
       name="twitter:description"
-      content="Interactive cyberpunk portfolio — live terminal, mini-games, achievements & easter eggs. React · Next.js · UI/UX · AI integration."
+      content="Frontend Developer & UI/UX Engineer — React, Next.js, TypeScript and AI-integrated product UI. Projects, experience and resume."
     />
     <meta name="twitter:image" content="https://shreyashtripathi.in/og-image.png" />
     <meta name="twitter:image:alt" content="Shreyash Tripathi — Frontend Developer & UI/UX Engineer" />
 
-    <!-- Google Analytics 4 (G-JKKJRK91DN). Events queue in dataLayer right away;
-         gtag.js itself is fetched after window load so it never competes with first paint. -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-JKKJRK91DN');
-      window.addEventListener('load', function () {
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JKKJRK91DN';
-        document.head.appendChild(s);
-      });
-    </script>
+    <!-- Fonts + Google Analytics 4 bootstrap (external file so the CSP can forbid inline script) -->
+    <script src="/site.js" async></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonts: preloaded here, applied by /site.js so they never block first paint (display=swap) -->
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@600;700;800;900&display=swap"
-      rel="stylesheet"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@600;700;800;900&display=swap"
+      />
+    </noscript>
 
-    <!-- Structured data: Person / ProfilePage (SEO + AEO + GEO) -->
+    <!-- Structured data: one linked graph (Person ⇄ ProfilePage ⇄ WebSite) for search, AEO and GEO -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfilePage",
-        "dateModified": "2026-08-09",
-        "mainEntity": {
-          "@type": "Person",
-          "name": "Shreyash Tripathi",
-          "alternateName": "Shreyash",
-          "jobTitle": "Junior Frontend / UI-UX Developer",
-          "description": "Frontend-focused full-stack developer and UI/UX contributor specializing in React, Next.js (App Router), TypeScript, Tailwind CSS and AI-integrated product development.",
-          "url": "https://shreyashtripathi.in/",
-          "image": "https://shreyashtripathi.in/og-image.png",
-          "email": "mailto:tshreyash024@gmail.com",
-          "telephone": "+91-81608-90957",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Noida",
-            "addressRegion": "Uttar Pradesh",
-            "addressCountry": "IN"
-          },
-          "sameAs": [
-            "https://github.com/Yaminam",
-            "https://www.linkedin.com/in/shreyashtripathi9"
-          ],
-          "alumniOf": {
-            "@type": "CollegeOrUniversity",
-            "name": "JECRC University"
-          },
-          "worksFor": {
-            "@type": "Organization",
-            "name": "Garage Collective"
-          },
-          "knowsAbout": [
-            "React", "Next.js", "TypeScript", "JavaScript", "Node.js", "Express.js",
-            "Tailwind CSS", "Radix UI", "Framer Motion", "GSAP", "Three.js",
-            "Supabase", "PostgreSQL", "MongoDB", "Prisma ORM", "REST API Design",
-            "OpenAI API", "Anthropic Claude SDK", "UI/UX Design", "Full-Stack Web Development"
-          ],
-          "knowsLanguage": ["English", "Hindi"]
-        }
-      }
-    </script>
-
-    <!-- Structured data: WebSite -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Shreyash Tripathi — Portfolio",
-        "url": "https://shreyashtripathi.in/",
-        "author": { "@type": "Person", "name": "Shreyash Tripathi" }
-      }
-    </script>
-
-    <!-- Structured data: FAQ (Answer Engine Optimization) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
+        "@graph": [
           {
-            "@type": "Question",
-            "name": "Who is Shreyash Tripathi?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Shreyash Tripathi is a Junior Frontend / UI-UX Developer based in Noida, India. He builds production UI with React, Next.js (App Router) and TypeScript, and contributes to AI-integrated SaaS platforms and marketing sites at a digital product agency."
-            }
+            "@type": "Person",
+            "@id": "https://shreyashtripathi.in/#person",
+            "name": "Shreyash Tripathi",
+            "alternateName": "Shreyash",
+            "url": "https://shreyashtripathi.in/",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://shreyashtripathi.in/shreyash-profile.jpg",
+              "width": 600,
+              "height": 600
+            },
+            "jobTitle": "Frontend Developer & UI/UX Engineer",
+            "description": "Frontend Developer and UI/UX Engineer in Noida, India, building React, Next.js (App Router) and TypeScript UI for AI-integrated SaaS platforms and marketing sites. Junior Developer, UI/UX at Garage Collective.",
+            "email": "mailto:tshreyash024@gmail.com",
+            "telephone": "+91-81608-90957",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Noida",
+              "addressRegion": "Uttar Pradesh",
+              "addressCountry": "IN"
+            },
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Garage Collective"
+            },
+            "hasOccupation": {
+              "@type": "Occupation",
+              "name": "Junior Developer, UI/UX",
+              "occupationLocation": { "@type": "City", "name": "Noida" },
+              "skills": "React, Next.js, TypeScript, Tailwind CSS, UI/UX design, AI integration"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "JECRC University",
+              "address": { "@type": "PostalAddress", "addressLocality": "Jaipur", "addressCountry": "IN" }
+            },
+            "award": [
+              "Top 10 of 200+ teams, Smart India Hackathon",
+              "Top 10 finalist, university Ideathon"
+            ],
+            "knowsAbout": [
+              "React", "Next.js", "TypeScript", "JavaScript", "Node.js", "Express.js",
+              "Tailwind CSS", "Radix UI", "Framer Motion", "GSAP", "Three.js",
+              "Supabase", "PostgreSQL", "MongoDB", "Prisma ORM", "REST API Design",
+              "OpenAI API", "Anthropic Claude SDK", "UI/UX Design", "Frontend Development"
+            ],
+            "knowsLanguage": ["English", "Hindi"],
+            "sameAs": [
+              "https://github.com/Yaminam",
+              "https://www.linkedin.com/in/shreyashtripathi9"
+            ]
           },
           {
-            "@type": "Question",
-            "name": "What technologies does Shreyash Tripathi work with?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "He works with React, Next.js, TypeScript and JavaScript on the frontend, Tailwind CSS, Radix UI, Framer Motion and GSAP for UI and motion, Node.js and Express for backend and REST APIs, Supabase and PostgreSQL for data, and the OpenAI and Anthropic Claude SDKs for AI integration."
-            }
+            "@type": "ProfilePage",
+            "@id": "https://shreyashtripathi.in/#profilepage",
+            "url": "https://shreyashtripathi.in/",
+            "name": "Shreyash Tripathi — Frontend Developer & UI/UX Engineer",
+            "inLanguage": "en",
+            "dateCreated": "2025-04-16",
+            "dateModified": "2026-09-25",
+            "isPartOf": { "@id": "https://shreyashtripathi.in/#website" },
+            "mainEntity": { "@id": "https://shreyashtripathi.in/#person" },
+            "primaryImageOfPage": { "@type": "ImageObject", "url": "https://shreyashtripathi.in/og-image.png" }
           },
           {
-            "@type": "Question",
-            "name": "What does Shreyash Tripathi do?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "He builds and ships production UI and AI-powered features across a digital product agency's client and SaaS portfolio — from responsive layout and design-system consistency through backend integration. He is currently a Junior Developer, UI/UX at Garage Collective, promoted from an AI Trainee role."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How can I contact Shreyash Tripathi?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Email tshreyash024@gmail.com, or connect on GitHub (github.com/Yaminam) and LinkedIn. He is open to interesting freelance projects and collaborations."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is Shreyash Tripathi available for freelance work or collaboration?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Shreyash Tripathi is currently a full-time Junior Developer, UI/UX at Garage Collective, and open to interesting freelance projects and collaborations alongside that role."
-            }
+            "@type": "WebSite",
+            "@id": "https://shreyashtripathi.in/#website",
+            "url": "https://shreyashtripathi.in/",
+            "name": "Shreyash Tripathi",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://shreyashtripathi.in/#person" }
           }
         ]
       }
@@ -183,37 +155,6 @@
   <body>
     <div id="root"></div>
 
-    <!-- No-JS / crawler fallback: key facts for engines that don't run JavaScript -->
-    <noscript>
-      <main>
-        <h1>Shreyash Tripathi — Frontend Developer &amp; UI/UX Engineer</h1>
-        <p>
-          Shreyash Tripathi is a Junior Frontend / UI-UX Developer based in
-          Noida, India. He builds production UI with React, Next.js (App Router)
-          and TypeScript, designs with Tailwind CSS and Radix UI, and contributes
-          to AI-integrated SaaS platforms and marketing sites at a digital product agency.
-        </p>
-        <h2>Skills</h2>
-        <p>
-          React, Next.js, TypeScript, JavaScript, Tailwind CSS, Radix UI,
-          Framer Motion, GSAP, Three.js, Node.js, Express.js, REST API design,
-          Supabase, PostgreSQL, MongoDB, Prisma ORM, OpenAI API, Anthropic Claude SDK, Git.
-        </p>
-        <h2>Experience</h2>
-        <p>Junior Developer, UI/UX at Garage Collective (Feb 2026–present), promoted from AI Trainee.</p>
-        <h2>Projects</h2>
-        <p>PurrCase (Next.js e-commerce), SketchRace (real-time multiplayer game), MERN Job Portal, and this portfolio website.</p>
-        <h2>Education</h2>
-        <p>B.Tech in Computer Science Engineering, JECRC University, Jaipur (2022–2026).</p>
-        <h2>Contact</h2>
-        <p>
-          Email: <a href="mailto:tshreyash024@gmail.com">tshreyash024@gmail.com</a> ·
-          GitHub: <a href="https://github.com/Yaminam">github.com/Yaminam</a> ·
-          LinkedIn: <a href="https://www.linkedin.com/in/shreyashtripathi9">Shreyash Tripathi</a>.
-          Open to freelance projects and collaborations.
-        </p>
-      </main>
-    </noscript>
 
     <script type="module" src="/src/main.tsx"></script>
   </body>

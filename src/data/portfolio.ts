@@ -21,7 +21,7 @@ export const profile = {
   github: "https://github.com/Yaminam",
   linkedin: "https://www.linkedin.com/in/shreyashtripathi9",
   resume: "/Shreyash_Tripathi_Resume.pdf",
-  photo: "/shreyash-profile.png",
+  photo: "/shreyash-profile.webp",
   summary:
     "Frontend-focused full-stack developer and UI/UX contributor with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. I build UI across React, Next.js (App Router) and TypeScript codebases with Tailwind CSS, Supabase and REST APIs, and I'm comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration.",
 };
@@ -321,4 +321,30 @@ export const navItems = [
   { id: "projects", label: "projects" },
   { id: "education", label: "education" },
   { id: "contact", label: "contact" },
+];
+
+export type Faq = { q: string; a: string };
+
+/** Visible Q&A (answer-engine friendly): plain, self-contained answers about who/what/how. */
+export const faqs: Faq[] = [
+  {
+    q: "Who is Shreyash Tripathi?",
+    a: "Shreyash Tripathi is a Frontend Developer and UI/UX Engineer based in Noida, India. He is a Junior Developer, UI/UX at Garage Collective, where he builds production UI with React, Next.js (App Router) and TypeScript for AI-integrated SaaS platforms and marketing sites.",
+  },
+  {
+    q: "What technologies does Shreyash Tripathi work with?",
+    a: "React, Next.js, TypeScript and JavaScript on the frontend; Tailwind CSS, Radix UI, Framer Motion and GSAP for UI and motion; Node.js and Express for backend and REST APIs; Supabase, PostgreSQL, MongoDB and Prisma for data; and the OpenAI and Anthropic Claude SDKs for AI features.",
+  },
+  {
+    q: "What does Shreyash Tripathi do at Garage Collective?",
+    a: "He builds and ships production UI and AI-powered features across the agency's client and SaaS portfolio, owning components end-to-end, from responsive layout and design-system consistency through backend integration. He was promoted to Junior Developer, UI/UX from an AI Trainee role.",
+  },
+  {
+    q: "Is Shreyash Tripathi available for freelance work?",
+    a: "Yes. He works full-time at Garage Collective and is open to interesting freelance projects and collaborations alongside that role, especially React/Next.js frontends, UI/UX builds and AI-integrated web apps.",
+  },
+  {
+    q: "How can I contact Shreyash Tripathi?",
+    a: "Email tshreyash024@gmail.com, or connect on GitHub (github.com/Yaminam) and LinkedIn (linkedin.com/in/shreyashtripathi9). His resume is available at shreyashtripathi.in/Shreyash_Tripathi_Resume.pdf.",
+  },
 ];

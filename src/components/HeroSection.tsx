@@ -188,11 +188,16 @@ const HeroSection = () => {
                 style={{ animationDirection: "reverse", animationDuration: "26s" }}
               />
 
-              <div className="relative rounded-full bg-gradient-to-br from-neon-cyan via-neon-purple to-neon-magenta p-[3px] animate-pulse-ring">
+              <div className="relative rounded-full bg-gradient-to-br from-neon-cyan via-neon-purple to-neon-magenta p-[3px] pulse-ring">
                 <div className="relative overflow-hidden rounded-full bg-terminal-bg p-2">
                   <img
                     src={profile.photo}
-                    alt={profile.name}
+                    alt={`${profile.name}, Frontend Developer & UI/UX Engineer`}
+                    width={600}
+                    height={600}
+                    // React 18 only passes the lowercase DOM attribute through
+                    {...{ fetchpriority: "high" }}
+                    decoding="async"
                     className="h-56 w-56 rounded-full object-cover object-top md:h-72 md:w-72"
                   />
                   {/* Scan sweep over the photo */}
