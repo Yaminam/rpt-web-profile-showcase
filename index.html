@@ -51,6 +51,21 @@
     <meta name="twitter:image" content="https://shreyashtripathi.in/og-image.png" />
     <meta name="twitter:image:alt" content="Shreyash Tripathi — Frontend Developer & UI/UX Engineer" />
 
+    <!-- Google Analytics 4 (G-JKKJRK91DN). Events queue in dataLayer right away;
+         gtag.js itself is fetched after window load so it never competes with first paint. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JKKJRK91DN');
+      window.addEventListener('load', function () {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JKKJRK91DN';
+        document.head.appendChild(s);
+      });
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
