@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Replace https://rpt-web-profile-showcase.vercel.app with your real domain after deploy -->
+<!-- Production domain: https://shreyashtripathi.in -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://rpt-web-profile-showcase.vercel.app/</loc>
-    <lastmod>2026-08-09</lastmod>
+    <loc>https://shreyashtripathi.in/</loc>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
