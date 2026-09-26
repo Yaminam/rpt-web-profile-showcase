@@ -55,3 +55,5 @@ Shreyash Tripathi is a frontend-focused full-stack developer and UI/UX contribut
 - [Resume (PDF)](https://shreyashtripathi.in/Shreyash_Tripathi_Resume.pdf): Full resume
 - [GitHub](https://github.com/Yaminam): Source code and side projects
 - [LinkedIn](https://www.linkedin.com/in/shreyashtripathi9): Professional profile
+- [Article: How I made my React portfolio 2x faster](https://dev.to/shreyashtripathi/how-i-made-my-react-portfolio-2x-faster-lighthouse-30-to-80-by-prerendering-a-vite-app-3j03): Prerendering a Vite + React app, Lighthouse 30 to 80
+- [dev.to](https://dev.to/shreyashtripathi): Articles by Shreyash
