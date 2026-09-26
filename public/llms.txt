@@ -22,9 +22,9 @@ Shreyash Tripathi is a frontend-focused full-stack developer and UI/UX contribut
 
 ## Projects
 
-- PurrCase — custom mobile-cover e-commerce platform (Next.js, Prisma, Kinde OAuth, RBAC, REST APIs); team project, Shreyash built the frontend (https://purr-case.vercel.app).
-- SketchRace — real-time multiplayer drawing & guessing game (Socket.IO, Canvas API, Next.js 15, React 19, TypeScript); team project, Shreyash built the Socket.IO backend (https://sketchrace.vercel.app).
-- MERN Job Portal — full-stack recruitment platform with JWT auth, RBAC and an admin dashboard.
+- PurrCase — custom phone-case store with a photo-based case designer, Stripe checkout and order emails (Next.js 14, Prisma, PostgreSQL, Kinde Auth, Stripe); team project, Shreyash built the frontend (https://purr-case.vercel.app).
+- SketchRace — real-time multiplayer drawing & guessing game (Socket.IO, Node.js, Canvas API, Next.js 15, React 19); team project, Shreyash built the Socket.IO backend (https://sketchrace.vercel.app).
+- Job Portal — full-stack job portal built solo with Next.js 15, TypeScript, REST API routes, JWT + bcrypt auth and a PostgreSQL schema: job search, saved jobs, applications and a user dashboard (https://v0-mern-job-portal-one.vercel.app).
 - Portfolio Website — this interactive, SEO-optimized cyberpunk-themed personal site (https://shreyashtripathi.in).
 
 ## Education
@@ -51,7 +51,7 @@ Shreyash Tripathi is a frontend-focused full-stack developer and UI/UX contribut
 - [Portfolio](https://shreyashtripathi.in/): Projects, experience, skills, FAQ and contact
 - [PurrCase case study](https://shreyashtripathi.in/projects/purrcase): What he built, features and tech stack
 - [SketchRace case study](https://shreyashtripathi.in/projects/sketchrace): What he built, features and tech stack
-- [MERN Job Portal case study](https://shreyashtripathi.in/projects/mern-job-portal): What he built, features and tech stack
+- [Job Portal case study](https://shreyashtripathi.in/projects/mern-job-portal): What he built, features and tech stack
 - [Resume (PDF)](https://shreyashtripathi.in/Shreyash_Tripathi_Resume.pdf): Full resume
 - [GitHub](https://github.com/Yaminam): Source code and side projects
 - [LinkedIn](https://www.linkedin.com/in/shreyashtripathi9): Professional profile

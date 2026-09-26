@@ -118,6 +118,12 @@ export type Project = {
   team?: { part: "frontend" | "backend"; role: string };
   /** <title> / meta description for the case-study page (keep ≤ 60 / ≤ 155 chars). */
   seo?: { title: string; description: string };
+  /** Case-study body: intro paragraphs, how it works step by step, and an optional honest note. */
+  caseStudy?: {
+    overview: string[];
+    howItWorks: { title: string; text: string }[];
+    note?: string;
+  };
   tagline: string;
   description: string;
   tech: string[];
@@ -141,14 +147,42 @@ export const projects: Project[] = [
       title: "PurrCase: Next.js E-Commerce Case Study | Shreyash Tripathi",
       description: "PurrCase is a custom phone-case store built with Next.js, Prisma and Kinde OAuth. Shreyash Tripathi built its frontend with Tailwind CSS and Radix UI.",
     },
+    caseStudy: {
+      overview: [
+        "PurrCase turns a customer's own photo into a custom phone case. The shopper uploads an image, places it on a live phone mockup, chooses the phone model and case options, checks a final preview and pays — all in one guided three-step flow.",
+        "It was built by a two-person team as a full-stack Next.js 14 app. Shreyash Tripathi owned the frontend: the storefront and landing page, the step-by-step configurator, the phone mockup and preview screens, and responsive layouts from mobile to desktop, built with Tailwind CSS and Radix UI components.",
+      ],
+      howItWorks: [
+        {
+          title: "Upload",
+          text: "The customer drops an image into a drag-and-drop zone (react-dropzone); the file is stored through UploadThing and a new case configuration is created for it.",
+        },
+        {
+          title: "Design",
+          text: "The image can be dragged and resized over a phone frame (react-rnd). The shopper picks an iPhone model from iPhone X to iPhone 15, a case colour, a silicone or soft polycarbonate material and a smooth or textured finish, with every option validated by Zod.",
+        },
+        {
+          title: "Preview",
+          text: "A preview page shows the finished case with its model, material, finish and total price before the customer signs in with Kinde and checks out.",
+        },
+        {
+          title: "Checkout",
+          text: "Payment runs on Stripe Checkout. A signed Stripe webhook marks the order as paid, saves the shipping and billing addresses in PostgreSQL through Prisma, and sends an order-confirmation email built with React Email and delivered by Resend.",
+        },
+        {
+          title: "Fulfilment",
+          text: "An admin-only dashboard shows recent orders and revenue for the last week and month, and lets the store move each order from awaiting shipment to shipped to fulfilled.",
+        },
+      ],
+    },
     tagline: "Custom Mobile Cover E-Commerce Platform",
     description:
-      "A full-stack e-commerce platform for custom phone cases with secure OAuth, role-based access and a polished, responsive storefront.",
-    tech: ["Next.js", "Prisma ORM", "Kinde OAuth", "Tailwind CSS", "Radix UI", "REST API"],
+      "A full-stack e-commerce store where customers design their own phone case from a photo, preview it and pay with Stripe.",
+    tech: ["Next.js 14", "TypeScript", "Tailwind CSS", "Radix UI", "Prisma", "PostgreSQL", "Kinde Auth", "Stripe", "UploadThing", "Resend"],
     highlights: [
-      "Engineered with Next.js + Prisma ORM and Kinde OAuth, featuring Role-Based Access Control (RBAC) and REST APIs.",
-      "Crafted a responsive UI with Tailwind CSS and Radix UI.",
-      "Integrated real-time data sync, file uploads, and automated email notifications.",
+      "Three-step case designer: upload a photo, drag and resize it on a phone mockup, pick model, material and finish.",
+      "Stripe checkout with webhook-confirmed orders, Prisma + PostgreSQL data and Resend order emails.",
+      "Frontend (Shreyash): responsive storefront and configurator UI built with Tailwind CSS and Radix UI.",
     ],
     accent: "cyan",
   },
@@ -167,36 +201,93 @@ export const projects: Project[] = [
       title: "SketchRace: Real-Time Multiplayer Game | Shreyash Tripathi",
       description: "SketchRace is a real-time multiplayer drawing and guessing game. Shreyash Tripathi built its Socket.IO backend for live sync, turns and scoring.",
     },
+    caseStudy: {
+      overview: [
+        "SketchRace is a real-time multiplayer drawing and guessing game that runs in the browser. Players join a room, one player draws a secret word on a shared canvas, and everyone else races to guess it in the chat before the timer runs out. Faster correct guesses score more points.",
+        "It was built by a two-person team. Shreyash Tripathi built the backend: the Socket.IO game server that keeps every player in a room in sync. A teammate built the Next.js 15 and React 19 frontend, which connects to the server with socket.io-client.",
+      ],
+      howItWorks: [
+        {
+          title: "Rooms",
+          text: "Every match runs in its own room, reached at /room/[roomId]. The server tracks who is in each room, whose turn it is to draw, and each player's score.",
+        },
+        {
+          title: "Word selection",
+          text: "At the start of a turn the server opens a word-selection window for the drawer, who picks one of several randomly generated words; the choice comes back to the server as a word-selected event.",
+        },
+        {
+          title: "Live drawing",
+          text: "Each stroke on the Canvas API surface is sent as a drawing event and broadcast to everyone else in the room, so all canvases show the same picture as it is drawn. A clear-canvas event wipes every canvas at once.",
+        },
+        {
+          title: "Guessing and scoring",
+          text: "Guesses arrive as chat messages while the server runs the guessing timer. A correct guess triggers a correct-guess event and awards points based on how fast it came; the round can also be ended early with force-end-timer.",
+        },
+        {
+          title: "Game flow",
+          text: "start-game and reset-game control each match, the drawing turn rotates to the next player after every round, and a final scoreboard closes the game.",
+        },
+      ],
+    },
     tagline: "Real-Time Multiplayer Drawing & Guessing Game",
     description:
       "A live multiplayer drawing game where players take turns sketching and guessing, racing against the clock for points.",
-    tech: ["Socket.IO", "Canvas API", "Next.js 15", "React 19", "TypeScript", "Tailwind CSS"],
+    tech: ["Socket.IO", "Node.js", "Canvas API", "Next.js 15", "React 19", "Tailwind CSS"],
     highlights: [
-      "Built real-time gameplay with Socket.IO for live sync, dynamic turn rotation and speed-based scoring across players.",
-      "Implemented the interactive drawing surface with the Canvas API.",
-      "Powered by Next.js 15, React 19 and TypeScript for a fast, typed experience.",
+      "Backend (Shreyash): Socket.IO game server for rooms, live drawing sync, turn rotation and speed-based scoring.",
+      "Shared drawing surface on the Canvas API, with strokes broadcast to every player in the room.",
+      "Timed rounds with random word choices, chat guessing and a final scoreboard.",
     ],
     accent: "magenta",
   },
   {
-    name: "MERN Job Portal",
+    name: "Job Portal",
     slug: "mern-job-portal",
     seo: {
-      title: "MERN Job Portal Case Study | Shreyash Tripathi",
-      description: "A full-stack MERN recruitment platform by Shreyash Tripathi: JWT auth, role-based access and an admin analytics dashboard. Live demo and source code.",
+      title: "Full-Stack Job Portal Case Study | Shreyash Tripathi",
+      description: "A full-stack job portal by Shreyash Tripathi, built with Next.js 15, TypeScript, JWT auth and REST APIs: job search, applications and a dashboard.",
     },
     links: {
       demo: "https://v0-mern-job-portal-one.vercel.app",
       repo: "https://github.com/Yaminam/jobportal",
     },
+    caseStudy: {
+      overview: [
+        "Job Portal connects job seekers and employers in one app. Candidates search and filter openings, save jobs for later and apply; employers post new roles; and everyone gets a personal dashboard that tracks their activity.",
+        "Shreyash Tripathi built it end to end as a full-stack Next.js 15 app with the App Router and TypeScript: the pages and UI, the REST API routes, authentication and the database schema.",
+      ],
+      howItWorks: [
+        {
+          title: "Authentication",
+          text: "Register and login API routes hash passwords with bcrypt and issue JSON Web Tokens, with separate sign-up flows for job seekers and employers.",
+        },
+        {
+          title: "Jobs and applications",
+          text: "REST endpoints serve jobs, applications, profiles and resumes. The job board filters by keyword, location and job type, and candidates can save jobs and track every application they send.",
+        },
+        {
+          title: "Data model",
+          text: "A relational PostgreSQL schema covers users, companies, jobs, applications, saved jobs, skills, work experience and education, with seed data for development.",
+        },
+        {
+          title: "Dashboard",
+          text: "Each user gets a dashboard with application and saved-job stats and recent activity; employers post new openings from a dedicated form.",
+        },
+        {
+          title: "Interface",
+          text: "Responsive layouts from mobile to desktop, a dark/light theme that follows the system setting, and loading skeletons, built with Tailwind CSS and shadcn/ui components.",
+        },
+      ],
+      note: "The live demo is a working prototype: its API routes serve in-memory sample data and the dashboard keeps state in the browser, while the SQL schema is ready for a real PostgreSQL database.",
+    },
     tagline: "Full-Stack Recruitment Platform",
     description:
-      "A real-time recruitment platform connecting recruiters and candidates with secure auth, an admin dashboard and full application tracking.",
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "TypeScript", "JWT", "RBAC"],
+      "A full-stack job portal where candidates search, save and apply for jobs and employers post openings, with JWT auth, REST APIs and a personal dashboard.",
+    tech: ["Next.js 15", "TypeScript", "REST API", "JWT", "bcrypt", "PostgreSQL", "Tailwind CSS", "shadcn/ui"],
     highlights: [
-      "Built a real-time job portal for employers and candidates with the full MERN stack + TypeScript.",
-      "Implemented JWT authentication, role-based access control (RBAC) and secure sessions.",
-      "Developed an admin dashboard with analytics and moderation tools; deployed on Vercel.",
+      "Built the full stack with the Next.js 15 App Router, TypeScript and REST API routes.",
+      "JWT authentication with bcrypt password hashing for job seekers and employers.",
+      "Job search with filters, saved jobs, application tracking and a user dashboard; deployed on Vercel.",
     ],
     accent: "green",
   },

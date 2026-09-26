@@ -111,6 +111,39 @@ const ProjectPage = () => {
             </div>
           </div>
 
+          {project.caseStudy && (
+            <>
+              <section className="cyber-card p-6 md:p-8">
+                <h2 className="mb-4 font-display text-xl font-bold md:text-2xl">Overview</h2>
+                <div className="space-y-4 leading-relaxed text-muted-foreground">
+                  {project.caseStudy.overview.map((para) => (
+                    <p key={para}>{para}</p>
+                  ))}
+                </div>
+              </section>
+
+              <section className="cyber-card p-6 md:p-8">
+                <h2 className="mb-5 font-display text-xl font-bold md:text-2xl">How it works</h2>
+                <ol className="space-y-5">
+                  {project.caseStudy.howItWorks.map((step, i) => (
+                    <li key={step.title} className="flex gap-4">
+                      <span
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border bg-muted/40 font-mono text-sm ${accent}`}
+                        aria-hidden
+                      >
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <div>
+                        <h3 className="font-display font-semibold text-foreground">{step.title}</h3>
+                        <p className="mt-1 leading-relaxed text-muted-foreground">{step.text}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            </>
+          )}
+
           <section className="cyber-card p-6 md:p-8">
             <h2 className="mb-4 font-display text-xl font-bold md:text-2xl">
               {project.team ? "Key features" : "What I built"}
@@ -142,6 +175,13 @@ const ProjectPage = () => {
               ))}
             </ul>
           </section>
+
+          {project.caseStudy?.note && (
+            <p className="rounded-md border border-neon-yellow/30 bg-neon-yellow/5 px-4 py-3 text-sm leading-relaxed text-muted-foreground">
+              <span className="font-mono text-neon-yellow">note: </span>
+              {project.caseStudy.note}
+            </p>
+          )}
 
           <section className="cyber-card flex flex-col gap-5 p-6 sm:flex-row sm:items-center md:p-8">
             <img
