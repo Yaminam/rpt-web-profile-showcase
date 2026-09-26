@@ -141,6 +141,38 @@ const ProjectPage = () => {
                   ))}
                 </ol>
               </section>
+
+              <section className="cyber-card p-6 md:p-8">
+                <h2 className="mb-5 font-display text-xl font-bold md:text-2xl">Challenges &amp; solutions</h2>
+                <div className="space-y-5">
+                  {project.caseStudy.challenges.map((c) => (
+                    <div key={c.problem} className="border-l-2 border-border pl-4">
+                      <p className="text-foreground">
+                        <span className="font-mono text-xs text-neon-magenta">challenge: </span>
+                        {c.problem}
+                      </p>
+                      <p className="mt-2 leading-relaxed text-muted-foreground">
+                        <span className={`font-mono text-xs ${accent}`}>solution: </span>
+                        {c.solution}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              <section className="cyber-card p-6 md:p-8">
+                <h2 className="mb-4 font-display text-xl font-bold md:text-2xl">Results</h2>
+                <ul className="space-y-3">
+                  {project.caseStudy.results.map((r) => (
+                    <li key={r} className="flex gap-3 leading-relaxed text-muted-foreground">
+                      <span className="mt-0.5 font-mono text-neon-green" aria-hidden>
+                        ✓
+                      </span>
+                      <span>{r}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
             </>
           )}
 

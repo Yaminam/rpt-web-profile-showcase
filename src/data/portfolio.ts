@@ -122,6 +122,10 @@ export type Project = {
   caseStudy?: {
     overview: string[];
     howItWorks: { title: string; text: string }[];
+    /** Engineering problems visible in the code, and how the code solves them. */
+    challenges: { problem: string; solution: string }[];
+    /** Verifiable outcomes only (what shipped, counts from the code) — no invented metrics. */
+    results: string[];
     note?: string;
   };
   tagline: string;
@@ -173,6 +177,25 @@ export const projects: Project[] = [
           title: "Fulfilment",
           text: "An admin-only dashboard shows recent orders and revenue for the last week and month, and lets the store move each order from awaiting shipment to shipped to fulfilled.",
         },
+      ],
+      challenges: [
+        {
+          problem: "What the customer sees in the designer has to be exactly what gets printed, even though the image can be dragged, resized and viewed on any screen size.",
+          solution: "The designer measures the phone frame and the image with getBoundingClientRect, redraws only the area inside the case onto an HTML canvas, and uploads that cropped PNG as the final design, so the saved file matches the on-screen preview.",
+        },
+        {
+          problem: "A custom-product checkout has several stages, and shoppers drop off when they lose track of where they are.",
+          solution: "A three-step progress bar (Add image, Customize design, Summary) follows the current route, each step carries the configuration id in the URL, and a live phone mockup keeps the design visible from upload to payment.",
+        },
+        {
+          problem: "An order must never be marked as paid unless the payment really went through.",
+          solution: "Orders are updated only by a Stripe webhook whose signature is verified with the webhook secret; only then is the order marked paid, the addresses saved and the confirmation email sent.",
+        },
+      ],
+      results: [
+        "Shipped and live at purr-case.vercel.app with a complete browse → design → pay → fulfil flow.",
+        "Case designer supports 6 iPhone models (iPhone X to iPhone 15), 2 materials and 2 finishes.",
+        "Orders move through 3 tracked states (awaiting shipment, shipped, fulfilled) in an admin dashboard with weekly and monthly revenue.",
       ],
     },
     tagline: "Custom Mobile Cover E-Commerce Platform",
@@ -228,6 +251,25 @@ export const projects: Project[] = [
           text: "start-game and reset-game control each match, the drawing turn rotates to the next player after every round, and a final scoreboard closes the game.",
         },
       ],
+      challenges: [
+        {
+          problem: "Every player's canvas has to show the drawing as it happens; sending whole images after each stroke would be slow and heavy.",
+          solution: "The server relays small drawing events for each stroke to the other players in the same room, and each client replays them on its own canvas, so pictures stay in sync with very little data per update.",
+        },
+        {
+          problem: "Timers and turns must be the same for everyone, or one player's clock could run ahead of another's.",
+          solution: "The server owns the game clock: it announces the word-selection and guessing phases to the whole room, rotates the drawer after each round and can end a round early, so every client follows one shared timeline.",
+        },
+        {
+          problem: "Scoring has to reward fast guessers fairly without trusting any single player's screen.",
+          solution: "Correct guesses are reported to the server as correct-guess events and scored against the round's timer, with faster guesses earning more points, and the totals feed the final scoreboard.",
+        },
+      ],
+      results: [
+        "Shipped and live at sketchrace.vercel.app as a playable multiplayer game in the browser.",
+        "The game runs on 10 real-time Socket.IO event types, covering drawing, canvas clearing, word choice, timers, chat, scoring and game resets.",
+        "Separate rooms at /room/[roomId] let multiple matches run at the same time.",
+      ],
     },
     tagline: "Real-Time Multiplayer Drawing & Guessing Game",
     description:
@@ -277,6 +319,25 @@ export const projects: Project[] = [
           title: "Interface",
           text: "Responsive layouts from mobile to desktop, a dark/light theme that follows the system setting, and loading skeletons, built with Tailwind CSS and shadcn/ui components.",
         },
+      ],
+      challenges: [
+        {
+          problem: "Job seekers and employers need accounts, and passwords must never be stored or compared in plain text.",
+          solution: "The register route hashes passwords with bcrypt (12 salt rounds) and the login route compares hashes before signing a JSON Web Token for the session.",
+        },
+        {
+          problem: "A job portal's data is highly connected: people, companies, jobs, applications, saved jobs and full profiles all reference each other.",
+          solution: "A relational PostgreSQL schema with foreign keys ties users, companies, jobs, applications, saved jobs, skills, work experience and education together, with seed data for testing.",
+        },
+        {
+          problem: "Pages that load lists of jobs and stats can feel slow or jumpy while data arrives.",
+          solution: "Every main route (home, jobs, companies, dashboard) has its own loading skeleton through the App Router's loading.tsx, so the layout appears instantly and fills in without jumping.",
+        },
+      ],
+      results: [
+        "Shipped and live at v0-mern-job-portal-one.vercel.app, with the source public on GitHub.",
+        "12 pages, including jobs, companies, dashboard, post a job, profile, resume, pricing, login and sign-up.",
+        "6 REST API routes (register, login, jobs, applications, profile, resume) and an 8-table database schema.",
       ],
       note: "The live demo is a working prototype: its API routes serve in-memory sample data and the dashboard keeps state in the browser, while the SQL schema is ready for a real PostgreSQL database.",
     },
