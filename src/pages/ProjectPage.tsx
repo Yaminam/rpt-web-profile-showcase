@@ -80,12 +80,19 @@ const ProjectPage = () => {
               </h1>
               <p className={`font-mono text-sm md:text-base ${accent}`}>{project.tagline}</p>
               <p className="max-w-2xl font-sans leading-relaxed text-muted-foreground">
-                {project.description} Designed and built end-to-end by{" "}
+                {project.description} {project.team ? `A team project, with the ${project.team.part} built by ` : "Designed and built end-to-end by "}
                 <a href="/" className="text-foreground underline decoration-neon-cyan/50 underline-offset-4">
                   {profile.name}
                 </a>
                 , a Frontend Developer and UI/UX Engineer based in {profile.location}.
               </p>
+
+              {project.team && (
+                <p className="rounded-md border border-neon-cyan/30 bg-neon-cyan/5 px-4 py-3 text-sm leading-relaxed text-muted-foreground">
+                  <span className="font-mono text-neon-cyan">my_role: </span>
+                  {project.team.role}
+                </p>
+              )}
 
               {(project.links?.demo || project.links?.repo) && (
                 <div className="flex flex-wrap gap-3 pt-1">
@@ -96,7 +103,7 @@ const ProjectPage = () => {
                   )}
                   {project.links?.repo && (
                     <a href={project.links.repo} target="_blank" rel="noopener noreferrer" className="btn-ghost">
-                      <Github className="h-4 w-4" /> source_code
+                      <Github className="h-4 w-4" /> {project.team ? "team_repo" : "source_code"}
                     </a>
                   )}
                 </div>
@@ -105,7 +112,9 @@ const ProjectPage = () => {
           </div>
 
           <section className="cyber-card p-6 md:p-8">
-            <h2 className="mb-4 font-display text-xl font-bold md:text-2xl">What I built</h2>
+            <h2 className="mb-4 font-display text-xl font-bold md:text-2xl">
+              {project.team ? "Key features" : "What I built"}
+            </h2>
             <ul className="space-y-3">
               {project.highlights.map((h) => (
                 <li key={h} className="flex gap-3 leading-relaxed text-muted-foreground">

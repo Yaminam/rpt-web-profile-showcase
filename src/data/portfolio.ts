@@ -114,6 +114,8 @@ export type Project = {
   /** URL slug for the /projects/<slug> case-study page (omit = no page). */
   slug?: string;
   links?: { demo?: string; repo?: string };
+  /** Team project: what Shreyash owned. Omit for solo projects. */
+  team?: { part: "frontend" | "backend"; role: string };
   /** <title> / meta description for the case-study page (keep ≤ 60 / ≤ 155 chars). */
   seo?: { title: string; description: string };
   tagline: string;
@@ -127,9 +129,17 @@ export const projects: Project[] = [
   {
     name: "PurrCase",
     slug: "purrcase",
+    team: {
+      part: "frontend",
+      role: "Frontend: built the storefront UI and responsive design with Tailwind CSS and Radix UI, working with a teammate on the full-stack app.",
+    },
+    links: {
+      demo: "https://purr-case.vercel.app",
+      repo: "https://github.com/NEMYSESx/Purr-Case",
+    },
     seo: {
       title: "PurrCase: Next.js E-Commerce Case Study | Shreyash Tripathi",
-      description: "PurrCase is a full-stack custom phone-case store built by Shreyash Tripathi with Next.js, Prisma, Kinde OAuth, RBAC and Tailwind CSS. Features and stack.",
+      description: "PurrCase is a custom phone-case store built with Next.js, Prisma and Kinde OAuth. Shreyash Tripathi built its frontend with Tailwind CSS and Radix UI.",
     },
     tagline: "Custom Mobile Cover E-Commerce Platform",
     description:
@@ -145,9 +155,17 @@ export const projects: Project[] = [
   {
     name: "SketchRace",
     slug: "sketchrace",
+    team: {
+      part: "backend",
+      role: "Backend: built the real-time Socket.IO game server behind live drawing sync, turn rotation and speed-based scoring, working with a teammate who built the Next.js frontend.",
+    },
+    links: {
+      demo: "https://sketchrace.vercel.app",
+      repo: "https://github.com/PRINCEjain0/sketchrace",
+    },
     seo: {
       title: "SketchRace: Real-Time Multiplayer Game | Shreyash Tripathi",
-      description: "SketchRace is a real-time multiplayer drawing and guessing game by Shreyash Tripathi, built with Socket.IO, the Canvas API, Next.js 15 and React 19.",
+      description: "SketchRace is a real-time multiplayer drawing and guessing game. Shreyash Tripathi built its Socket.IO backend for live sync, turns and scoring.",
     },
     tagline: "Real-Time Multiplayer Drawing & Guessing Game",
     description:

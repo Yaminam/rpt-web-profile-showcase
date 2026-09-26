@@ -99,6 +99,7 @@ const ProjectsSection = () => {
                     </h3>
                     <p className={`relative mb-3 font-mono text-xs ${accent.text}`}>
                       {project.tagline}
+                      {project.team && <span className="text-muted-foreground"> · team project, {project.team.part}</span>}
                     </p>
 
                     <p className="relative mb-4 text-sm leading-relaxed text-muted-foreground">

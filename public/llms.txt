@@ -22,8 +22,8 @@ Shreyash Tripathi is a frontend-focused full-stack developer and UI/UX contribut
 
 ## Projects
 
-- PurrCase — custom mobile-cover e-commerce platform (Next.js, Prisma, Kinde OAuth, RBAC, REST APIs).
-- SketchRace — real-time multiplayer drawing & guessing game (Socket.IO, Canvas API, Next.js 15, React 19, TypeScript).
+- PurrCase — custom mobile-cover e-commerce platform (Next.js, Prisma, Kinde OAuth, RBAC, REST APIs); team project, Shreyash built the frontend (https://purr-case.vercel.app).
+- SketchRace — real-time multiplayer drawing & guessing game (Socket.IO, Canvas API, Next.js 15, React 19, TypeScript); team project, Shreyash built the Socket.IO backend (https://sketchrace.vercel.app).
 - MERN Job Portal — full-stack recruitment platform with JWT auth, RBAC and an admin dashboard.
 - Portfolio Website — this interactive, SEO-optimized cyberpunk-themed personal site (https://shreyashtripathi.in).
 
