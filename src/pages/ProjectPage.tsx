@@ -94,7 +94,7 @@ const ProjectPage = () => {
                 </p>
               )}
 
-              {(project.links?.demo || project.links?.repo) && (
+              {(project.links?.demo || project.links?.repo || project.links?.article) && (
                 <div className="flex flex-wrap gap-3 pt-1">
                   {project.links?.demo && (
                     <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="btn-neon">
@@ -104,6 +104,11 @@ const ProjectPage = () => {
                   {project.links?.repo && (
                     <a href={project.links.repo} target="_blank" rel="noopener noreferrer" className="btn-ghost">
                       <Github className="h-4 w-4" /> {project.team ? "team_repo" : "source_code"}
+                    </a>
+                  )}
+                  {project.links?.article && (
+                    <a href={project.links.article} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+                      <ArrowUpRight className="h-4 w-4" /> read_deep_dive
                     </a>
                   )}
                 </div>

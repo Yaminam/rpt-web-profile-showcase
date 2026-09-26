@@ -113,7 +113,7 @@ export type Project = {
   name: string;
   /** URL slug for the /projects/<slug> case-study page (omit = no page). */
   slug?: string;
-  links?: { demo?: string; repo?: string };
+  links?: { demo?: string; repo?: string; article?: string };
   /** Team project: what Shreyash owned. Omit for solo projects. */
   team?: { part: "frontend" | "backend"; role: string };
   /** <title> / meta description for the case-study page (keep ≤ 60 / ≤ 155 chars). */
@@ -219,6 +219,7 @@ export const projects: Project[] = [
     links: {
       demo: "https://sketchrace.vercel.app",
       repo: "https://github.com/PRINCEjain0/sketchrace",
+      article: "https://dev.to/shreyashtripathi/building-a-real-time-multiplayer-drawing-game-with-socketio-rooms-timers-scoring-and-the-bugs-3i4j",
     },
     seo: {
       title: "SketchRace: Real-Time Multiplayer Game | Shreyash Tripathi",
