@@ -111,6 +111,11 @@ export const experience: Experience[] = [
 
 export type Project = {
   name: string;
+  /** URL slug for the /projects/<slug> case-study page (omit = no page). */
+  slug?: string;
+  links?: { demo?: string; repo?: string };
+  /** <title> / meta description for the case-study page (keep ≤ 60 / ≤ 155 chars). */
+  seo?: { title: string; description: string };
   tagline: string;
   description: string;
   tech: string[];
@@ -121,6 +126,11 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: "PurrCase",
+    slug: "purrcase",
+    seo: {
+      title: "PurrCase: Next.js E-Commerce Case Study | Shreyash Tripathi",
+      description: "PurrCase is a full-stack custom phone-case store built by Shreyash Tripathi with Next.js, Prisma, Kinde OAuth, RBAC and Tailwind CSS. Features and stack.",
+    },
     tagline: "Custom Mobile Cover E-Commerce Platform",
     description:
       "A full-stack e-commerce platform for custom phone cases with secure OAuth, role-based access and a polished, responsive storefront.",
@@ -134,6 +144,11 @@ export const projects: Project[] = [
   },
   {
     name: "SketchRace",
+    slug: "sketchrace",
+    seo: {
+      title: "SketchRace: Real-Time Multiplayer Game | Shreyash Tripathi",
+      description: "SketchRace is a real-time multiplayer drawing and guessing game by Shreyash Tripathi, built with Socket.IO, the Canvas API, Next.js 15 and React 19.",
+    },
     tagline: "Real-Time Multiplayer Drawing & Guessing Game",
     description:
       "A live multiplayer drawing game where players take turns sketching and guessing, racing against the clock for points.",
@@ -147,6 +162,15 @@ export const projects: Project[] = [
   },
   {
     name: "MERN Job Portal",
+    slug: "mern-job-portal",
+    seo: {
+      title: "MERN Job Portal Case Study | Shreyash Tripathi",
+      description: "A full-stack MERN recruitment platform by Shreyash Tripathi: JWT auth, role-based access and an admin analytics dashboard. Live demo and source code.",
+    },
+    links: {
+      demo: "https://v0-mern-job-portal-one.vercel.app",
+      repo: "https://github.com/Yaminam/jobportal",
+    },
     tagline: "Full-Stack Recruitment Platform",
     description:
       "A real-time recruitment platform connecting recruiters and candidates with secure auth, an admin dashboard and full application tracking.",
@@ -348,3 +372,8 @@ export const faqs: Faq[] = [
     a: "Email tshreyash024@gmail.com, or connect on GitHub (github.com/Yaminam) and LinkedIn (linkedin.com/in/shreyashtripathi9). His resume is available at shreyashtripathi.in/Shreyash_Tripathi_Resume.pdf.",
   },
 ];
+
+export const SITE_URL = "https://shreyashtripathi.in";
+
+/** Projects that have their own /projects/<slug> case-study page. */
+export const caseStudies = projects.filter((p): p is Project & { slug: string } => Boolean(p.slug));

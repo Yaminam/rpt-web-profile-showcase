@@ -114,6 +114,16 @@ const ProjectsSection = () => {
                       ))}
                     </ul>
 
+                    {project.slug && (
+                      <a
+                        href={`/projects/${project.slug}`}
+                        className={`relative mb-4 inline-flex items-center gap-1 font-mono text-xs ${accent.text} hover:underline`}
+                      >
+                        read_case_study <ArrowUpRight className="h-3.5 w-3.5" />
+                        <span className="sr-only"> for {project.name}</span>
+                      </a>
+                    )}
+
                     <div className="relative mt-auto flex flex-wrap gap-1.5 border-t border-border/60 pt-4">
                       {project.tech.map((t) => (
                         <span

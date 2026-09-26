@@ -1,6 +1,7 @@
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
 import { AppShell, AppRoutes } from "./App";
+export { caseStudyPages } from "./lib/seo";
 
 /**
  * Build-time render of "/" (see scripts/prerender.mjs) so crawlers and AI engines get

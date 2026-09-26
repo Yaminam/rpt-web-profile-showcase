@@ -49,6 +49,9 @@ Shreyash Tripathi is a frontend-focused full-stack developer and UI/UX contribut
 ## Links
 
 - [Portfolio](https://shreyashtripathi.in/): Projects, experience, skills, FAQ and contact
+- [PurrCase case study](https://shreyashtripathi.in/projects/purrcase): What he built, features and tech stack
+- [SketchRace case study](https://shreyashtripathi.in/projects/sketchrace): What he built, features and tech stack
+- [MERN Job Portal case study](https://shreyashtripathi.in/projects/mern-job-portal): What he built, features and tech stack
 - [Resume (PDF)](https://shreyashtripathi.in/Shreyash_Tripathi_Resume.pdf): Full resume
 - [GitHub](https://github.com/Yaminam): Source code and side projects
 - [LinkedIn](https://www.linkedin.com/in/shreyashtripathi9): Professional profile

@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AchievementsProvider } from "@/hooks/use-achievements";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import ProjectPage from "./pages/ProjectPage";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ export const AppShell = ({ children }: { children: React.ReactNode }) => (
 export const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Index />} />
+    <Route path="/projects/:slug" element={<ProjectPage />} />
     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
     <Route path="*" element={<NotFound />} />
   </Routes>
