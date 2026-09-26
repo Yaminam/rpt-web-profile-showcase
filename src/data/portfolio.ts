@@ -214,7 +214,7 @@ export const projects: Project[] = [
     slug: "sketchrace",
     team: {
       part: "backend",
-      role: "Backend: built the real-time Socket.IO game server behind live drawing sync, turn rotation and speed-based scoring, working with a teammate who built the Next.js frontend.",
+      role: "Backend: built the real-time Socket.IO game server behind live drawing sync, turn rotation, hints and scoring, working with a teammate who built the Next.js frontend.",
     },
     links: {
       demo: "https://sketchrace.vercel.app",
@@ -244,11 +244,11 @@ export const projects: Project[] = [
         },
         {
           title: "Guessing and scoring",
-          text: "Guesses arrive as chat messages while the server runs the guessing timer. A correct guess triggers a correct-guess event and awards points based on how fast it came; the round can also be ended early with force-end-timer.",
+          text: "Guesses arrive as chat messages during a 45-second guessing window. With 20 seconds left, the server reveals two random letters of the word, sent only to the guessers. A correct guess earns the guesser 10 points (reduced by 20% after the hint) and the drawer 5, and if everyone gets it the turn ends early with a 10-point drawer bonus.",
         },
         {
           title: "Game flow",
-          text: "start-game and reset-game control each match, the drawing turn rotates to the next player after every round, and a final scoreboard closes the game.",
+          text: "Each turn starts with a 7-second word-selection countdown, which the drawer can skip (force-end-timer). The pen then rotates to the next player; after everyone has drawn the round advances, and after 3 rounds the server sends final scores and ends the game.",
         },
       ],
       challenges: [
@@ -258,11 +258,11 @@ export const projects: Project[] = [
         },
         {
           problem: "Timers and turns must be the same for everyone, or one player's clock could run ahead of another's.",
-          solution: "The server owns the game clock: it announces the word-selection and guessing phases to the whole room, rotates the drawer after each round and can end a round early, so every client follows one shared timeline.",
+          solution: "The server owns the game clock: it announces the word-selection and guessing phases to the whole room, broadcasts a tick every second, and rotates the drawer after each turn, so every client follows one shared timeline.",
         },
         {
-          problem: "Scoring has to reward fast guessers fairly without trusting any single player's screen.",
-          solution: "Correct guesses are reported to the server as correct-guess events and scored against the round's timer, with faster guesses earning more points, and the totals feed the final scoreboard.",
+          problem: "Scoring has to reward both sides: players who guess, and the drawer whose sketch made the word guessable.",
+          solution: "The server keeps every score. Guessers earn 10 points (20% less if they saw the hint); the drawer earns 5 per correct guess, 10 more if everyone gets it, and an end-of-turn bonus scaled by the share of players who guessed. Scores are broadcast after every change and totalled on the final scoreboard.",
         },
       ],
       results: [
@@ -276,7 +276,7 @@ export const projects: Project[] = [
       "A live multiplayer drawing game where players take turns sketching and guessing, racing against the clock for points.",
     tech: ["Socket.IO", "Node.js", "Canvas API", "Next.js 15", "React 19", "Tailwind CSS"],
     highlights: [
-      "Backend (Shreyash): Socket.IO game server for rooms, live drawing sync, turn rotation and speed-based scoring.",
+      "Backend (Shreyash): Express + Socket.IO game server for rooms, live drawing sync, server-owned timers, hints and scoring.",
       "Shared drawing surface on the Canvas API, with strokes broadcast to every player in the room.",
       "Timed rounds with random word choices, chat guessing and a final scoreboard.",
     ],
