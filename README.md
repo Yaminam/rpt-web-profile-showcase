@@ -1,11 +1,13 @@
 # Shreyash Tripathi — Portfolio
 
-A cyberpunk / terminal-themed personal portfolio for **Shreyash Tripathi** — Full-Stack Developer & AI Enthusiast.
+A cyberpunk / terminal-themed personal portfolio for **Shreyash Tripathi** — Frontend Developer & UI/UX Engineer.
+
+**Live:** https://shreyashtripathi.in · Case studies: [PurrCase](https://shreyashtripathi.in/projects/purrcase) · [SketchRace](https://shreyashtripathi.in/projects/sketchrace) · [Job Portal](https://shreyashtripathi.in/projects/mern-job-portal)
 
 ## Tech Stack
 
 - **React 18** + **TypeScript**
-- **Vite** (build tooling)
+- **Vite** (build tooling), with every page prerendered to static HTML at build time (`src/entry-server.tsx` + `scripts/prerender.mjs`)
 - **Tailwind CSS** + **shadcn/ui** (Radix UI)
 - **lucide-react** (icons)
 
