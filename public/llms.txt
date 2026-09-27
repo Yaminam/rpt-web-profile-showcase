@@ -59,4 +59,5 @@ Shreyash Tripathi is a frontend-focused full-stack developer and UI/UX contribut
 - [LinkedIn](https://www.linkedin.com/in/shreyashtripathi9): Professional profile
 - [Article: How I made my React portfolio 2x faster](https://dev.to/shreyashtripathi/how-i-made-my-react-portfolio-2x-faster-lighthouse-30-to-80-by-prerendering-a-vite-app-3j03): Prerendering a Vite + React app, Lighthouse 30 to 80
 - [Article: Building a real-time multiplayer drawing game with Socket.IO](https://dev.to/shreyashtripathi/building-a-real-time-multiplayer-drawing-game-with-socketio-rooms-timers-scoring-and-the-bugs-3i4j): SketchRace game server, rooms, timers, scoring
+- [Article: Building a zero-knowledge vault in the browser with WebCrypto](https://dev.to/shreyashtripathi/building-a-zero-knowledge-vault-in-the-browser-with-webcrypto-no-crypto-libraries-51k4): PBKDF2, AES-256-GCM, key envelopes and recipient-bound share links
 - [dev.to](https://dev.to/shreyashtripathi): Articles by Shreyash

@@ -357,6 +357,7 @@ export const projects: Project[] = [
     // Internal tool built at work: kept anonymous on purpose (no product/company name, no repo or live link).
     name: "Asset & Credential Vault",
     slug: "asset-credential-vault",
+    links: { article: "https://dev.to/shreyashtripathi/building-a-zero-knowledge-vault-in-the-browser-with-webcrypto-no-crypto-libraries-51k4" },
     seo: {
       title: "Zero-Knowledge Asset & Credential Vault | Shreyash Tripathi",
       description: "Zero-knowledge asset, credential and billing manager by Shreyash Tripathi, built with Next.js, Supabase and WebCrypto: QR asset labels and invoice OCR.",
