@@ -6,8 +6,9 @@
 export const profile = {
   name: "Shreyash Tripathi",
   handle: "shreyash",
-  role: "Junior Frontend / UI-UX Developer",
+  role: "Full-Stack Developer & UI/UX Engineer",
   roles: [
+    "Full-Stack Developer",
     "Junior Developer, UI/UX",
     "Frontend Developer",
     "UI/UX Engineer",
@@ -23,7 +24,7 @@ export const profile = {
   resume: "/Shreyash_Tripathi_Resume.pdf",
   photo: "/shreyash-tripathi.webp",
   summary:
-    "Frontend-focused full-stack developer and UI/UX contributor with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. I build UI across React, Next.js (App Router) and TypeScript codebases with Tailwind CSS, Supabase and REST APIs, and I'm comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration.",
+    "Full-stack developer and UI/UX engineer with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. I build UI across React, Next.js (App Router) and TypeScript codebases with Tailwind CSS, Supabase and REST APIs, and I'm comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration.",
 };
 
 export type ContactReason = {
@@ -596,7 +597,7 @@ export type Faq = { q: string; a: string };
 export const faqs: Faq[] = [
   {
     q: "Who is Shreyash Tripathi?",
-    a: "Shreyash Tripathi is a Frontend Developer and UI/UX Engineer based in Noida, India. He is a Junior Developer, UI/UX at Garage Collective, where he builds production UI with React, Next.js (App Router) and TypeScript for AI-integrated SaaS platforms and marketing sites.",
+    a: "Shreyash Tripathi is a Full-Stack Developer and UI/UX Engineer based in Noida, India. He is a Junior Developer, UI/UX at Garage Collective, where he builds production UI with React, Next.js (App Router) and TypeScript for AI-integrated SaaS platforms and marketing sites.",
   },
   {
     q: "What technologies does Shreyash Tripathi work with?",

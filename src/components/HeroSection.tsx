@@ -192,7 +192,7 @@ const HeroSection = () => {
                 <div className="relative overflow-hidden rounded-full bg-terminal-bg p-2">
                   <img
                     src={profile.photo}
-                    alt={`${profile.name}, Frontend Developer & UI/UX Engineer`}
+                    alt={`${profile.name}, Full-Stack Developer & UI/UX Engineer`}
                     width={600}
                     height={600}
                     // React 18 only passes the lowercase DOM attribute through

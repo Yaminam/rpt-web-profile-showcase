@@ -84,7 +84,7 @@ const ProjectPage = () => {
                 <a href="/" className="text-foreground underline decoration-neon-cyan/50 underline-offset-4">
                   {profile.name}
                 </a>
-                , a Frontend Developer and UI/UX Engineer based in {profile.location}.
+                , a Full-Stack Developer and UI/UX Engineer based in {profile.location}.
               </p>
 
               {project.team && (
@@ -223,7 +223,7 @@ const ProjectPage = () => {
           <section className="cyber-card flex flex-col gap-5 p-6 sm:flex-row sm:items-center md:p-8">
             <img
               src={profile.photo}
-              alt={`${profile.name}, Frontend Developer & UI/UX Engineer`}
+              alt={`${profile.name}, Full-Stack Developer & UI/UX Engineer`}
               width={96}
               height={96}
               loading="lazy"
@@ -236,7 +236,7 @@ const ProjectPage = () => {
                 <a href="/" className="text-foreground underline decoration-neon-cyan/50 underline-offset-4">
                   {profile.name}
                 </a>{" "}
-                is a Frontend Developer and UI/UX Engineer in {profile.location}, currently Junior Developer, UI/UX
+                is a Full-Stack Developer and UI/UX Engineer in {profile.location}, currently Junior Developer, UI/UX
                 at Garage Collective. He builds React, Next.js and TypeScript interfaces for AI-integrated SaaS
                 products.
               </p>
@@ -291,7 +291,7 @@ const ProjectPage = () => {
         <a href="/" className="hover:text-foreground">
           {profile.name}
         </a>{" "}
-        · Frontend Developer &amp; UI/UX Engineer
+        · Full-Stack Developer &amp; UI/UX Engineer
       </footer>
     </div>
   );

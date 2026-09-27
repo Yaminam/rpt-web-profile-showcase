@@ -1,10 +1,10 @@
 # Shreyash Tripathi
 
-> Frontend Developer & UI/UX Engineer based in Noida, India. Builds production UI with React, Next.js (App Router) and TypeScript, and contributes to AI-integrated SaaS platforms and marketing sites at a digital product agency. Available for full-time roles (full-stack, frontend or backend) and freelance full-stack projects (https://shreyashtripathi.in/hire).
+> Full-Stack Developer & UI/UX Engineer based in Noida, India. Builds production UI with React, Next.js (App Router) and TypeScript, and contributes to AI-integrated SaaS platforms and marketing sites at a digital product agency. Available for full-time roles (full-stack, frontend or backend) and freelance full-stack projects (https://shreyashtripathi.in/hire).
 
 ## Summary
 
-Shreyash Tripathi is a frontend-focused full-stack developer and UI/UX contributor with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. He builds UI across React, Next.js (App Router) and TypeScript codebases using Tailwind CSS, Supabase and REST APIs, and is comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration. He is currently a Junior Developer, UI/UX at Garage Collective, promoted from an AI Trainee role.
+Shreyash Tripathi is a full-stack developer and UI/UX engineer with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. He builds UI across React, Next.js (App Router) and TypeScript codebases using Tailwind CSS, Supabase and REST APIs, and is comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration. He is currently a Junior Developer, UI/UX at Garage Collective, promoted from an AI Trainee role.
 
 ## Skills
 

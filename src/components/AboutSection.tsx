@@ -77,7 +77,7 @@ const AboutSection = () => {
             index="01."
             command="cat about.md"
             title="About Me"
-            subtitle="Frontend-focused engineer and UI/UX builder who turns ideas into clean, scalable, production-ready interfaces."
+            subtitle="Full-stack engineer and UI/UX builder who turns ideas into clean, scalable, production-ready products, from interface to API and database."
           />
         </Reveal>
 

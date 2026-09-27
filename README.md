@@ -1,6 +1,6 @@
 # Shreyash Tripathi — Portfolio
 
-A cyberpunk / terminal-themed personal portfolio for **Shreyash Tripathi** — Frontend Developer & UI/UX Engineer.
+A cyberpunk / terminal-themed personal portfolio for **Shreyash Tripathi** — Full-Stack Developer & UI/UX Engineer.
 
 **Live:** https://shreyashtripathi.in · Case studies: [PurrCase](https://shreyashtripathi.in/projects/purrcase) · [SketchRace](https://shreyashtripathi.in/projects/sketchrace) · [Job Portal](https://shreyashtripathi.in/projects/mern-job-portal)
 
