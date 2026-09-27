@@ -608,7 +608,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Is Shreyash Tripathi available for hire or freelance work?",
-    a: "Yes, for both. He is open to full-time frontend roles (Noida, Delhi NCR, remote or with relocation) and to freelance projects: React/Next.js websites and apps, UI/UX builds and AI-integrated features. Details are at shreyashtripathi.in/hire.",
+    a: "Yes, for both. He is open to full-time frontend roles (Noida, Delhi NCR, Uttar Pradesh, Gujarat, remote or with relocation) and to freelance projects: React/Next.js websites and apps, UI/UX builds and AI-integrated features. Details are at shreyashtripathi.in/hire.",
   },
   {
     q: "How can I contact Shreyash Tripathi?",
@@ -624,23 +624,31 @@ export const caseStudies = projects.filter((p): p is Project & { slug: string } 
 /** /hire page: open to full-time roles and freelance work. Facts only — no invented prices, clients or reviews. */
 export const hire = {
   seo: {
-    title: "Hire a React & Next.js Developer, Noida | Shreyash Tripathi",
+    title: "Hire a React/Next.js Developer in India | Shreyash Tripathi",
     description:
-      "Hire Shreyash Tripathi, a React & Next.js developer and UI/UX engineer in Noida, for full-time roles or freelance projects: web apps, sites, AI features.",
+      "Hire Shreyash Tripathi, React & Next.js developer for full-time or freelance work in Noida, Delhi NCR, Uttar Pradesh, Gujarat or remote anywhere.",
   },
-  headline: "Hire a React & Next.js Developer in Noida",
+  headline: "Hire a React & Next.js Developer in India",
   intro:
-    "I'm Shreyash Tripathi, a Frontend Developer and UI/UX Engineer who builds production React, Next.js and TypeScript interfaces for AI-integrated SaaS products and marketing sites. I'm open to full-time frontend roles and to freelance projects.",
+    "I'm Shreyash Tripathi, a Frontend Developer and UI/UX Engineer who builds production React, Next.js and TypeScript interfaces for AI-integrated SaaS products and marketing sites. I'm open to full-time frontend roles and to freelance projects, in Noida, Delhi NCR, Uttar Pradesh and Gujarat, or remotely from anywhere.",
+  /** Places served, shown on the page and in the Service schema (areaServed). */
+  locations: [
+    { name: "Noida", text: "Where I'm based today: on-site, hybrid or freelance." },
+    { name: "Delhi NCR", text: "Delhi, Gurugram, Ghaziabad and Faridabad: on-site or hybrid roles and projects." },
+    { name: "Uttar Pradesh", text: "Lucknow and across UP: remote-first, with on-site visits when needed." },
+    { name: "Gujarat", text: "Ahmedabad and across Gujarat, where I'm originally from: on-site, hybrid or remote." },
+    { name: "Remote, India & worldwide", text: "Freelance projects and remote roles for teams anywhere with working-hour overlap with IST." },
+  ],
   engagements: [
     {
       title: "Full-time roles",
-      text: "Frontend, UI/UX and Next.js roles: on-site or hybrid in Noida and Delhi NCR, fully remote, or with relocation.",
+      text: "Frontend, UI/UX and Next.js roles: on-site or hybrid in Noida, Delhi NCR, Uttar Pradesh or Gujarat, fully remote, or with relocation.",
       reason: "job",
       cta: "hire_full_time",
     },
     {
       title: "Freelance projects",
-      text: "Remote projects for startups, agencies and businesses in India and abroad: new builds, redesigns, fixes and ongoing support.",
+      text: "Projects for startups, agencies and businesses across India (Noida, Delhi NCR, UP, Gujarat and beyond) and abroad: new builds, redesigns, fixes and ongoing support.",
       reason: "freelance",
       cta: "start_a_project",
     },
@@ -683,8 +691,8 @@ export const hire = {
       a: "Yes, for both full-time frontend roles and freelance projects. He is currently a Junior Developer, UI/UX at Garage Collective in Noida.",
     },
     {
-      q: "Does he work remotely?",
-      a: "Yes. Freelance work is fully remote. For full-time roles he is open to on-site or hybrid work in Noida and Delhi NCR, remote roles, or relocating.",
+      q: "Where does he work, and does he work remotely?",
+      a: "Yes. Freelance work is remote-first for clients anywhere. For full-time roles he is open to on-site or hybrid work in Noida, Delhi NCR, Uttar Pradesh or Gujarat (Ahmedabad), fully remote roles, or relocating.",
     },
     {
       q: "What kind of freelance projects does he take on?",

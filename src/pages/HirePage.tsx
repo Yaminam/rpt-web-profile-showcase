@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { ArrowLeft, ArrowUpRight, Briefcase, FileDown, Linkedin, Mail, Rocket } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Briefcase, FileDown, Linkedin, Mail, MapPin, Rocket } from "lucide-react";
 import CyberBackground from "@/components/CyberBackground";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { caseStudies, contactReasons, hire, mailtoFor, profile } from "@/data/portfolio";
@@ -95,6 +95,21 @@ const HirePage = () => {
           ))}
         </section>
 
+        {/* Locations: named on the page, not just in metadata, so location searches can match */}
+        <section className="space-y-5">
+          <h2 className="font-display text-2xl font-bold md:text-3xl">Where I work</h2>
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {hire.locations.map((loc) => (
+              <li key={loc.name} className="cyber-card p-5">
+                <span className="flex items-center gap-2 font-display font-bold">
+                  <MapPin className="h-4 w-4 shrink-0 text-neon-cyan" aria-hidden /> {loc.name}
+                </span>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{loc.text}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* Services */}
         <section className="space-y-5">
           <h2 className="font-display text-2xl font-bold md:text-3xl">What I can build for you</h2>
@@ -186,7 +201,7 @@ const HirePage = () => {
         <a href="/" className="hover:text-foreground">
           {profile.name}
         </a>{" "}
-        · React &amp; Next.js Developer, Noida
+        · React &amp; Next.js Developer · Noida · Delhi NCR · UP · Gujarat · Remote
       </footer>
     </div>
   );

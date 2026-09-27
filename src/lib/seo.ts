@@ -118,6 +118,9 @@ export function hireSeo(): PageSeo {
           areaServed: [
             { "@type": "City", name: "Noida" },
             { "@type": "AdministrativeArea", name: "Delhi NCR" },
+            { "@type": "State", name: "Uttar Pradesh" },
+            { "@type": "State", name: "Gujarat" },
+            { "@type": "City", name: "Ahmedabad" },
             { "@type": "Country", name: "India" },
           ],
           availableChannel: { "@type": "ServiceChannel", serviceUrl: url },
