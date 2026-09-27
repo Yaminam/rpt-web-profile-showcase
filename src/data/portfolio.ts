@@ -608,7 +608,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Is Shreyash Tripathi available for hire or freelance work?",
-    a: "Yes, for both. He is open to full-time frontend roles (Noida, Delhi NCR, Uttar Pradesh, Gujarat, remote or with relocation) and to freelance projects: React/Next.js websites and apps, UI/UX builds and AI-integrated features. Details are at shreyashtripathi.in/hire.",
+    a: "Yes, for both. He is open to full-time roles, full-stack, frontend or backend (Noida, Delhi NCR, Uttar Pradesh, Gujarat, remote or with relocation), and to freelance projects: full-stack web apps, backends and APIs, React/Next.js sites, UI/UX builds and AI-integrated features. Details are at shreyashtripathi.in/hire.",
   },
   {
     q: "How can I contact Shreyash Tripathi?",
@@ -624,13 +624,13 @@ export const caseStudies = projects.filter((p): p is Project & { slug: string } 
 /** /hire page: open to full-time roles and freelance work. Facts only — no invented prices, clients or reviews. */
 export const hire = {
   seo: {
-    title: "Hire a React/Next.js Developer in India | Shreyash Tripathi",
+    title: "Hire a Full-Stack Developer in India | Shreyash Tripathi",
     description:
-      "Hire Shreyash Tripathi, React & Next.js developer for full-time or freelance work in Noida, Delhi NCR, Uttar Pradesh, Gujarat or remote anywhere.",
+      "Hire Shreyash Tripathi, full-stack developer (React, Next.js, Node.js, Postgres), for full-time or freelance work in Noida, NCR, UP, Gujarat or remote.",
   },
-  headline: "Hire a React & Next.js Developer in India",
+  headline: "Hire a Full-Stack Developer in India",
   intro:
-    "I'm Shreyash Tripathi, a Frontend Developer and UI/UX Engineer who builds production React, Next.js and TypeScript interfaces for AI-integrated SaaS products and marketing sites. I'm open to full-time frontend roles and to freelance projects, in Noida, Delhi NCR, Uttar Pradesh and Gujarat, or remotely from anywhere.",
+    "I'm Shreyash Tripathi, a full-stack developer with a strong UI/UX eye: React, Next.js and TypeScript on the frontend; Node.js, Express, REST APIs, Socket.IO and PostgreSQL/Supabase on the backend. I build complete products for AI-integrated SaaS platforms and marketing sites, and I'm open to full-time roles and freelance projects in Noida, Delhi NCR, Uttar Pradesh and Gujarat, or remotely from anywhere.",
   /** Places served, shown on the page and in the Service schema (areaServed). */
   locations: [
     { name: "Noida", text: "Where I'm based today: on-site, hybrid or freelance." },
@@ -642,7 +642,7 @@ export const hire = {
   engagements: [
     {
       title: "Full-time roles",
-      text: "Frontend, UI/UX and Next.js roles: on-site or hybrid in Noida, Delhi NCR, Uttar Pradesh or Gujarat, fully remote, or with relocation.",
+      text: "Full-stack, frontend or backend roles (React, Next.js, Node.js): on-site or hybrid in Noida, Delhi NCR, Uttar Pradesh or Gujarat, fully remote, or with relocation.",
       reason: "job",
       cta: "hire_full_time",
     },
@@ -655,12 +655,24 @@ export const hire = {
   ],
   services: [
     {
-      title: "React & Next.js web apps",
-      text: "Production UI in React, Next.js (App Router) and TypeScript, from components and state to API integration, built across 20+ client and SaaS projects at a digital product agency.",
+      title: "Full-stack web apps",
+      text: "Complete products end to end: a Next.js or React frontend, Node.js APIs and a PostgreSQL database, with auth and deployment. Built solo, like a job portal and a zero-knowledge asset and credential manager.",
     },
     {
-      title: "Fast, SEO-ready websites",
-      text: "Prerendered, accessible pages with structured data and strict security headers. This portfolio went from a mobile Lighthouse score of 30 to 70-80, with every page readable by search engines and AI assistants.",
+      title: "Backend & REST APIs",
+      text: "Node.js and Express services, REST API design, JWT authentication with bcrypt password hashing, role-based access, file uploads and third-party integrations like Stripe and email.",
+    },
+    {
+      title: "Real-time features",
+      text: "Live multiplayer and collaborative features with Socket.IO: rooms, server-owned timers, state sync and scoring, as in the server I built for a real-time drawing game.",
+    },
+    {
+      title: "Databases & auth",
+      text: "PostgreSQL and Supabase (row-level security, storage, migrations), MongoDB and Prisma ORM, with data models designed for the product, not bolted on later.",
+    },
+    {
+      title: "React & Next.js frontends",
+      text: "Production UI in React, Next.js (App Router) and TypeScript, from components and state to API integration, built across 20+ client and SaaS projects at a digital product agency.",
     },
     {
       title: "UI/UX implementation",
@@ -671,12 +683,8 @@ export const hire = {
       text: "OpenAI and Anthropic Claude SDK integrations, from content pipelines to in-app assistants. I built a daily AI content agent that cut manual content work by roughly 40%.",
     },
     {
-      title: "Dashboards & internal tools",
-      text: "Supabase and Postgres apps with auth, analytics and file handling, including a zero-knowledge asset and credential manager encrypted in the browser.",
-    },
-    {
-      title: "Performance & SEO fixes",
-      text: "Find and fix what slows a React, Vite or Next.js site down or hides it from Google and AI search: bundle size, rendering, images, metadata.",
+      title: "Fast, SEO-ready websites",
+      text: "Prerendered, accessible sites with structured data and strict security headers, plus performance and SEO fixes for existing React, Vite or Next.js sites. This portfolio went from a mobile Lighthouse score of 30 to 70-80.",
     },
   ],
   process: [
@@ -688,15 +696,19 @@ export const hire = {
   faqs: [
     {
       q: "Is Shreyash Tripathi available for hire?",
-      a: "Yes, for both full-time frontend roles and freelance projects. He is currently a Junior Developer, UI/UX at Garage Collective in Noida.",
+      a: "Yes, for both full-time roles (full-stack, frontend or backend) and freelance projects. He is currently a Junior Developer, UI/UX at Garage Collective in Noida.",
     },
     {
       q: "Where does he work, and does he work remotely?",
       a: "Yes. Freelance work is remote-first for clients anywhere. For full-time roles he is open to on-site or hybrid work in Noida, Delhi NCR, Uttar Pradesh or Gujarat (Ahmedabad), fully remote roles, or relocating.",
     },
     {
+      q: "Does he do backend development too?",
+      a: "Yes. He is a full-stack developer: Node.js and Express APIs, REST design, JWT authentication, Socket.IO real-time servers, and PostgreSQL, Supabase and MongoDB databases, alongside React and Next.js frontends.",
+    },
+    {
       q: "What kind of freelance projects does he take on?",
-      a: "React and Next.js websites and web apps, landing pages, UI/UX implementation from designs, AI-integrated features, dashboards and internal tools, and performance or SEO fixes for existing sites.",
+      a: "Full-stack web apps, backends and REST APIs, real-time features, React and Next.js websites, UI/UX implementation from designs, AI-integrated features, dashboards and internal tools, and performance or SEO fixes for existing sites.",
     },
     {
       q: "How much does a freelance project cost?",

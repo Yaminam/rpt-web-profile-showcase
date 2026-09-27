@@ -103,8 +103,8 @@ export function hireSeo(): PageSeo {
         {
           "@type": "Service",
           "@id": `${url}#service`,
-          name: "React & Next.js development",
-          serviceType: "Frontend web development",
+          name: "Full-stack web development (React, Next.js, Node.js)",
+          serviceType: "Full-stack web development",
           description: hire.intro,
           url,
           provider: {
@@ -126,7 +126,7 @@ export function hireSeo(): PageSeo {
           availableChannel: { "@type": "ServiceChannel", serviceUrl: url },
           hasOfferCatalog: {
             "@type": "OfferCatalog",
-            name: "Frontend development services",
+            name: "Full-stack development services",
             itemListElement: hire.services.map((svc) => ({
               "@type": "Offer",
               itemOffered: { "@type": "Service", name: svc.title, description: svc.text },

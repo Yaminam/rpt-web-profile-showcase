@@ -113,7 +113,7 @@ const HirePage = () => {
         {/* Services */}
         <section className="space-y-5">
           <h2 className="font-display text-2xl font-bold md:text-3xl">What I can build for you</h2>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {hire.services.map((svc, i) => (
               <div key={svc.title} className="cyber-card p-6">
                 <span className="font-mono text-xs text-neon-magenta">{String(i + 1).padStart(2, "0")}.</span>
@@ -201,7 +201,7 @@ const HirePage = () => {
         <a href="/" className="hover:text-foreground">
           {profile.name}
         </a>{" "}
-        · React &amp; Next.js Developer · Noida · Delhi NCR · UP · Gujarat · Remote
+        · Full-Stack Developer · Noida · Delhi NCR · UP · Gujarat · Remote
       </footer>
     </div>
   );

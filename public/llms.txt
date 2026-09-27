@@ -1,6 +1,6 @@
 # Shreyash Tripathi
 
-> Frontend Developer & UI/UX Engineer based in Noida, India. Builds production UI with React, Next.js (App Router) and TypeScript, and contributes to AI-integrated SaaS platforms and marketing sites at a digital product agency. Available for full-time frontend roles and freelance React/Next.js projects (https://shreyashtripathi.in/hire).
+> Frontend Developer & UI/UX Engineer based in Noida, India. Builds production UI with React, Next.js (App Router) and TypeScript, and contributes to AI-integrated SaaS platforms and marketing sites at a digital product agency. Available for full-time roles (full-stack, frontend or backend) and freelance full-stack projects (https://shreyashtripathi.in/hire).
 
 ## Summary
 
@@ -55,7 +55,7 @@ Shreyash Tripathi is a frontend-focused full-stack developer and UI/UX contribut
 ## Links
 
 - [Portfolio](https://shreyashtripathi.in/): Projects, experience, skills, FAQ and contact
-- [Hire me](https://shreyashtripathi.in/hire): Available for full-time frontend roles and freelance React/Next.js projects in Noida, Delhi NCR, Uttar Pradesh, Gujarat (Ahmedabad) or remote anywhere; services, process and contact
+- [Hire me](https://shreyashtripathi.in/hire): Available for full-time roles (full-stack, frontend or backend) and freelance full-stack projects (React, Next.js, Node.js, PostgreSQL) in Noida, Delhi NCR, Uttar Pradesh, Gujarat (Ahmedabad) or remote anywhere; services, process and contact
 - [PurrCase case study](https://shreyashtripathi.in/projects/purrcase): What he built, features and tech stack
 - [SketchRace case study](https://shreyashtripathi.in/projects/sketchrace): What he built, features and tech stack
 - [Asset & Credential Vault case study](https://shreyashtripathi.in/projects/asset-credential-vault): Internal zero-knowledge asset, credential and billing manager, encryption design and features
