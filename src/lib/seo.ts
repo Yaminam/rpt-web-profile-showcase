@@ -27,7 +27,13 @@ export function projectSeo(project: Project & { slug: string }): PageSeo {
     keywords: project.tech.join(", "),
   };
   // A team project credits Shreyash as a contributor, not its sole author.
-  const person = { "@type": "Person", "@id": PERSON_ID, name: profile.name, url: `${SITE_URL}/` };
+  const person = {
+    "@type": "Person",
+    "@id": PERSON_ID,
+    name: profile.name,
+    url: `${SITE_URL}/`,
+    image: `${SITE_URL}/shreyash-tripathi.jpg`,
+  };
   if (project.team) work.contributor = person;
   else Object.assign(work, { author: person, creator: { "@id": PERSON_ID } });
   if (project.links?.repo) {

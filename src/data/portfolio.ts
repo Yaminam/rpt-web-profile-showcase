@@ -21,7 +21,7 @@ export const profile = {
   github: "https://github.com/Yaminam",
   linkedin: "https://www.linkedin.com/in/shreyashtripathi9",
   resume: "/Shreyash_Tripathi_Resume.pdf",
-  photo: "/shreyash-profile.webp",
+  photo: "/shreyash-tripathi.webp",
   summary:
     "Frontend-focused full-stack developer and UI/UX contributor with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. I build UI across React, Next.js (App Router) and TypeScript codebases with Tailwind CSS, Supabase and REST APIs, and I'm comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration.",
 };
