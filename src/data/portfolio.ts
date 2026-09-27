@@ -103,7 +103,7 @@ export const experience: Experience[] = [
       "Built and deployed a daily AI content-generation agent (Instagram, LinkedIn, blog), cutting manual content-creation effort by roughly 40%.",
       "Shipped UTM auto-tagging and partner-portal link generation on a multi-tenant affiliate-marketing SaaS platform, plus a new analytics dashboard module for an internal campaign-management platform.",
       "Rebuilt a 45-page K-12 school marketing site with a mobile-layout overhaul, fixing horizontal-scroll, tap-target and navigation issues.",
-      "Extended a zero-knowledge credential management tool with credential revocation and multi-currency vendor billing, and delivered dark-mode, responsiveness and TypeScript fixes across a social-listening platform, an AI call-screening product and a startup/investor marketplace.",
+      "Built an internal zero-knowledge asset, credential and billing manager (Next.js, Supabase, WebCrypto) with QR asset labels, invoice OCR and multi-currency spend tracking, and delivered dark-mode, responsiveness and TypeScript fixes across a social-listening platform, an AI call-screening product and a startup/investor marketplace.",
       "Gained hands-on exposure across 20+ client and SaaS builds — from cinematic 3D/WebGL marketing sites to multi-tenant dashboards and AI content pipelines — with tools spanning Three.js, GSAP, Framer Motion, Stripe/Razorpay, Clerk, Turborepo and OpenAI/Anthropic SDKs.",
     ],
   },
@@ -352,6 +352,77 @@ export const projects: Project[] = [
       "Job search with filters, saved jobs, application tracking and a user dashboard; deployed on Vercel.",
     ],
     accent: "green",
+  },
+  {
+    // Internal tool built at work: kept anonymous on purpose (no product/company name, no repo or live link).
+    name: "Asset & Credential Vault",
+    slug: "asset-credential-vault",
+    seo: {
+      title: "Zero-Knowledge Asset & Credential Vault | Shreyash Tripathi",
+      description: "Zero-knowledge asset, credential and billing manager by Shreyash Tripathi, built with Next.js, Supabase and WebCrypto: QR asset labels and invoice OCR.",
+    },
+    caseStudy: {
+      overview: [
+        "An internal tool for the digital agency where Shreyash works, replacing scattered spreadsheets with one place for the team's hardware inventory, service logins, environment variables and vendor bills. Every record is encrypted in the browser under a master password, so the database only ever stores ciphertext.",
+        "Shreyash Tripathi built it end to end as a Next.js 15, React 19 and TypeScript app on Supabase (Postgres, Storage and row-level security): about 16,000 lines of TypeScript, with the entire encryption layer on the browser's built-in WebCrypto API and no third-party crypto libraries.",
+      ],
+      howItWorks: [
+        {
+          title: "Unlock",
+          text: "The master password and a per-vault salt go through PBKDF2-SHA256 with 600,000 iterations to derive an AES-256-GCM key. The key lives only in memory for the session and is dropped when the vault locks; the password never leaves the tab.",
+        },
+        {
+          title: "Asset inventory and QR labels",
+          text: "Each hardware asset gets a readable tag built from its category (for example LT-0007 for a laptop) and a printable 70 x 35 mm thermal label with a QR code. Scanning the label with any phone opens a read-only view of what's printed on it, without unlocking the vault.",
+        },
+        {
+          title: "Who has what",
+          text: "An allocation view lists every employee with the assets assigned to them, built around the offboarding question: what does this person need to hand back?",
+        },
+        {
+          title: "Credentials and environments",
+          text: "Logins and environment variables live alongside the assets. Provider templates pre-fill the exact key names each service expects, .env files can be imported directly, and a generator and health audit score password strength with a deliberately pessimistic entropy estimate.",
+        },
+        {
+          title: "Bills and spend",
+          text: "Invoice PDFs are read through pdf.js, with Tesseract OCR as a fallback for scans and photos, and turned into billing entries one at a time or in bulk. Spend dashboards break costs down per currency and never add INR to USD.",
+        },
+        {
+          title: "Sharing",
+          text: "One-time share links are bound to a named recipient: the key is derived from a random token in the URL fragment plus the recipient's name, so neither the database nor a link leaked into a chat can read the shared entry.",
+        },
+      ],
+      challenges: [
+        {
+          problem: "The data has to stay private even from the database that stores it, including whoever administers it.",
+          solution: "A zero-knowledge design: titles, usernames, URLs, owners and attached files are all encrypted in the browser with AES-256-GCM before upload, so Postgres and Storage hold only initialisation vectors and ciphertext, with no readable metadata at all.",
+        },
+        {
+          problem: "Asset labels must work when anyone scans them with a phone, without ever exposing the vault.",
+          solution: "The QR code carries only what is already printed on the label, inside the URL fragment, which browsers never send to a server. The scan page needs no unlock and makes no network request; labels print from the unlocked tab, with each QR drawn as one SVG path instead of about 5,000 rectangles to keep print jobs fast.",
+        },
+        {
+          problem: "Every dependency that touches plaintext credentials is a supply-chain risk.",
+          solution: "The dependency surface is kept small on purpose: a hand-written .xlsx reader built on the browser's DecompressionStream replaces a spreadsheet library, and service logos ship as bundled path data rather than being fetched from a logo CDN, which would reveal which services the vault holds.",
+        },
+      ],
+      results: [
+        "Built and deployed for internal use at the agency, covering hardware assets, logins, environment variables and vendor bills in one encrypted app.",
+        "About 16,000 lines of TypeScript and 7 database migrations, with encryption on WebCrypto alone (no third-party crypto libraries).",
+        "Zero plaintext in the database: PBKDF2-SHA256 (600,000 iterations) and AES-256-GCM for every record and file.",
+      ],
+      note: "This is an internal tool, so there's no public demo or source code link; details that would identify the company or its data are left out.",
+    },
+    tagline: "Zero-Knowledge Asset, Credential & Billing Manager",
+    description:
+      "An internal tool for tracking hardware assets, logins, environment variables and vendor bills, encrypted end to end in the browser so the database never sees plaintext.",
+    tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS 4", "Supabase", "PostgreSQL", "WebCrypto", "pdf.js", "Tesseract.js"],
+    highlights: [
+      "Asset inventory with printable QR labels and a who-has-what view for offboarding.",
+      "Zero-knowledge encryption: PBKDF2 + AES-256-GCM in the browser, ciphertext-only database.",
+      "Invoice OCR, multi-currency spend tracking and one-time share links bound to a recipient.",
+    ],
+    accent: "yellow",
   },
   {
     name: "Portfolio Website",

@@ -18,12 +18,13 @@ Shreyash Tripathi is a frontend-focused full-stack developer and UI/UX contribut
 
 ## Experience
 
-- Junior Developer, UI/UX — Garage Collective, Noida (Feb 2026 – present), promoted from AI Trainee. Ships production UI and AI-powered features across the agency's client and SaaS portfolio: analytics dashboard integrations, a 45-page school marketing site rebuild, a zero-knowledge credential management tool, a daily AI content-generation agent (~40% less manual effort), UTM auto-tagging and partner-portal tooling for a multi-tenant affiliate-marketing SaaS platform, UI theming and responsiveness work on an AI call-screening product's marketing site, dark-mode fixes on a social-listening platform, and UI/build fixes on a startup-investor marketplace and an SEO/AI-visibility platform. Broader stack exposure spans Three.js, GSAP, Framer Motion, Stripe/Razorpay, Clerk and Turborepo.
+- Junior Developer, UI/UX — Garage Collective, Noida (Feb 2026 – present), promoted from AI Trainee. Ships production UI and AI-powered features across the agency's client and SaaS portfolio: analytics dashboard integrations, a 45-page school marketing site rebuild, an internal zero-knowledge asset, credential and billing manager he built end to end (QR asset labels, invoice OCR, multi-currency spend), a daily AI content-generation agent (~40% less manual effort), UTM auto-tagging and partner-portal tooling for a multi-tenant affiliate-marketing SaaS platform, UI theming and responsiveness work on an AI call-screening product's marketing site, dark-mode fixes on a social-listening platform, and UI/build fixes on a startup-investor marketplace and an SEO/AI-visibility platform. Broader stack exposure spans Three.js, GSAP, Framer Motion, Stripe/Razorpay, Clerk and Turborepo.
 
 ## Projects
 
 - PurrCase — custom phone-case store with a photo-based case designer, Stripe checkout and order emails (Next.js 14, Prisma, PostgreSQL, Kinde Auth, Stripe); team project, Shreyash built the frontend (https://purr-case.vercel.app).
 - SketchRace — real-time multiplayer drawing & guessing game (Socket.IO, Node.js, Canvas API, Next.js 15, React 19); team project, Shreyash built the Socket.IO backend (https://sketchrace.vercel.app).
+- Asset & Credential Vault — internal zero-knowledge asset, credential and billing manager built solo (Next.js 15, React 19, TypeScript, Supabase, WebCrypto): QR asset labels, who-has-what allocation, invoice OCR, multi-currency spend, one-time share links; PBKDF2 + AES-256-GCM in the browser (https://shreyashtripathi.in/projects/asset-credential-vault).
 - Job Portal — full-stack job portal built solo with Next.js 15, TypeScript, REST API routes, JWT + bcrypt auth and a PostgreSQL schema: job search, saved jobs, applications and a user dashboard (https://v0-mern-job-portal-one.vercel.app).
 - Portfolio Website — this interactive, SEO-optimized cyberpunk-themed personal site (https://shreyashtripathi.in).
 
@@ -51,6 +52,7 @@ Shreyash Tripathi is a frontend-focused full-stack developer and UI/UX contribut
 - [Portfolio](https://shreyashtripathi.in/): Projects, experience, skills, FAQ and contact
 - [PurrCase case study](https://shreyashtripathi.in/projects/purrcase): What he built, features and tech stack
 - [SketchRace case study](https://shreyashtripathi.in/projects/sketchrace): What he built, features and tech stack
+- [Asset & Credential Vault case study](https://shreyashtripathi.in/projects/asset-credential-vault): Internal zero-knowledge asset, credential and billing manager, encryption design and features
 - [Job Portal case study](https://shreyashtripathi.in/projects/mern-job-portal): What he built, features and tech stack
 - [Resume (PDF)](https://shreyashtripathi.in/Shreyash_Tripathi_Resume.pdf): Full resume
 - [GitHub](https://github.com/Yaminam): Source code and side projects
