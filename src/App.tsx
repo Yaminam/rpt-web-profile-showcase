@@ -8,6 +8,7 @@ import { AchievementsProvider } from "@/hooks/use-achievements";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ProjectPage from "./pages/ProjectPage";
+import HirePage from "./pages/HirePage";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ export const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Index />} />
     <Route path="/projects/:slug" element={<ProjectPage />} />
+    <Route path="/hire" element={<HirePage />} />
     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
     <Route path="*" element={<NotFound />} />
   </Routes>

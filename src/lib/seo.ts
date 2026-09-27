@@ -1,4 +1,4 @@
-import { caseStudies, profile, SITE_URL, type Project } from "@/data/portfolio";
+import { caseStudies, hire, profile, SITE_URL, type Project } from "@/data/portfolio";
 
 export type PageSeo = {
   path: string;
@@ -76,3 +76,69 @@ export function projectSeo(project: Project & { slug: string }): PageSeo {
 }
 
 export const caseStudyPages = (): PageSeo[] => caseStudies.map(projectSeo);
+
+/** Head tags + structured data for /hire (full-time roles and freelance services). */
+export function hireSeo(): PageSeo {
+  const path = "/hire";
+  const url = `${SITE_URL}${path}`;
+  return {
+    path,
+    title: hire.seo.title,
+    description: hire.seo.description,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${url}#webpage`,
+          url,
+          name: hire.seo.title,
+          description: hire.seo.description,
+          inLanguage: "en",
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          about: { "@id": PERSON_ID },
+          mainEntity: { "@id": `${url}#service` },
+          breadcrumb: { "@id": `${url}#breadcrumb` },
+        },
+        {
+          "@type": "Service",
+          "@id": `${url}#service`,
+          name: "React & Next.js development",
+          serviceType: "Frontend web development",
+          description: hire.intro,
+          url,
+          provider: {
+            "@type": "Person",
+            "@id": PERSON_ID,
+            name: profile.name,
+            url: `${SITE_URL}/`,
+            image: `${SITE_URL}/shreyash-tripathi.jpg`,
+            email: `mailto:${profile.email}`,
+          },
+          areaServed: [
+            { "@type": "City", name: "Noida" },
+            { "@type": "AdministrativeArea", name: "Delhi NCR" },
+            { "@type": "Country", name: "India" },
+          ],
+          availableChannel: { "@type": "ServiceChannel", serviceUrl: url },
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Frontend development services",
+            itemListElement: hire.services.map((svc) => ({
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: svc.title, description: svc.text },
+            })),
+          },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${url}#breadcrumb`,
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: profile.name, item: `${SITE_URL}/` },
+            { "@type": "ListItem", position: 2, name: "Hire me", item: url },
+          ],
+        },
+      ],
+    },
+  };
+}

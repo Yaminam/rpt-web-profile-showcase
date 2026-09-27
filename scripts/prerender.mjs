@@ -9,7 +9,7 @@ const ssrDir = path.join(root, "dist-ssr");
 const htmlPath = path.join(root, "dist", "index.html");
 const SITE_URL = "https://shreyashtripathi.in";
 
-const { render, caseStudyPages } = await import(pathToFileURL(path.join(ssrDir, "entry-server.js")).href);
+const { render, caseStudyPages, hireSeo } = await import(pathToFileURL(path.join(ssrDir, "entry-server.js")).href);
 
 const template = await readFile(htmlPath, "utf8");
 const marker = '<div id="root"></div>';
@@ -50,6 +50,7 @@ function withHead(html, { path: pagePath, title, description, jsonLd }) {
 
 const pages = [
   { url: "/", file: "index.html" },
+  { url: "/hire", file: "hire.html", seo: hireSeo() },
   // Case studies: /projects/<slug> is served from projects/<slug>.html (vercel.json cleanUrls).
   ...caseStudyPages().map((seo) => ({ url: seo.path, file: `${seo.path.slice(1)}.html`, seo })),
   // Served by Vercel for unknown paths (404 status); noindex + no canonical so it never competes with "/".

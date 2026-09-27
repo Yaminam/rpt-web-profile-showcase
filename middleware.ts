@@ -41,7 +41,7 @@ const BOTS: [string, RegExp, "ai" | "search"][] = [
 export const config = {
   runtime: "nodejs",
   // Pages and crawler-facing text files only; images, scripts and styles never hit this.
-  matcher: ["/", "/projects/:path*", "/robots.txt", "/llms.txt", "/sitemap.xml"],
+  matcher: ["/", "/hire", "/projects/:path*", "/robots.txt", "/llms.txt", "/sitemap.xml"],
 };
 
 export default function middleware(request: Request) {
