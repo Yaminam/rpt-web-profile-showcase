@@ -700,3 +700,30 @@ export const hire = {
     },
   ],
 };
+
+/**
+ * Praise from leadership, quoted from real messages. At the user's request: no names and no
+ * company, role only. Text is verbatim apart from joining consecutive messages into sentences.
+ * Deliberately not marked up as Review/rating schema (self-hosted, anonymous reviews aren't eligible).
+ */
+export const testimonials = [
+  {
+    quote: "The email has come out great. Kudos. Keep up the great work.",
+    role: "CEO",
+    context: "on a company email newsletter I built",
+  },
+  {
+    quote: "Fantastic job with the website. Keep shining. Wonderful show.",
+    role: "Founder",
+    context: "on the company website I built with a teammate",
+  },
+  {
+    quote: "This looks amazing.",
+    role: "AVP",
+    context: "on a school website I delivered for a client",
+  },
+];
+
+/** A fact rather than a quote: what leadership did after seeing the work. */
+export const testimonialNote =
+  "After I redesigned the company website, the CEO asked for the same approach on another of the group's brand sites.";

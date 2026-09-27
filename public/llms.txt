@@ -28,6 +28,11 @@ Shreyash Tripathi is a frontend-focused full-stack developer and UI/UX contribut
 - Job Portal — full-stack job portal built solo with Next.js 15, TypeScript, REST API routes, JWT + bcrypt auth and a PostgreSQL schema: job search, saved jobs, applications and a user dashboard (https://v0-mern-job-portal-one.vercel.app).
 - Portfolio Website — this interactive, SEO-optimized cyberpunk-themed personal site (https://shreyashtripathi.in).
 
+## Recognition
+
+- Praised in writing by his company's CEO ("The email has come out great. Kudos. Keep up the great work."), founder ("Fantastic job with the website. Keep shining. Wonderful show.") and AVP ("This looks amazing.") for a newsletter, the company website and a client school website.
+- After his redesign of the company website, the CEO asked for the same approach on another of the group's brand sites.
+
 ## Education
 
 - B.Tech, Computer Science Engineering — JECRC University, Jaipur (2022 – 2026), CGPA 8.1.

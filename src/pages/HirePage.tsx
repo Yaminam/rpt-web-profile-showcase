@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { ArrowLeft, ArrowUpRight, Briefcase, FileDown, Linkedin, Mail, Rocket } from "lucide-react";
 import CyberBackground from "@/components/CyberBackground";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import { caseStudies, contactReasons, hire, mailtoFor, profile } from "@/data/portfolio";
 
 const reasonMail = (id: string) => {
@@ -123,6 +124,11 @@ const HirePage = () => {
             ))}
           </div>
         </section>
+
+        {/* Praise from leadership (anonymous, role only) */}
+        <TestimonialsSection
+          heading={<h2 className="mb-5 font-display text-2xl font-bold md:text-3xl">What leadership says</h2>}
+        />
 
         {/* Process */}
         <section className="cyber-card p-6 md:p-8">
