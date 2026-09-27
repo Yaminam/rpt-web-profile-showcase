@@ -1,12 +1,29 @@
 {
   "name": "Shreyash Tripathi — Frontend Developer & UI/UX Engineer",
   "short_name": "Shreyash T.",
-  "description": "Interactive cyberpunk portfolio of Shreyash Tripathi — Frontend Developer & UI/UX Engineer. React, Next.js, Tailwind CSS and AI-integrated products.",
+  "description": "Portfolio of Shreyash Tripathi — Frontend Developer & UI/UX Engineer. React, Next.js, TypeScript and AI-integrated product UI.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#05060a",
   "theme_color": "#05060a",
   "icons": [
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
   ]
 }
