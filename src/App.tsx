@@ -9,6 +9,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ProjectPage from "./pages/ProjectPage";
 import HirePage from "./pages/HirePage";
+import BooksPage from "./pages/BooksPage";
+import BookPage from "./pages/BookPage";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +32,8 @@ export const AppRoutes = () => (
     <Route path="/" element={<Index />} />
     <Route path="/projects/:slug" element={<ProjectPage />} />
     <Route path="/hire" element={<HirePage />} />
+    <Route path="/books" element={<BooksPage />} />
+    <Route path="/books/:slug" element={<BookPage />} />
     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
     <Route path="*" element={<NotFound />} />
   </Routes>

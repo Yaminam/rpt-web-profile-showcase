@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowUpRight, Briefcase, FileDown, Linkedin, Mail, MapPin, R
 import CyberBackground from "@/components/CyberBackground";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { caseStudies, contactReasons, hire, mailtoFor, profile } from "@/data/portfolio";
+import { bookCover, books, SERIES_NAME } from "@/data/books";
 
 const reasonMail = (id: string) => {
   const reason = contactReasons.find((r) => r.id === id);
@@ -63,10 +64,10 @@ const HirePage = () => {
             <h1 className="font-display text-3xl font-extrabold leading-tight md:text-5xl">{hire.headline}</h1>
             <p className="max-w-3xl font-sans text-lg leading-relaxed text-muted-foreground">{hire.intro}</p>
             <div className="flex flex-wrap gap-3 pt-1">
-              <a href={reasonMail("job")} className="btn-neon">
+              <a href={reasonMail("job")} data-event="hire_full_time_click" className="btn-neon">
                 <Briefcase className="h-4 w-4" /> hire_full_time
               </a>
-              <a href={reasonMail("freelance")} className="btn-neon">
+              <a href={reasonMail("freelance")} data-event="start_project_click" className="btn-neon">
                 <Rocket className="h-4 w-4" /> start_a_project
               </a>
               <a href={profile.resume} download className="btn-ghost">
@@ -88,7 +89,7 @@ const HirePage = () => {
             <div key={e.title} className="cyber-card flex flex-col gap-3 p-6 md:p-8">
               <h3 className="font-display text-xl font-bold">{e.title}</h3>
               <p className="flex-1 leading-relaxed text-muted-foreground">{e.text}</p>
-              <a href={reasonMail(e.reason)} className="btn-ghost self-start text-xs">
+              <a href={reasonMail(e.reason)} data-event={e.reason === "job" ? "hire_full_time_click" : "start_project_click"} className="btn-ghost self-start text-xs">
                 <Mail className="h-4 w-4" /> {e.cta}
               </a>
             </div>
@@ -140,6 +141,44 @@ const HirePage = () => {
           </div>
         </section>
 
+        {/* Books he wrote: proof of depth across CS fundamentals */}
+        <section className="space-y-5">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h2 className="font-display text-2xl font-bold md:text-3xl">Books I've written</h2>
+              <p className="mt-2 max-w-3xl text-muted-foreground">
+                The {SERIES_NAME}: {books.length} books and about{" "}
+                {(Math.floor(books.reduce((n, b) => n + b.editions[0].pages, 0) / 100) * 100).toLocaleString("en-IN")}{" "}
+                pages on System Design, DSA, DBMS, Computer Networks, Operating Systems and Full-Stack TypeScript, written
+                for developers preparing for interviews.
+              </p>
+            </div>
+            <a href="/books" className="btn-ghost text-xs">
+              all_books <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
+          </div>
+          <ul className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-7">
+            {books.map((b) => (
+              <li key={b.slug}>
+                <a href={`/books/${b.slug}`} className="group block" title={b.title}>
+                  <img
+                    src={bookCover(b.slug)}
+                    alt={`${b.title} book cover by ${profile.name}`}
+                    width={847}
+                    height={1200}
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[847/1200] w-full rounded-md border border-border object-cover transition-transform duration-300 group-hover:-translate-y-1 group-hover:border-neon-cyan/60"
+                  />
+                  <span className="mt-2 block text-center font-mono text-[11px] text-muted-foreground group-hover:text-neon-cyan">
+                    {b.shortTitle}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* Praise from leadership (anonymous, role only) */}
         <TestimonialsSection
           heading={<h2 className="mb-5 font-display text-2xl font-bold md:text-3xl">What leadership says</h2>}
@@ -186,10 +225,10 @@ const HirePage = () => {
             or use a button below.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <a href={reasonMail("job")} className="btn-neon">
+            <a href={reasonMail("job")} data-event="hire_full_time_click" className="btn-neon">
               <Briefcase className="h-4 w-4" /> hire_full_time
             </a>
-            <a href={reasonMail("freelance")} className="btn-neon">
+            <a href={reasonMail("freelance")} data-event="start_project_click" className="btn-neon">
               <Rocket className="h-4 w-4" /> start_a_project
             </a>
           </div>

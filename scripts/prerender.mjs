@@ -9,7 +9,7 @@ const ssrDir = path.join(root, "dist-ssr");
 const htmlPath = path.join(root, "dist", "index.html");
 const SITE_URL = "https://shreyashtripathi.in";
 
-const { render, caseStudyPages, hireSeo } = await import(pathToFileURL(path.join(ssrDir, "entry-server.js")).href);
+const { render, bookPages, caseStudyPages, hireSeo } = await import(pathToFileURL(path.join(ssrDir, "entry-server.js")).href);
 
 const template = await readFile(htmlPath, "utf8");
 const marker = '<div id="root"></div>';
@@ -26,7 +26,7 @@ function sub(html, re, replacement, label) {
 }
 
 /** Rewrite the home page's <head> for another indexable page (title, description, canonical, social, JSON-LD). */
-function withHead(html, { path: pagePath, title, description, jsonLd }) {
+function withHead(html, { path: pagePath, title, description, jsonLd, image }) {
   const url = `${SITE_URL}${pagePath}`;
   const t = escAttr(title);
   const d = escAttr(description);
@@ -39,6 +39,16 @@ function withHead(html, { path: pagePath, title, description, jsonLd }) {
   html = sub(html, /<meta\s+property="og:description"\s+content="[^"]*"\s*\/>/, `<meta property="og:description" content="${d}" />`, "og:description");
   html = sub(html, /<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${t}" />`, "twitter:title");
   html = sub(html, /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/>/, `<meta name="twitter:description" content="${d}" />`, "twitter:description");
+  if (image) {
+    // Per-page share image (e.g. a book cover for links posted in WhatsApp / Telegram groups).
+    const alt = escAttr(image.alt);
+    html = sub(html, /<meta property="og:image" content="[^"]*" \/>/, `<meta property="og:image" content="${image.url}" />`, "og:image");
+    html = sub(html, /<meta property="og:image:width" content="[^"]*" \/>/, `<meta property="og:image:width" content="${image.width}" />`, "og:image:width");
+    html = sub(html, /<meta property="og:image:height" content="[^"]*" \/>/, `<meta property="og:image:height" content="${image.height}" />`, "og:image:height");
+    html = sub(html, /<meta property="og:image:alt" content="[^"]*" \/>/, `<meta property="og:image:alt" content="${alt}" />`, "og:image:alt");
+    html = sub(html, /<meta name="twitter:image" content="[^"]*" \/>/, `<meta name="twitter:image" content="${image.url}" />`, "twitter:image");
+    html = sub(html, /<meta name="twitter:image:alt" content="[^"]*" \/>/, `<meta name="twitter:image:alt" content="${alt}" />`, "twitter:image:alt");
+  }
   html = sub(
     html,
     /<script type="application\/ld\+json">[\s\S]*?<\/script>/,
@@ -51,6 +61,8 @@ function withHead(html, { path: pagePath, title, description, jsonLd }) {
 const pages = [
   { url: "/", file: "index.html" },
   { url: "/hire", file: "hire.html", seo: hireSeo() },
+  // Books: /books -> books.html, /books/<slug> -> books/<slug>.html (vercel.json cleanUrls).
+  ...bookPages().map((seo) => ({ url: seo.path, file: `${seo.path.slice(1)}.html`, seo })),
   // Case studies: /projects/<slug> is served from projects/<slug>.html (vercel.json cleanUrls).
   ...caseStudyPages().map((seo) => ({ url: seo.path, file: `${seo.path.slice(1)}.html`, seo })),
   // Served by Vercel for unknown paths (404 status); noindex + no canonical so it never competes with "/".

@@ -29,3 +29,18 @@ gtag("config", "G-JKKJRK91DN");
   if (document.readyState === "complete") loadGtag();
   else window.addEventListener("load", loadGtag);
 })();
+
+// Lead tracking: any link with data-event="name" sends that GA4 event when clicked
+// (book preview downloads, full-book requests, hire buttons). data-book adds the book slug.
+document.addEventListener(
+  "click",
+  function (e) {
+    var el = e.target && e.target.closest ? e.target.closest("[data-event]") : null;
+    if (!el) return;
+    var params = { link_url: el.getAttribute("href") || "", page_path: location.pathname };
+    var book = el.getAttribute("data-book");
+    if (book) params.book = book;
+    gtag("event", el.getAttribute("data-event"), params);
+  },
+  true
+);

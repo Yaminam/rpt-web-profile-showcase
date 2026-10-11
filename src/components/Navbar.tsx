@@ -56,6 +56,9 @@ const Navbar = () => {
           >
             ?
           </button>
+          <a href="/books" className="nav-link">
+            <span className="text-neon-magenta/70">/</span>books
+          </a>
           <a href="/hire" className="btn-ghost py-2 text-xs">
             hire_me
           </a>
@@ -93,6 +96,15 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href="/books"
+                onClick={() => setOpen(false)}
+                className="block rounded-md px-3 py-2 font-mono text-sm text-muted-foreground transition-colors hover:bg-neon-cyan/5 hover:text-neon-cyan"
+              >
+                <span className="text-neon-magenta/70">/</span>books: free previews
+              </a>
+            </li>
             <li className="px-3 pt-2">
               <a href="/hire" className="btn-ghost w-full py-2 text-xs" onClick={() => setOpen(false)}>
                 hire_me: full-time &amp; freelance

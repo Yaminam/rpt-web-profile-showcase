@@ -708,6 +708,10 @@ export const hire = {
       a: "Yes. He is a full-stack developer: Node.js and Express APIs, REST design, JWT authentication, Socket.IO real-time servers, and PostgreSQL, Supabase and MongoDB databases, alongside React and Next.js frontends.",
     },
     {
+      q: "Has Shreyash Tripathi written any books?",
+      a: "Yes. He wrote the Job-Ready Series, seven books for developers preparing for interviews: System Design, DSA in Java, DSA in Python, DBMS, Computer Networks, Operating Systems and Full-Stack TypeScript with Next.js. Free previews are at shreyashtripathi.in/books.",
+    },
+    {
       q: "What kind of freelance projects does he take on?",
       a: "Full-stack web apps, backends and REST APIs, real-time features, React and Next.js websites, UI/UX implementation from designs, AI-integrated features, dashboards and internal tools, and performance or SEO fixes for existing sites.",
     },

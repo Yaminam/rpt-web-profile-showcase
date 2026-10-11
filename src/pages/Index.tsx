@@ -13,6 +13,7 @@ import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import FaqSection from "@/components/FaqSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import BooksSection from "@/components/BooksSection";
 import Footer from "@/components/Footer";
 
 const InteractiveLayer = lazy(() => import("@/components/InteractiveLayer"));
@@ -52,6 +53,7 @@ const Index = () => {
         <ContactSection />
         <FaqSection />
         <TestimonialsSection />
+        <BooksSection />
       </main>
       <Footer />
 

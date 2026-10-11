@@ -1,4 +1,5 @@
 import { caseStudies, hire, profile, SITE_URL, type Project } from "@/data/portfolio";
+import { bookCoverJpg, bookPreview, books, SERIES_NAME, type Book } from "@/data/books";
 
 export type PageSeo = {
   path: string;
@@ -6,6 +7,8 @@ export type PageSeo = {
   description: string;
   /** JSON-LD object, serialized into <script type="application/ld+json"> by scripts/prerender.mjs */
   jsonLd: Record<string, unknown>;
+  /** Social preview image (og:image / twitter:image); defaults to the site banner. */
+  image?: { url: string; width: number; height: number; alt: string };
 };
 
 const PERSON_ID = `${SITE_URL}/#person`;
@@ -145,3 +148,122 @@ export function hireSeo(): PageSeo {
     },
   };
 }
+
+/* ------------------------------------------------------------- books ---- */
+
+const bookUrl = (slug: string) => `${SITE_URL}/books/${slug}`;
+
+const bookNode = (b: Book) => ({
+  "@type": "Book",
+  "@id": `${bookUrl(b.slug)}#book`,
+  name: b.title,
+  description: b.blurb,
+  url: bookUrl(b.slug),
+  image: `${SITE_URL}${bookCoverJpg(b.slug)}`,
+  author: { "@id": PERSON_ID },
+  inLanguage: "en",
+  bookFormat: "https://schema.org/EBook",
+  numberOfPages: Math.max(...b.editions.map((e) => e.pages)),
+  bookEdition: b.editions.map((e) => e.label).join(", "),
+  copyrightHolder: { "@id": PERSON_ID },
+  copyrightYear: 2026,
+  isPartOf: { "@type": "BookSeries", name: `${SERIES_NAME} by ${profile.name}` },
+  keywords: b.keywords.join(", "),
+  hasPart: {
+    "@type": "CreativeWork",
+    name: `${b.title}: free preview (first ${b.previewChapters} chapters)`,
+    encodingFormat: "application/pdf",
+    url: `${SITE_URL}${bookPreview(b.slug)}`,
+    isAccessibleForFree: true,
+  },
+});
+
+/** Head tags + structured data for a /books/<slug> page. */
+export function bookSeo(b: Book): PageSeo {
+  const path = `/books/${b.slug}`;
+  const url = `${SITE_URL}${path}`;
+  return {
+    path,
+    title: b.seo.title,
+    description: b.seo.description,
+    // The cover is what a link shared in a WhatsApp / Telegram placement group should show.
+    image: {
+      url: `${SITE_URL}${bookCoverJpg(b.slug)}`,
+      width: 847,
+      height: 1200,
+      alt: `${b.title} by ${profile.name}: book cover`,
+    },
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${url}#webpage`,
+          url,
+          name: b.seo.title,
+          description: b.seo.description,
+          inLanguage: "en",
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          mainEntity: { "@id": `${url}#book` },
+          primaryImageOfPage: { "@type": "ImageObject", url: `${SITE_URL}${bookCoverJpg(b.slug)}` },
+          breadcrumb: { "@id": `${url}#breadcrumb` },
+        },
+        bookNode(b),
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${url}#breadcrumb`,
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: profile.name, item: `${SITE_URL}/` },
+            { "@type": "ListItem", position: 2, name: "Books", item: `${SITE_URL}/books` },
+            { "@type": "ListItem", position: 3, name: b.title, item: url },
+          ],
+        },
+      ],
+    },
+  };
+}
+
+export const BOOKS_SEO = {
+  title: "Placement Prep Books: DSA, DBMS, OS, CN | Shreyash Tripathi",
+  description:
+    "Placement and interview prep books by Shreyash Tripathi: DSA in Java and Python, DBMS, OS, Computer Networks, System Design, Next.js. Free PDF previews.",
+};
+
+/** Head tags + structured data for /books (the series index). */
+export function booksIndexSeo(): PageSeo {
+  const path = "/books";
+  const url = `${SITE_URL}${path}`;
+  return {
+    path,
+    title: BOOKS_SEO.title,
+    description: BOOKS_SEO.description,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": `${url}#webpage`,
+          url,
+          name: BOOKS_SEO.title,
+          description: BOOKS_SEO.description,
+          inLanguage: "en",
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          author: { "@id": PERSON_ID },
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: books.map((b, i) => ({ "@type": "ListItem", position: i + 1, url: bookUrl(b.slug), name: b.title })),
+          },
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: profile.name, item: `${SITE_URL}/` },
+            { "@type": "ListItem", position: 2, name: "Books", item: url },
+          ],
+        },
+      ],
+    },
+  };
+}
+
+export const bookPages = (): PageSeo[] => [booksIndexSeo(), ...books.map(bookSeo)];
