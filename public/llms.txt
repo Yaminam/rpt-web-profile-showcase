@@ -41,12 +41,12 @@ Shreyash wrote a series of interview and job-preparation books for developers, a
 
 - [All books](https://shreyashtripathi.in/books)
 - [System Design: From Zero to Hero](https://shreyashtripathi.in/books/system-design): Complete 796 pages, Short 283 pages. 28 chapters in 5 parts; 25+ real system case studies; Question bank with answers. Free preview PDF.
-- [DSA in Java: From Zero to Offer](https://shreyashtripathi.in/books/dsa-java): Java edition 406 pages. Java basics included; 20 problem-solving patterns; Brute force to optimal, with dry runs. Free preview PDF.
-- [DSA in Python: From Zero to Offer](https://shreyashtripathi.in/books/dsa-python): Python edition 404 pages. Python basics included; 20 problem-solving patterns; Brute force to optimal, with dry runs. Free preview PDF.
+- [DSA in Java: From Zero to Offer](https://shreyashtripathi.in/books/dsa-java): Java edition 405 pages. Java basics included; 20 problem-solving patterns; Brute force to optimal, with dry runs. Free preview PDF.
+- [DSA in Python: From Zero to Offer](https://shreyashtripathi.in/books/dsa-python): Python edition 406 pages. Python basics included; 20 problem-solving patterns; Brute force to optimal, with dry runs. Free preview PDF.
 - [Database Management Systems](https://shreyashtripathi.in/books/dbms): Complete 422 pages, Short 186 pages. ER models to B+ trees; SQL from basics to window functions; 120+ interview questions with answers. Free preview PDF.
-- [Computer Networks](https://shreyashtripathi.in/books/computer-networks): Complete 369 pages, Short 164 pages. OSI and TCP/IP to TLS; Worked subnetting numericals; 100+ interview questions with answers. Free preview PDF.
+- [Computer Networks](https://shreyashtripathi.in/books/computer-networks): Complete 364 pages, Short 164 pages. OSI and TCP/IP to TLS; Worked subnetting numericals; 100+ interview questions with answers. Free preview PDF.
 - [Operating Systems](https://shreyashtripathi.in/books/operating-systems): Short 192 pages. Processes to containers and Linux; Worked scheduling and paging numericals; 90+ interview questions with answers. Free preview PDF.
-- [Full-Stack TypeScript and Next.js](https://shreyashtripathi.in/books/fullstack-typescript-nextjs): Compact 322 pages. TypeScript, React and Next.js; Node.js APIs, databases, auth and Docker; 100 interview questions with answers. Free preview PDF.
+- [Full-Stack TypeScript and Next.js](https://shreyashtripathi.in/books/fullstack-typescript-nextjs): Compact 362 pages. TypeScript, React and Next.js; Node.js APIs, databases, auth and Docker; 100 interview questions with answers. Free preview PDF.
 
 ## Education
 

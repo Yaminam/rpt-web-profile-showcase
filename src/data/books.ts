@@ -105,7 +105,7 @@ export const books: Book[] = [
     "editions": [
       {
         "label": "Java edition",
-        "pages": 406
+        "pages": 405
       }
     ],
     "chapters": [
@@ -136,7 +136,7 @@ export const books: Book[] = [
       "Appendix D: Glossary"
     ],
     "previewChapters": 2,
-    "previewPages": 48,
+    "previewPages": 47,
     "seo": {
       "title": "DSA in Java Book for Placements | Shreyash Tripathi",
       "description": "DSA in Java for placements and coding interviews: Java basics, 20 patterns, dry runs, clean code and Big-O. Free PDF preview of the first chapters."
@@ -161,7 +161,7 @@ export const books: Book[] = [
     "editions": [
       {
         "label": "Python edition",
-        "pages": 404
+        "pages": 406
       }
     ],
     "chapters": [
@@ -273,7 +273,7 @@ export const books: Book[] = [
     "editions": [
       {
         "label": "Complete",
-        "pages": 369
+        "pages": 364
       },
       {
         "label": "Short",
@@ -376,7 +376,7 @@ export const books: Book[] = [
     "editions": [
       {
         "label": "Compact",
-        "pages": 322
+        "pages": 362
       }
     ],
     "chapters": [
@@ -408,7 +408,7 @@ export const books: Book[] = [
       "Appendix D: Sample Question Paper with Answers"
     ],
     "previewChapters": 2,
-    "previewPages": 33,
+    "previewPages": 38,
     "seo": {
       "title": "Full-Stack TypeScript & Next.js Book | Shreyash Tripathi",
       "description": "Full-Stack TypeScript and Next.js for jobs: React, Next.js, Node.js APIs, databases, auth, Docker and 100 interview questions. Free PDF preview."
