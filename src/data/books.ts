@@ -204,6 +204,62 @@ export const books: Book[] = [
     ]
   },
   {
+    "slug": "dsa-cpp",
+    "title": "DSA in C++: From Zero to Offer",
+    "shortTitle": "DSA (C++)",
+    "tagline": "Job-Ready Series, C++ edition",
+    "blurb": "Start from C++ and STL basics, learn 20 patterns, and crack coding rounds. Every problem in simple steps: brute force, the key trick, a dry run, clean code and Big-O.",
+    "highlights": [
+      "C++ and STL basics included",
+      "20 problem-solving patterns",
+      "100 must-do problems, with answers"
+    ],
+    "editions": [
+      {
+        "label": "Short",
+        "pages": 256
+      }
+    ],
+    "chapters": [
+      "0. C++ and STL Basics for DSA (Start Here)",
+      "1. How to Approach Any DSA Problem",
+      "2. Time and Space Complexity",
+      "3. Arrays, Strings and Prefix Sums",
+      "4. Two Pointers",
+      "5. Sliding Window",
+      "6. Hashing",
+      "7. Binary Search",
+      "8. Sorting and Intervals",
+      "9. Recursion and Backtracking",
+      "10. Linked Lists",
+      "11. Stacks, Queues and Monotonic Stack",
+      "12. Trees and Binary Search Trees",
+      "13. Heaps and Priority Queues",
+      "14. Graphs I: BFS, DFS and Topological Sort",
+      "15. Graphs II: Shortest Paths, Union-Find and MST",
+      "16. Dynamic Programming I: Foundations",
+      "17. Dynamic Programming II: Grids, Strings and Subsequences",
+      "18. Greedy Algorithms",
+      "19. Tries, Bit Manipulation and Math Tricks",
+      "20. Must-Do Problem Bank and Pattern Cheat Sheet",
+      "Appendix A: Pattern Recognition Cheat Sheet",
+      "Appendix B: Big-O and C++ STL Cheat Sheet",
+      "Appendix C: C++ Code Templates",
+      "Appendix D: Glossary"
+    ],
+    "previewChapters": 2,
+    "previewPages": 34,
+    "seo": {
+      "title": "DSA in C++ Book for Placements | Shreyash Tripathi",
+      "description": "DSA in C++ for placements and coding interviews: C++ and STL basics, 20 patterns, 100 must-do problems, dry runs and Big-O. Free PDF preview."
+    },
+    "keywords": [
+      "dsa in c++ book",
+      "data structures and algorithms c++",
+      "c++ stl for coding interviews"
+    ]
+  },
+  {
     "slug": "dbms",
     "title": "Database Management Systems",
     "shortTitle": "DBMS",
