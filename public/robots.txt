@@ -1,4 +1,4 @@
-# Shreyash Tripathi — Frontend Developer & UI/UX Engineer — portfolio
+# Shreyash Tripathi — Full-Stack Developer & UI/UX Engineer — portfolio
 # Search engines
 User-agent: Googlebot
 Allow: /
