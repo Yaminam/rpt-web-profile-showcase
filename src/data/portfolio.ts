@@ -319,7 +319,7 @@ export const projects: Project[] = [
         },
         {
           title: "Interface",
-          text: "Responsive layouts from mobile to desktop, a dark/light theme that follows the system setting, and loading skeletons, built with Tailwind CSS and shadcn/ui components.",
+          text: "Responsive layouts from mobile to desktop, a dark/light theme that follows the system setting, and loading states while jobs load, built with Tailwind CSS and shadcn/ui components.",
         },
       ],
       challenges: [
@@ -332,8 +332,8 @@ export const projects: Project[] = [
           solution: "A relational PostgreSQL schema with foreign keys ties users, companies, jobs, applications, saved jobs, skills, work experience and education together, with seed data for testing.",
         },
         {
-          problem: "Pages that load lists of jobs and stats can feel slow or jumpy while data arrives.",
-          solution: "Every main route (home, jobs, companies, dashboard) has its own loading skeleton through the App Router's loading.tsx, so the layout appears instantly and fills in without jumping.",
+          problem: "A candidate must never be able to apply to the same job twice, even with a double click or a retried request.",
+          solution: "The applications API rejects a second application for the same job and user with a clear error, and the database schema backs it up with a UNIQUE (job_id, user_id) constraint; saved jobs use the same rule.",
         },
       ],
       results: [
