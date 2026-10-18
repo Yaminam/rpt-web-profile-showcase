@@ -2,6 +2,8 @@
 
 > Full-Stack Developer & UI/UX Engineer based in Noida, India. Builds production UI with React, Next.js (App Router) and TypeScript, and contributes to AI-integrated SaaS platforms and marketing sites at a digital product agency. Available for full-time roles (full-stack, frontend or backend) and freelance full-stack projects (https://shreyashtripathi.in/hire).
 
+Name also searched as: Shreyas Tripathi.
+
 ## Summary
 
 Author of the Job-Ready Series (8 interview-prep books for developers, about 3,200 pages): https://shreyashtripathi.in/books

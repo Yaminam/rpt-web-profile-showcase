@@ -288,8 +288,8 @@ export const projects: Project[] = [
     name: "Job Portal",
     slug: "mern-job-portal",
     seo: {
-      title: "Full-Stack Job Portal Case Study | Shreyash Tripathi",
-      description: "A full-stack job portal by Shreyash Tripathi, built with Next.js 15, TypeScript, JWT auth and REST APIs: job search, applications and a dashboard.",
+      title: "Job Portal & Job Board App Case Study | Shreyash Tripathi",
+      description: "Job portal and job board app by Shreyash Tripathi, built with Next.js 15, TypeScript, JWT auth and REST APIs: job search, applications and a dashboard.",
     },
     links: {
       demo: "https://v0-mern-job-portal-one.vercel.app",

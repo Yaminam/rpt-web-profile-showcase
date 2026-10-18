@@ -81,7 +81,7 @@ export const books: Book[] = [
     "previewChapters": 2,
     "previewPages": 62,
     "seo": {
-      "title": "System Design Book for Interviews | Shreyash Tripathi",
+      "title": "System Design Zero to Hero Book | Shreyash Tripathi",
       "description": "System Design: From Zero to Hero, a book for placements and interviews: 25+ case studies, simple language, question bank. Free PDF preview."
     },
     "keywords": [
