@@ -294,6 +294,7 @@ export const projects: Project[] = [
     links: {
       demo: "https://v0-mern-job-portal-one.vercel.app",
       repo: "https://github.com/Yaminam/jobportal",
+      article: "https://dev.to/shreyashtripathi/building-a-job-portal-with-nextjs-15-route-handlers-auth-applications-and-the-schema-behind-them-4of4",
     },
     caseStudy: {
       overview: [
