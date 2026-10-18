@@ -4,14 +4,25 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [
         {
           "type": "host",
           "value": "rpt-web-profile-showcase.vercel.app"
         }
       ],
-      "destination": "https://shreyashtripathi.in/:path*",
+      "destination": "https://shreyashtripathi.in/",
+      "permanent": true
+    },
+    {
+      "source": "/:path+",
+      "has": [
+        {
+          "type": "host",
+          "value": "rpt-web-profile-showcase.vercel.app"
+        }
+      ],
+      "destination": "https://shreyashtripathi.in/:path+",
       "permanent": true
     }
   ],
