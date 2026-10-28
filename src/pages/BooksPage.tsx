@@ -78,7 +78,7 @@ const BooksPage = () => {
               The {SERIES_NAME}: interview books for developers
             </h1>
             <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              System Design, DSA in Java, Python and C++, DevOps, DBMS, Computer Networks, Operating Systems and Full-Stack
+              System Design, DSA in Java, Python and C++, DevOps, Cloud, Salesforce, DBMS, Computer Networks, Operating Systems and Full-Stack
               TypeScript with Next.js, written by {profile.name} in simple language, with worked examples and interview
               questions with answers.
             </p>
@@ -151,6 +151,10 @@ const BooksPage = () => {
         ·{" "}
         <a href="/hire" className="hover:text-foreground">
           hire me: frontend &amp; full-stack
+        </a>{" "}
+        ·{" "}
+        <a href="/hire/seo" className="hover:text-foreground">
+          seo, aeo &amp; geo services
         </a>
       </footer>
     </div>

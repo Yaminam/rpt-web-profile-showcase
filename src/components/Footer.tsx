@@ -119,6 +119,11 @@ const Footer = () => {
                   › hire me: frontend &amp; full-stack developer
                 </a>
               </li>
+              <li>
+                <a href="/hire/seo" className="hover:text-neon-cyan">
+                  › seo, aeo &amp; geo services
+                </a>
+              </li>
             </ul>
 
             <div className="mt-5 flex items-center gap-3">

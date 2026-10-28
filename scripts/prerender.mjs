@@ -9,7 +9,7 @@ const ssrDir = path.join(root, "dist-ssr");
 const htmlPath = path.join(root, "dist", "index.html");
 const SITE_URL = "https://shreyashtripathi.in";
 
-const { render, bookPages, caseStudyPages, hireSeo } = await import(pathToFileURL(path.join(ssrDir, "entry-server.js")).href);
+const { render, bookPages, caseStudyPages, hireSeo, seoServicesSeo } = await import(pathToFileURL(path.join(ssrDir, "entry-server.js")).href);
 
 const template = await readFile(htmlPath, "utf8");
 const marker = '<div id="root"></div>';
@@ -61,6 +61,7 @@ function withHead(html, { path: pagePath, title, description, jsonLd, image }) {
 const pages = [
   { url: "/", file: "index.html" },
   { url: "/hire", file: "hire.html", seo: hireSeo() },
+  { url: "/hire/seo", file: "hire/seo.html", seo: seoServicesSeo() },
   // Books: /books -> books.html, /books/<slug> -> books/<slug>.html (vercel.json cleanUrls).
   ...bookPages().map((seo) => ({ url: seo.path, file: `${seo.path.slice(1)}.html`, seo })),
   // Case studies: /projects/<slug> is served from projects/<slug>.html (vercel.json cleanUrls).

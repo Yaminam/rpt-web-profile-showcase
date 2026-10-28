@@ -623,6 +623,46 @@ export const SITE_URL = "https://shreyashtripathi.in";
 /** Projects that have their own /projects/<slug> case-study page. */
 export const caseStudies = projects.filter((p): p is Project & { slug: string } => Boolean(p.slug));
 
+/** /hire/seo: secondary hire page for AI-first SEO, AEO and GEO work. Facts only: the proof is this site's own results. */
+export const seoServices = {
+  seo: {
+    title: "AI-First SEO, AEO & GEO Services | Shreyash Tripathi",
+    description:
+      "Get found on Google and in AI answers (ChatGPT, Perplexity, Gemini). Technical SEO, structured data, llms.txt and AI-crawler tracking by a developer.",
+  },
+  headline: "AI-first SEO, AEO & GEO, done by a developer",
+  intro:
+    "I'm Shreyash Tripathi, a full-stack developer who does search work from the code up. SEO gets you ranked on Google; AEO (answer engine optimization) gets your content used as the answer; GEO (generative engine optimization) gets you named and cited by AI assistants like ChatGPT, Perplexity and Gemini. I fix the technical side myself instead of handing you a report.",
+  terms: [
+    { title: "SEO", text: "Search engine optimization: crawlable pages, the right titles and descriptions, speed and structured data so Google ranks you." },
+    { title: "AEO", text: "Answer engine optimization: clear question-and-answer content and FAQ sections so search features and assistants can lift your answer." },
+    { title: "GEO", text: "Generative engine optimization: consistent facts about you across the web, llms.txt and open access for AI crawlers, so AI assistants name and cite you." },
+  ],
+  services: [
+    { title: "Technical SEO audit & fixes", text: "Crawlability, indexing, canonical URLs, redirects, sitemaps and robots rules, fixed in your code, not just listed." },
+    { title: "SEO for React, Vite & Next.js", text: "Prerendering or server rendering so single-page apps show real content to Google and AI crawlers instead of an empty page." },
+    { title: "Structured data (Schema.org)", text: "JSON-LD for people, organizations, products, services, books, FAQs and breadcrumbs, validated for rich results." },
+    { title: "AEO: answer-ready content", text: "FAQ and how-to sections written as direct answers, matched to the questions people actually search." },
+    { title: "GEO: visibility in AI assistants", text: "llms.txt, AI-crawler access, consistent profiles across GitHub, LinkedIn and dev.to, and tracking of GPTBot, ClaudeBot and PerplexityBot visits in GA4." },
+    { title: "Search Console, Bing & GA4 setup", text: "Verification, sitemaps, IndexNow, lead events and a simple monthly read of what's working." },
+    { title: "Speed & Core Web Vitals", text: "Lighthouse and Core Web Vitals improvements: image optimization, code splitting and render-blocking fixes." },
+    { title: "Data-driven keyword tuning", text: "Titles and descriptions rewritten from your real Search Console queries, so pages that are shown but not clicked start getting clicks." },
+  ],
+  proof: [
+    "Took this site from a parked domain to 15+ indexable pages, with 18,000+ words crawlers can read (from 134).",
+    "Lighthouse SEO, accessibility and best practices at 100; mobile performance 30 to 70-80.",
+    "Ranking around position 3 for my name within the first month, with clicks growing week over week.",
+    "New book pages earned more search clicks than the home page within 2 weeks of launch.",
+    "ChatGPT identifies me and links this site when asked who I am.",
+  ],
+  faqs: [
+    { q: "What is the difference between SEO, AEO and GEO?", a: "SEO gets your pages ranked in search results. AEO shapes your content so it can be used directly as an answer. GEO makes AI assistants like ChatGPT, Perplexity and Gemini know about you, name you and cite your site. Good AEO and GEO are built on top of solid technical SEO." },
+    { q: "How long until results show?", a: "Indexing usually takes days to a couple of weeks. Ranking for your name or brand often follows within weeks; competitive keywords and AI-assistant mentions take one to three months and depend on links and mentions from other sites." },
+    { q: "Do you need access to my code?", a: "For technical fixes, yes: a repository or CMS access. For an audit or a Search Console review, read access is enough." },
+    { q: "Can you work on React or Next.js sites?", a: "Yes, that's my main stack. Single-page React and Vite apps often need prerendering before Google and AI crawlers can see their content, and I did exactly that on this site." },
+  ],
+};
+
 /** /hire page: open to full-time roles and freelance work. Facts only — no invented prices, clients or reviews. */
 export const hire = {
   seo: {
@@ -641,7 +681,6 @@ export const hire = {
     { title: "UI/UX Engineer", text: "Turning designs into pixel-accurate, accessible UI, and improving UX with motion and mobile-first layouts." },
     { title: "Web Developer", text: "Marketing sites, landing pages and SEO for agencies and brands, including AI-powered features." },
     { title: "AI Integration Developer", text: "Adding OpenAI and Anthropic Claude features to products: content agents, chat and automation." },
-    { title: "SEO / AEO / GEO Developer", text: "AI-first search work: technical SEO, structured data, llms.txt and AI-crawler tracking so sites show up in Google and in ChatGPT, Perplexity and Gemini answers." },
   ],
   intro:
     "I'm Shreyash Tripathi, a frontend and full-stack developer with a strong UI/UX eye: React, Next.js and TypeScript on the frontend; Node.js, Express, REST APIs, Socket.IO and PostgreSQL/Supabase on the backend. I build complete products for AI-integrated SaaS platforms and marketing sites, and I'm open to full-time roles and freelance projects in Noida, Delhi NCR, Uttar Pradesh and Gujarat, or remotely from anywhere.",
@@ -697,8 +736,8 @@ export const hire = {
       text: "OpenAI and Anthropic Claude SDK integrations, from content pipelines to in-app assistants. I built a daily AI content agent that cut manual content work by roughly 40%.",
     },
     {
-      title: "AI-first SEO, AEO & GEO",
-      text: "Get found on Google and in AI answers (ChatGPT, Perplexity, Gemini): prerendering, structured data, llms.txt, AI-crawler tracking, IndexNow, Search Console and GA4. I did it for this site: indexed within weeks, named by ChatGPT for my name, and mobile Lighthouse 30 to 70-80.",
+      title: "Fast, SEO-ready websites",
+      text: "Prerendered, accessible sites with structured data and strict security headers, plus performance and SEO fixes for existing React, Vite or Next.js sites. This portfolio went from a mobile Lighthouse score of 30 to 70-80.",
     },
   ],
   process: [
@@ -722,7 +761,7 @@ export const hire = {
     },
     {
       q: "Has Shreyash Tripathi written any books?",
-      a: "Yes. He wrote the Job-Ready Series, nine books for developers preparing for interviews: System Design, DSA in Java, DSA in Python, DSA in C++, DevOps, DBMS, Computer Networks, Operating Systems and Full-Stack TypeScript with Next.js. Free previews are at shreyashtripathi.in/books.",
+      a: "Yes. He wrote the Job-Ready Series, eleven books for developers preparing for interviews and job switches: System Design, DSA in Java, DSA in Python, DSA in C++, DevOps, Cloud (AWS, Azure, GCP), Salesforce, DBMS, Computer Networks, Operating Systems and Full-Stack TypeScript with Next.js. Free previews are at shreyashtripathi.in/books.",
     },
     {
       q: "What kind of freelance projects does he take on?",

@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ProjectPage from "./pages/ProjectPage";
 import HirePage from "./pages/HirePage";
+import SeoServicesPage from "./pages/SeoServicesPage";
 import BooksPage from "./pages/BooksPage";
 import BookPage from "./pages/BookPage";
 
@@ -32,6 +33,7 @@ export const AppRoutes = () => (
     <Route path="/" element={<Index />} />
     <Route path="/projects/:slug" element={<ProjectPage />} />
     <Route path="/hire" element={<HirePage />} />
+    <Route path="/hire/seo" element={<SeoServicesPage />} />
     <Route path="/books" element={<BooksPage />} />
     <Route path="/books/:slug" element={<BookPage />} />
     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

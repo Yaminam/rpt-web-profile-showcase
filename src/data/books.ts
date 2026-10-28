@@ -312,6 +312,110 @@ export const books: Book[] = [
     ]
   },
   {
+    "slug": "cloud",
+    "title": "Cloud Computing: The Job-Switch Guide",
+    "shortTitle": "Cloud (AWS)",
+    "tagline": "Job-Ready Series, Job-Switch edition",
+    "blurb": "AWS-first and multi-cloud ready: every cloud service interviews ask about, in simple language, from IAM and VPCs to EC2, Lambda, S3 and DynamoDB, plus security, cost and architecture, with free-tier labs, real scenarios and projects.",
+    "highlights": [
+      "AWS-first, with Azure and GCP for AWS engineers",
+      "Free-tier labs, real scenarios and architecture patterns",
+      "120+ interview questions with answers"
+    ],
+    "editions": [
+      {
+        "label": "Job-Switch",
+        "pages": 345
+      }
+    ],
+    "chapters": [
+      "1. Cloud Computing and the Cloud Career Roadmap",
+      "2. Cloud Foundations: Regions, Pricing and the Well-Architected Framework",
+      "3. Identity and Access Management",
+      "4. Cloud Networking: VPC in Depth",
+      "5. Compute: EC2, Auto Scaling and Load Balancing",
+      "6. Storage: S3, EBS, EFS and Backup",
+      "7. Databases in the Cloud",
+      "8. Containers and Serverless",
+      "9. Messaging, Events and Integration",
+      "10. DNS, CDN and the Edge",
+      "11. Cloud Security and Compliance",
+      "12. Monitoring, Logging and Cost Optimization",
+      "13. Infrastructure as Code and Automation",
+      "14. High Availability, Disaster Recovery and Architecture Patterns",
+      "15. Azure and GCP for AWS Engineers",
+      "16. Cloud Projects and Real Scenarios",
+      "17. Cloud Interview Question Bank",
+      "Appendix A: AWS CLI and Service Cheat Sheet",
+      "Appendix B: Architecture and Policy Templates",
+      "Appendix C: Glossary",
+      "Appendix D: Job Switch Toolkit"
+    ],
+    "previewChapters": 2,
+    "previewPages": 42,
+    "seo": {
+      "title": "Cloud Computing Book: AWS, Azure & GCP | Shreyash Tripathi",
+      "description": "AWS-first cloud job-switch guide: IAM, VPC, EC2, S3, Lambda, DynamoDB, security, cost and architecture, with free-tier labs and 120+ interview Q&A."
+    },
+    "keywords": [
+      "cloud computing book",
+      "aws interview questions",
+      "aws azure gcp guide"
+    ]
+  },
+  {
+    "slug": "salesforce",
+    "title": "Salesforce: The Job-Switch Guide",
+    "shortTitle": "Salesforce",
+    "tagline": "Job-Ready Series, Job-Switch edition",
+    "blurb": "From Admin to Developer: everything Salesforce interviews ask, in simple language, from the data model, security, Flow and reports to Apex, SOQL, triggers, governor limits, Lightning Web Components, integration and DevOps, with org labs and projects.",
+    "highlights": [
+      "Admin and Developer tracks in one book",
+      "Org labs, real scenarios and projects",
+      "120+ interview questions with answers"
+    ],
+    "editions": [
+      {
+        "label": "Job-Switch",
+        "pages": 360
+      }
+    ],
+    "chapters": [
+      "1. The Salesforce Ecosystem and Career Roadmap",
+      "2. Platform Basics and the Data Model",
+      "3. Security and the Sharing Model",
+      "4. Automation with Flow and Declarative Tools",
+      "5. Reports, Dashboards and Data Management",
+      "6. Sales Cloud and Service Cloud Essentials",
+      "7. Apex Fundamentals",
+      "8. SOQL and SOSL",
+      "9. Apex Triggers and Governor Limits",
+      "10. Asynchronous Apex and Testing",
+      "11. Lightning Web Components I",
+      "12. Lightning Web Components II: Data and Apex",
+      "13. Integration",
+      "14. Salesforce DevOps and Deployment",
+      "15. Experience Cloud, Data Cloud and Agentforce",
+      "16. Salesforce Projects and Real Scenarios",
+      "17. Salesforce Interview Question Bank",
+      "Appendix A: Apex, SOQL and sf CLI Cheat Sheet",
+      "Appendix B: Code Templates",
+      "Appendix C: Glossary",
+      "Appendix D: Job Switch Toolkit"
+    ],
+    "previewChapters": 2,
+    "previewPages": 41,
+    "seo": {
+      "title": "Salesforce Admin & Developer Book | Shreyash Tripathi",
+      "description": "Salesforce job-switch guide, admin to developer: data model, security, Flow, Apex, SOQL, triggers, LWC and integration, with labs and 120+ interview Q&A."
+    },
+    "keywords": [
+      "salesforce book",
+      "salesforce interview questions",
+      "apex lwc salesforce developer guide"
+    ]
+  },
+  {
     "slug": "dbms",
     "title": "Database Management Systems",
     "shortTitle": "DBMS",

@@ -6,7 +6,7 @@ Name also searched as: Shreyas Tripathi.
 
 ## Summary
 
-Author of the Job-Ready Series (9 interview-prep books for developers, about 3,500 pages): https://shreyashtripathi.in/books
+Author of the Job-Ready Series (11 interview-prep and job-switch books for developers, about 4,200 pages): https://shreyashtripathi.in/books
 
 Shreyash Tripathi is a full-stack developer and UI/UX engineer with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. He builds UI across React, Next.js (App Router) and TypeScript codebases using Tailwind CSS, Supabase and REST APIs, and is comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration. He is currently a Junior Developer, UI/UX at Garage Collective, promoted from an AI Trainee role.
 
@@ -47,6 +47,8 @@ Shreyash wrote a series of interview and job-preparation books for developers, a
 - [DSA in Python: From Zero to Offer](https://shreyashtripathi.in/books/dsa-python): Python edition 406 pages. Python basics included; 20 problem-solving patterns; Brute force to optimal, with dry runs. Free preview PDF.
 - [DSA in C++: From Zero to Offer](https://shreyashtripathi.in/books/dsa-cpp): Short edition 256 pages. C++ and STL basics included; 20 problem-solving patterns; 100 must-do problems, with answers. Free preview PDF.
 - [DevOps: The Job-Switch Guide](https://shreyashtripathi.in/books/devops): Job-Switch edition 364 pages. 13 tools from Linux to Kubernetes (Docker, CI/CD, AWS, Terraform, Ansible, Prometheus, Grafana); hands-on labs, real configs and production incidents; 120+ interview questions with answers. Free preview PDF.
+- [Cloud Computing: The Job-Switch Guide](https://shreyashtripathi.in/books/cloud): Job-Switch edition 345 pages. AWS-first with Azure and GCP: IAM, VPC, EC2, S3, Lambda, DynamoDB, security, cost and architecture; free-tier labs and projects; 120+ interview questions with answers. Free preview PDF.
+- [Salesforce: The Job-Switch Guide](https://shreyashtripathi.in/books/salesforce): Job-Switch edition 360 pages. From Admin to Developer: data model, security, Flow, reports, Apex, SOQL, triggers, governor limits, LWC, integration and DevOps; org labs and projects; 120+ interview questions with answers. Free preview PDF.
 - [Database Management Systems](https://shreyashtripathi.in/books/dbms): Complete 422 pages, Short 186 pages. ER models to B+ trees; SQL from basics to window functions; 120+ interview questions with answers. Free preview PDF.
 - [Computer Networks](https://shreyashtripathi.in/books/computer-networks): Complete 364 pages, Short 164 pages. OSI and TCP/IP to TLS; Worked subnetting numericals; 100+ interview questions with answers. Free preview PDF.
 - [Operating Systems](https://shreyashtripathi.in/books/operating-systems): Short 192 pages. Processes to containers and Linux; Worked scheduling and paging numericals; 90+ interview questions with answers. Free preview PDF.
@@ -74,7 +76,8 @@ Shreyash wrote a series of interview and job-preparation books for developers, a
 ## Links
 
 - [Portfolio](https://shreyashtripathi.in/): Projects, experience, skills, FAQ and contact
-- [Hire me: frontend & full-stack developer](https://shreyashtripathi.in/hire): Available for full-time roles (full-stack, frontend or backend) and freelance full-stack projects (React, Next.js, Node.js, PostgreSQL) in Noida, Delhi NCR, Uttar Pradesh, Gujarat (Ahmedabad) or remote anywhere; services, process and contact Also offers AI-first SEO, AEO and GEO: technical SEO, structured data, llms.txt and AI-crawler tracking so sites appear in Google and AI answers.
+- [Hire me: frontend & full-stack developer](https://shreyashtripathi.in/hire): Available for full-time roles (full-stack, frontend or backend) and freelance full-stack projects (React, Next.js, Node.js, PostgreSQL) in Noida, Delhi NCR, Uttar Pradesh, Gujarat (Ahmedabad) or remote anywhere; services, process and contact
+- [AI-first SEO, AEO & GEO services](https://shreyashtripathi.in/hire/seo): Technical SEO, structured data, llms.txt and AI-crawler tracking so sites appear in Google and in ChatGPT, Perplexity and Gemini answers. Proof: this site's own results.
 - [PurrCase case study](https://shreyashtripathi.in/projects/purrcase): What he built, features and tech stack
 - [SketchRace case study](https://shreyashtripathi.in/projects/sketchrace): What he built, features and tech stack
 - [Asset & Credential Vault case study](https://shreyashtripathi.in/projects/asset-credential-vault): Internal zero-knowledge asset, credential and billing manager, encryption design and features

@@ -1,4 +1,4 @@
-import { caseStudies, hire, profile, SITE_URL, type Project } from "@/data/portfolio";
+import { caseStudies, hire, profile, seoServices, SITE_URL, type Project } from "@/data/portfolio";
 import { bookCoverJpg, bookPreview, books, SERIES_NAME, type Book } from "@/data/books";
 
 export type PageSeo = {
@@ -107,7 +107,7 @@ export function hireSeo(): PageSeo {
           "@type": "Service",
           "@id": `${url}#service`,
           name: "Frontend and full-stack web development (React, Next.js, Node.js)",
-          serviceType: ["Frontend development", "Full-stack web development", "UI/UX engineering", "SEO, AEO and GEO (AI search optimization)"],
+          serviceType: ["Frontend development", "Full-stack web development", "UI/UX engineering"],
           description: hire.intro,
           url,
           provider: {
@@ -226,7 +226,7 @@ export function bookSeo(b: Book): PageSeo {
 export const BOOKS_SEO = {
   title: "Placement Prep Books: DSA, DBMS, OS, CN | Shreyash Tripathi",
   description:
-    "Placement and interview prep books by Shreyash Tripathi: DSA (Java, Python, C++), DBMS, OS, CN, System Design, DevOps, Next.js. Free PDF previews.",
+    "Interview and job-switch books by Shreyash Tripathi: DSA, DBMS, OS, CN, System Design, DevOps, Cloud, Salesforce, Next.js. Free PDF previews.",
 };
 
 /** Head tags + structured data for /books (the series index). */
@@ -267,3 +267,61 @@ export function booksIndexSeo(): PageSeo {
 }
 
 export const bookPages = (): PageSeo[] => [booksIndexSeo(), ...books.map(bookSeo)];
+
+/** Head tags + structured data for /hire/seo (AI-first SEO, AEO and GEO services). */
+export function seoServicesSeo(): PageSeo {
+  const path = "/hire/seo";
+  const url = `${SITE_URL}${path}`;
+  return {
+    path,
+    title: seoServices.seo.title,
+    description: seoServices.seo.description,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${url}#webpage`,
+          url,
+          name: seoServices.seo.title,
+          description: seoServices.seo.description,
+          inLanguage: "en",
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          about: { "@id": PERSON_ID },
+          mainEntity: { "@id": `${url}#service` },
+          breadcrumb: { "@id": `${url}#breadcrumb` },
+        },
+        {
+          "@type": "Service",
+          "@id": `${url}#service`,
+          name: "AI-first SEO, AEO and GEO",
+          serviceType: ["Search engine optimization", "Answer engine optimization", "Generative engine optimization", "Technical SEO"],
+          description: seoServices.intro,
+          url,
+          provider: { "@type": "Person", "@id": PERSON_ID, name: profile.name, url: `${SITE_URL}/` },
+          areaServed: [
+            { "@type": "Country", name: "India" },
+            { "@type": "Place", name: "Worldwide (remote)" },
+          ],
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "SEO, AEO and GEO services",
+            itemListElement: seoServices.services.map((svc) => ({
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: svc.title, description: svc.text },
+            })),
+          },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${url}#breadcrumb`,
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: profile.name, item: `${SITE_URL}/` },
+            { "@type": "ListItem", position: 2, name: "Hire me", item: `${SITE_URL}/hire` },
+            { "@type": "ListItem", position: 3, name: "SEO, AEO & GEO", item: url },
+          ],
+        },
+      ],
+    },
+  };
+}

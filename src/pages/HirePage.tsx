@@ -73,9 +73,6 @@ const HirePage = () => {
               <a href={profile.resume} download className="btn-ghost">
                 <FileDown className="h-4 w-4" /> resume.pdf
               </a>
-              <a href="/Shreyash_Tripathi_Resume_FullStack_SEO.pdf" download data-event="resume_seo_download" className="btn-ghost">
-                <FileDown className="h-4 w-4" /> resume_fullstack_+_seo.pdf
-              </a>
               <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn-ghost">
                 <Linkedin className="h-4 w-4" /> LinkedIn
               </a>
@@ -102,7 +99,7 @@ const HirePage = () => {
         {/* Roles: each job title written out so searches for frontend, full-stack, React, etc. can match */}
         <section className="space-y-5">
           <h2 className="font-display text-2xl font-bold md:text-3xl">Roles I can join as</h2>
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {hire.roles.map((r) => (
               <li key={r.title} className="cyber-card p-5">
                 <h3 className="font-display font-bold">{r.title}</h3>
@@ -165,15 +162,15 @@ const HirePage = () => {
               <p className="mt-2 max-w-3xl text-muted-foreground">
                 The {SERIES_NAME}: {books.length} books and about{" "}
                 {(Math.floor(books.reduce((n, b) => n + b.editions[0].pages, 0) / 100) * 100).toLocaleString("en-IN")}{" "}
-                pages on System Design, DSA, DBMS, Computer Networks, Operating Systems and Full-Stack TypeScript, written
-                for developers preparing for interviews.
+                pages on System Design, DSA, DBMS, Computer Networks, Operating Systems, DevOps, Cloud, Salesforce and Full-Stack
+                TypeScript, written for developers preparing for interviews and job switches.
               </p>
             </div>
             <a href="/books" className="btn-ghost text-xs">
               all_books <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
           </div>
-          <ul className="grid grid-cols-4 gap-3 sm:grid-cols-4 lg:grid-cols-9">
+          <ul className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6">
             {books.map((b) => (
               <li key={b.slug}>
                 <a href={`/books/${b.slug}`} className="group block" title={b.title}>
@@ -256,7 +253,10 @@ const HirePage = () => {
         <a href="/" className="hover:text-foreground">
           {profile.name}
         </a>{" "}
-        · Full-Stack Developer · Noida · Delhi NCR · UP · Gujarat · Remote
+        · Full-Stack Developer · Noida · Delhi NCR · UP · Gujarat · Remote ·{" "}
+        <a href="/hire/seo" className="hover:text-foreground">
+          seo, aeo &amp; geo services
+        </a>
       </footer>
     </div>
   );

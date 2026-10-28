@@ -15,19 +15,45 @@ const coreChapters = (b: Book) =>
 const questionsLine = (b: Book) =>
   b.highlights.find((h) => /question/i.test(h))?.toLowerCase() ?? "interview questions with answers";
 
+/** Job-switch books: written for people moving into a new role, not only placements. */
+const JOB_SWITCH: Record<string, { role: string; audience: string; whoFor: string[] }> = {
+  devops: {
+    role: "a DevOps job",
+    audience: "developers switching into DevOps and students targeting DevOps roles",
+    whoFor: [
+      "Developers and testers switching into DevOps, cloud or SRE roles",
+      "Students targeting DevOps and cloud internships who want one complete roadmap",
+      "Engineers preparing for DevOps interviews who need hands-on labs plus a question bank",
+    ],
+  },
+  cloud: {
+    role: "a cloud job",
+    audience: "developers and IT professionals moving into cloud roles and students targeting AWS jobs",
+    whoFor: [
+      "Developers, sysadmins and support engineers switching into cloud engineer or architect roles",
+      "Students preparing for AWS, Azure or GCP interviews and certifications who want one practical guide",
+      "Engineers who know AWS and need to map their skills to Azure and GCP",
+    ],
+  },
+  salesforce: {
+    role: "a Salesforce job",
+    audience: "people moving into Salesforce admin or developer roles",
+    whoFor: [
+      "Professionals switching into Salesforce Admin roles from support, sales ops or testing",
+      "Developers moving into Salesforce Developer roles (Apex, SOQL, Lightning Web Components)",
+      "Admins preparing to grow into development, and anyone preparing for Salesforce interviews",
+    ],
+  },
+};
+
 export const whoFor = (b: Book): string[] => {
   const base = [
     "Students in placement season preparing for campus drives and off-campus interviews",
     "Students applying for internships who want one complete, simple resource",
     "Developers preparing for a job switch who need a fast but complete revision",
   ];
-  if (b.slug === "devops") {
-    return [
-      "Developers and testers switching into DevOps, cloud or SRE roles",
-      "Students targeting DevOps and cloud internships who want one complete roadmap",
-      "Engineers preparing for DevOps interviews who need hands-on labs plus a question bank",
-    ];
-  }
+  const sw = JOB_SWITCH[b.slug];
+  if (sw) return sw.whoFor;
   if (b.slug === "fullstack-typescript-nextjs") {
     base[1] = "Students building projects and applying for frontend or full-stack roles";
   }
@@ -56,8 +82,8 @@ export const bookFaqs = (b: Book): { q: string; a: string }[] => {
   const last = core[core.length - 1];
   const faqs = [
     {
-      q: b.slug === "devops" ? `Is ${b.title} good for switching to a DevOps job?` : `Is ${b.title} good for placement preparation?`,
-      a: `Yes, it was written for ${b.slug === "devops" ? "developers switching into DevOps and students targeting DevOps roles" : "students preparing for placements, internships and interviews"}. It starts from the basics (${first}) and goes all the way to ${last}, with ${questionsLine(b)}.`,
+      q: JOB_SWITCH[b.slug] ? `Is ${b.title} good for switching to ${JOB_SWITCH[b.slug].role}?` : `Is ${b.title} good for placement preparation?`,
+      a: `Yes, it was written for ${JOB_SWITCH[b.slug]?.audience ?? "students preparing for placements, internships and interviews"}. It starts from the basics (${first}) and goes all the way to ${last}, with ${questionsLine(b)}.`,
     },
     {
       q: `Is there a free PDF of ${b.title}?`,
