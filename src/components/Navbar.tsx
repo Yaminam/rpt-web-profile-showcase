@@ -74,9 +74,10 @@ const Navbar = () => {
               </span>
             </span>
           </a>
+          {/* Hire page hidden for now
           <a href="/hire" className="btn-ghost py-2 text-xs">
             hire_me
-          </a>
+          </a> */}
           <a href={profile.resume} download className="btn-neon py-2 text-xs">
             <FileDown className="h-4 w-4" /> resume
           </a>
@@ -126,11 +127,12 @@ const Navbar = () => {
                 </span>
               </a>
             </li>
+            {/* Hire page hidden for now
             <li className="px-3 pt-2">
               <a href="/hire" className="btn-ghost w-full py-2 text-xs" onClick={() => setOpen(false)}>
                 hire_me: full-time &amp; freelance
               </a>
-            </li>
+            </li> */}
             <li className="px-3 pt-2">
               <a
                 href={profile.resume}

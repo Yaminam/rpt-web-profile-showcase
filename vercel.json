@@ -4,6 +4,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/hire",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/",
       "has": [
         {
