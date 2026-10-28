@@ -641,6 +641,7 @@ export const hire = {
     { title: "UI/UX Engineer", text: "Turning designs into pixel-accurate, accessible UI, and improving UX with motion and mobile-first layouts." },
     { title: "Web Developer", text: "Marketing sites, landing pages and SEO for agencies and brands, including AI-powered features." },
     { title: "AI Integration Developer", text: "Adding OpenAI and Anthropic Claude features to products: content agents, chat and automation." },
+    { title: "SEO / AEO / GEO Developer", text: "AI-first search work: technical SEO, structured data, llms.txt and AI-crawler tracking so sites show up in Google and in ChatGPT, Perplexity and Gemini answers." },
   ],
   intro:
     "I'm Shreyash Tripathi, a frontend and full-stack developer with a strong UI/UX eye: React, Next.js and TypeScript on the frontend; Node.js, Express, REST APIs, Socket.IO and PostgreSQL/Supabase on the backend. I build complete products for AI-integrated SaaS platforms and marketing sites, and I'm open to full-time roles and freelance projects in Noida, Delhi NCR, Uttar Pradesh and Gujarat, or remotely from anywhere.",
@@ -696,8 +697,8 @@ export const hire = {
       text: "OpenAI and Anthropic Claude SDK integrations, from content pipelines to in-app assistants. I built a daily AI content agent that cut manual content work by roughly 40%.",
     },
     {
-      title: "Fast, SEO-ready websites",
-      text: "Prerendered, accessible sites with structured data and strict security headers, plus performance and SEO fixes for existing React, Vite or Next.js sites. This portfolio went from a mobile Lighthouse score of 30 to 70-80.",
+      title: "AI-first SEO, AEO & GEO",
+      text: "Get found on Google and in AI answers (ChatGPT, Perplexity, Gemini): prerendering, structured data, llms.txt, AI-crawler tracking, IndexNow, Search Console and GA4. I did it for this site: indexed within weeks, named by ChatGPT for my name, and mobile Lighthouse 30 to 70-80.",
     },
   ],
   process: [

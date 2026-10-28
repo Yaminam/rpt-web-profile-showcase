@@ -73,6 +73,9 @@ const HirePage = () => {
               <a href={profile.resume} download className="btn-ghost">
                 <FileDown className="h-4 w-4" /> resume.pdf
               </a>
+              <a href="/Shreyash_Tripathi_Resume_FullStack_SEO.pdf" download data-event="resume_seo_download" className="btn-ghost">
+                <FileDown className="h-4 w-4" /> resume_fullstack_+_seo.pdf
+              </a>
               <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn-ghost">
                 <Linkedin className="h-4 w-4" /> LinkedIn
               </a>
@@ -99,7 +102,7 @@ const HirePage = () => {
         {/* Roles: each job title written out so searches for frontend, full-stack, React, etc. can match */}
         <section className="space-y-5">
           <h2 className="font-display text-2xl font-bold md:text-3xl">Roles I can join as</h2>
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {hire.roles.map((r) => (
               <li key={r.title} className="cyber-card p-5">
                 <h3 className="font-display font-bold">{r.title}</h3>
