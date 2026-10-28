@@ -224,7 +224,7 @@ export const projects: Project[] = [
     },
     seo: {
       title: "SketchRace: Real-Time Multiplayer Game | Shreyash Tripathi",
-      description: "SketchRace is a real-time multiplayer drawing and guessing game. Shreyash Tripathi built its Socket.IO backend for live sync, turns and scoring.",
+      description: "How the SketchRace game server works: a real-time multiplayer drawing and guessing game with Socket.IO rooms, live strokes, timers and scoring.",
     },
     caseStudy: {
       overview: [
@@ -626,13 +626,24 @@ export const caseStudies = projects.filter((p): p is Project & { slug: string } 
 /** /hire page: open to full-time roles and freelance work. Facts only — no invented prices, clients or reviews. */
 export const hire = {
   seo: {
-    title: "Hire a Full-Stack Developer in India | Shreyash Tripathi",
+    title: "Hire a Frontend & Full-Stack Developer | Shreyash Tripathi",
     description:
-      "Hire Shreyash Tripathi, full-stack developer (React, Next.js, Node.js, Postgres), for full-time or freelance work in Noida, NCR, UP, Gujarat or remote.",
+      "Hire Shreyash Tripathi, React & Next.js frontend and full-stack developer, for full-time or freelance work in Noida, Delhi NCR, Gujarat or remote.",
   },
-  headline: "Hire a Full-Stack Developer in India",
+  headline: "Hire a Frontend & Full-Stack Developer in India",
+  /** Job titles he fits, written out on the page so searches for each title can match. Facts only. */
+  roles: [
+    { title: "Frontend Developer", text: "React, Next.js and TypeScript interfaces: responsive layouts, design systems, accessibility and fast pages." },
+    { title: "Full-Stack Developer", text: "Complete products end to end: UI, REST APIs, auth, databases and deployment on Vercel." },
+    { title: "React Developer", text: "Component-driven React apps with hooks, state management, Tailwind CSS, Radix UI and Framer Motion." },
+    { title: "Next.js Developer", text: "App Router, server rendering and prerendering, SEO-ready pages and API route handlers." },
+    { title: "Node.js / Backend Developer", text: "Node.js and Express APIs, JWT auth, Socket.IO real-time servers, PostgreSQL, Supabase and MongoDB." },
+    { title: "UI/UX Engineer", text: "Turning designs into pixel-accurate, accessible UI, and improving UX with motion and mobile-first layouts." },
+    { title: "Web Developer", text: "Marketing sites, landing pages and SEO for agencies and brands, including AI-powered features." },
+    { title: "AI Integration Developer", text: "Adding OpenAI and Anthropic Claude features to products: content agents, chat and automation." },
+  ],
   intro:
-    "I'm Shreyash Tripathi, a full-stack developer with a strong UI/UX eye: React, Next.js and TypeScript on the frontend; Node.js, Express, REST APIs, Socket.IO and PostgreSQL/Supabase on the backend. I build complete products for AI-integrated SaaS platforms and marketing sites, and I'm open to full-time roles and freelance projects in Noida, Delhi NCR, Uttar Pradesh and Gujarat, or remotely from anywhere.",
+    "I'm Shreyash Tripathi, a frontend and full-stack developer with a strong UI/UX eye: React, Next.js and TypeScript on the frontend; Node.js, Express, REST APIs, Socket.IO and PostgreSQL/Supabase on the backend. I build complete products for AI-integrated SaaS platforms and marketing sites, and I'm open to full-time roles and freelance projects in Noida, Delhi NCR, Uttar Pradesh and Gujarat, or remotely from anywhere.",
   /** Places served, shown on the page and in the Service schema (areaServed). */
   locations: [
     { name: "Noida", text: "Where I'm based today: on-site, hybrid or freelance." },

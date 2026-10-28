@@ -74,7 +74,7 @@ Shreyash wrote a series of interview and job-preparation books for developers, a
 ## Links
 
 - [Portfolio](https://shreyashtripathi.in/): Projects, experience, skills, FAQ and contact
-- [Hire me](https://shreyashtripathi.in/hire): Available for full-time roles (full-stack, frontend or backend) and freelance full-stack projects (React, Next.js, Node.js, PostgreSQL) in Noida, Delhi NCR, Uttar Pradesh, Gujarat (Ahmedabad) or remote anywhere; services, process and contact
+- [Hire me: frontend & full-stack developer](https://shreyashtripathi.in/hire): Available for full-time roles (full-stack, frontend or backend) and freelance full-stack projects (React, Next.js, Node.js, PostgreSQL) in Noida, Delhi NCR, Uttar Pradesh, Gujarat (Ahmedabad) or remote anywhere; services, process and contact
 - [PurrCase case study](https://shreyashtripathi.in/projects/purrcase): What he built, features and tech stack
 - [SketchRace case study](https://shreyashtripathi.in/projects/sketchrace): What he built, features and tech stack
 - [Asset & Credential Vault case study](https://shreyashtripathi.in/projects/asset-credential-vault): Internal zero-knowledge asset, credential and billing manager, encryption design and features

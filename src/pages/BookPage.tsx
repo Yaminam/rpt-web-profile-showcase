@@ -208,7 +208,11 @@ const BookPage = () => {
         <a href="/" className="hover:text-foreground">
           {profile.name}
         </a>{" "}
-        · {book.title} · All rights reserved
+        · {book.title} · All rights reserved{" "}
+        ·{" "}
+        <a href="/hire" className="hover:text-foreground">
+          hire me: frontend &amp; full-stack
+        </a>
       </footer>
     </div>
   );

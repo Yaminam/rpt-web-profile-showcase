@@ -106,8 +106,8 @@ export function hireSeo(): PageSeo {
         {
           "@type": "Service",
           "@id": `${url}#service`,
-          name: "Full-stack web development (React, Next.js, Node.js)",
-          serviceType: "Full-stack web development",
+          name: "Frontend and full-stack web development (React, Next.js, Node.js)",
+          serviceType: ["Frontend development", "Full-stack web development", "UI/UX engineering"],
           description: hire.intro,
           url,
           provider: {

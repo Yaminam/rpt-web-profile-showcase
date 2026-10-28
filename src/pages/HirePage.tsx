@@ -96,6 +96,19 @@ const HirePage = () => {
           ))}
         </section>
 
+        {/* Roles: each job title written out so searches for frontend, full-stack, React, etc. can match */}
+        <section className="space-y-5">
+          <h2 className="font-display text-2xl font-bold md:text-3xl">Roles I can join as</h2>
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {hire.roles.map((r) => (
+              <li key={r.title} className="cyber-card p-5">
+                <h3 className="font-display font-bold">{r.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{r.text}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* Locations: named on the page, not just in metadata, so location searches can match */}
         <section className="space-y-5">
           <h2 className="font-display text-2xl font-bold md:text-3xl">Where I work</h2>

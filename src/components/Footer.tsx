@@ -114,6 +114,11 @@ const Footer = () => {
                 <MapPin className="h-4 w-4 text-neon-cyan" />
                 {profile.location}
               </li>
+              <li>
+                <a href="/hire" className="text-neon-green hover:text-neon-cyan">
+                  › hire me: frontend &amp; full-stack developer
+                </a>
+              </li>
             </ul>
 
             <div className="mt-5 flex items-center gap-3">
