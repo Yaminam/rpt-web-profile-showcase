@@ -416,6 +416,61 @@ export const books: Book[] = [
     ]
   },
   {
+    "slug": "ai-engineering",
+    "title": "AI Engineering: RAG, GraphRAG & Enterprise Agents",
+    "shortTitle": "AI Engineering",
+    "tagline": "Job-Ready Series, Job-Switch edition",
+    "blurb": "Build what every company wants now: RAG with pgvector, knowledge graphs with Apache AGE, GraphRAG, and permission-aware enterprise agents with MCP, all on PostgreSQL, with real Python code, labs, scenarios and portfolio projects.",
+    "highlights": [
+      "RAG with pgvector and GraphRAG with Apache AGE, all on PostgreSQL",
+      "AI agents, tool calling, LangGraph and MCP",
+      "120+ interview questions with answers"
+    ],
+    "editions": [
+      {
+        "label": "Job-Switch",
+        "pages": 420
+      }
+    ],
+    "chapters": [
+      "1. The AI Engineer Job and Roadmap",
+      "2. LLMs for Developers",
+      "3. Embeddings and Vector Search",
+      "4. PostgreSQL for AI Engineers",
+      "5. RAG Architecture End to End",
+      "6. Ingestion, Parsing and Chunking",
+      "7. pgvector in Depth and Hybrid Search",
+      "8. Advanced RAG Techniques",
+      "9. Evaluating and Debugging RAG",
+      "10. Knowledge Graphs Fundamentals",
+      "11. Apache AGE: Graphs inside PostgreSQL",
+      "12. Building Knowledge Graphs with LLMs",
+      "13. GraphRAG",
+      "14. Hybrid Retrieval: Vectors and Graphs in One Postgres",
+      "15. AI Agents and Tool Calling",
+      "16. Frameworks and Protocols: LangChain, LlamaIndex, LangGraph and MCP",
+      "17. Multi-Agent Systems and Enterprise Agents",
+      "18. Production AI Systems",
+      "19. AI Portfolio Projects and Real Scenarios",
+      "20. AI Engineering Interview Question Bank",
+      "Appendix A: SQL, pgvector and Cypher Cheat Sheet",
+      "Appendix B: Code Templates",
+      "Appendix C: Glossary",
+      "Appendix D: Job Switch Toolkit"
+    ],
+    "previewChapters": 2,
+    "previewPages": 43,
+    "seo": {
+      "title": "AI Engineering Book: RAG & AI Agents | Shreyash Tripathi",
+      "description": "AI engineering job-switch guide: LLMs, embeddings, RAG with pgvector, GraphRAG, AI agents and MCP on PostgreSQL, with Python labs and 120+ interview Q&A."
+    },
+    "keywords": [
+      "ai engineering book",
+      "rag interview questions",
+      "graphrag ai agents guide"
+    ]
+  },
+  {
     "slug": "dbms",
     "title": "Database Management Systems",
     "shortTitle": "DBMS",

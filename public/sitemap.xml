@@ -135,6 +135,15 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://shreyashtripathi.in/books/ai-engineering</loc>
+    <image:image>
+      <image:loc>https://shreyashtripathi.in/book-files/ai-engineering-cover.jpg</image:loc>
+    </image:image>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://shreyashtripathi.in/books/dbms</loc>
     <image:image>
       <image:loc>https://shreyashtripathi.in/book-files/dbms-cover.jpg</image:loc>

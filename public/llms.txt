@@ -6,7 +6,7 @@ Name also searched as: Shreyas Tripathi.
 
 ## Summary
 
-Author of the Job-Ready Series (11 interview-prep and job-switch books for developers, about 4,200 pages): https://shreyashtripathi.in/books
+Author of the Job-Ready Series (12 interview-prep and job-switch books for developers, about 4,600 pages): https://shreyashtripathi.in/books
 
 Shreyash Tripathi is a full-stack developer and UI/UX engineer with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. He builds web apps with React, Next.js (App Router) and TypeScript, Android apps with React Native and Expo, using Tailwind CSS, Supabase and REST APIs, and is comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration. He is currently a Junior Developer, UI/UX at Garage Collective, promoted from an AI Trainee role.
 
@@ -49,6 +49,7 @@ Shreyash wrote a series of interview and job-preparation books for developers, a
 - [DevOps: The Job-Switch Guide](https://shreyashtripathi.in/books/devops): Job-Switch edition 364 pages. 13 tools from Linux to Kubernetes (Docker, CI/CD, AWS, Terraform, Ansible, Prometheus, Grafana); hands-on labs, real configs and production incidents; 120+ interview questions with answers. Free preview PDF.
 - [Cloud Computing: The Job-Switch Guide](https://shreyashtripathi.in/books/cloud): Job-Switch edition 345 pages. AWS-first with Azure and GCP: IAM, VPC, EC2, S3, Lambda, DynamoDB, security, cost and architecture; free-tier labs and projects; 120+ interview questions with answers. Free preview PDF.
 - [Salesforce: The Job-Switch Guide](https://shreyashtripathi.in/books/salesforce): Job-Switch edition 360 pages. From Admin to Developer: data model, security, Flow, reports, Apex, SOQL, triggers, governor limits, LWC, integration and DevOps; org labs and projects; 120+ interview questions with answers. Free preview PDF.
+- [AI Engineering: RAG, GraphRAG & Enterprise Agents](https://shreyashtripathi.in/books/ai-engineering): Job-Switch edition 420 pages. LLMs, embeddings, RAG with pgvector, hybrid search, RAG evaluation, knowledge graphs with Apache AGE, GraphRAG, AI agents, LangGraph and MCP, all on PostgreSQL; Python labs and projects; 120+ interview questions with answers. Free preview PDF.
 - [Database Management Systems](https://shreyashtripathi.in/books/dbms): Complete 422 pages, Short 186 pages. ER models to B+ trees; SQL from basics to window functions; 120+ interview questions with answers. Free preview PDF.
 - [Computer Networks](https://shreyashtripathi.in/books/computer-networks): Complete 364 pages, Short 164 pages. OSI and TCP/IP to TLS; Worked subnetting numericals; 100+ interview questions with answers. Free preview PDF.
 - [Operating Systems](https://shreyashtripathi.in/books/operating-systems): Short 192 pages. Processes to containers and Linux; Worked scheduling and paging numericals; 90+ interview questions with answers. Free preview PDF.

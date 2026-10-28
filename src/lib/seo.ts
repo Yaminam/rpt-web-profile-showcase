@@ -226,7 +226,7 @@ export function bookSeo(b: Book): PageSeo {
 export const BOOKS_SEO = {
   title: "Placement Prep Books: DSA, DBMS, OS, CN | Shreyash Tripathi",
   description:
-    "Interview and job-switch books by Shreyash Tripathi: DSA, DBMS, OS, CN, System Design, DevOps, Cloud, Salesforce, Next.js. Free PDF previews.",
+    "Interview and job-switch books by Shreyash Tripathi: DSA, DBMS, OS, CN, System Design, DevOps, Cloud, AI, Salesforce, Next.js. Free PDF previews.",
 };
 
 /** Head tags + structured data for /books (the series index). */

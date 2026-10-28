@@ -35,6 +35,15 @@ const JOB_SWITCH: Record<string, { role: string; audience: string; whoFor: strin
       "Engineers who know AWS and need to map their skills to Azure and GCP",
     ],
   },
+  "ai-engineering": {
+    role: "an AI engineer job",
+    audience: "developers moving into AI engineering roles and students targeting AI and LLM jobs",
+    whoFor: [
+      "Software developers switching into AI engineer, LLM engineer or applied AI roles",
+      "Backend and data engineers who want to build RAG, GraphRAG and agents on PostgreSQL",
+      "Students preparing for AI engineering interviews who need real projects and a question bank",
+    ],
+  },
   salesforce: {
     role: "a Salesforce job",
     audience: "people moving into Salesforce admin or developer roles",
