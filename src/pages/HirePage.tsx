@@ -157,7 +157,7 @@ const HirePage = () => {
               all_books <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
           </div>
-          <ul className="grid grid-cols-4 gap-3 sm:grid-cols-4 lg:grid-cols-8">
+          <ul className="grid grid-cols-4 gap-3 sm:grid-cols-4 lg:grid-cols-9">
             {books.map((b) => (
               <li key={b.slug}>
                 <a href={`/books/${b.slug}`} className="group block" title={b.title}>

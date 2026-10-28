@@ -21,6 +21,13 @@ export const whoFor = (b: Book): string[] => {
     "Students applying for internships who want one complete, simple resource",
     "Developers preparing for a job switch who need a fast but complete revision",
   ];
+  if (b.slug === "devops") {
+    return [
+      "Developers and testers switching into DevOps, cloud or SRE roles",
+      "Students targeting DevOps and cloud internships who want one complete roadmap",
+      "Engineers preparing for DevOps interviews who need hands-on labs plus a question bank",
+    ];
+  }
   if (b.slug === "fullstack-typescript-nextjs") {
     base[1] = "Students building projects and applying for frontend or full-stack roles";
   }
@@ -49,8 +56,8 @@ export const bookFaqs = (b: Book): { q: string; a: string }[] => {
   const last = core[core.length - 1];
   const faqs = [
     {
-      q: `Is ${b.title} good for placement preparation?`,
-      a: `Yes, it was written for students preparing for placements, internships and interviews. It starts from the basics (${first}) and goes all the way to ${last}, with ${questionsLine(b)}.`,
+      q: b.slug === "devops" ? `Is ${b.title} good for switching to a DevOps job?` : `Is ${b.title} good for placement preparation?`,
+      a: `Yes, it was written for ${b.slug === "devops" ? "developers switching into DevOps and students targeting DevOps roles" : "students preparing for placements, internships and interviews"}. It starts from the basics (${first}) and goes all the way to ${last}, with ${questionsLine(b)}.`,
     },
     {
       q: `Is there a free PDF of ${b.title}?`,

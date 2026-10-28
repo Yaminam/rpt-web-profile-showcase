@@ -710,7 +710,7 @@ export const hire = {
     },
     {
       q: "Has Shreyash Tripathi written any books?",
-      a: "Yes. He wrote the Job-Ready Series, eight books for developers preparing for interviews: System Design, DSA in Java, DSA in Python, DSA in C++, DBMS, Computer Networks, Operating Systems and Full-Stack TypeScript with Next.js. Free previews are at shreyashtripathi.in/books.",
+      a: "Yes. He wrote the Job-Ready Series, nine books for developers preparing for interviews: System Design, DSA in Java, DSA in Python, DSA in C++, DevOps, DBMS, Computer Networks, Operating Systems and Full-Stack TypeScript with Next.js. Free previews are at shreyashtripathi.in/books.",
     },
     {
       q: "What kind of freelance projects does he take on?",

@@ -260,6 +260,58 @@ export const books: Book[] = [
     ]
   },
   {
+    "slug": "devops",
+    "title": "DevOps: The Job-Switch Guide",
+    "shortTitle": "DevOps",
+    "tagline": "Job-Ready Series, Job-Switch edition",
+    "blurb": "From Linux to Kubernetes: the 13 tools every DevOps interview asks about, in simple language, with commands, real configs, hands-on labs, production incidents and portfolio projects.",
+    "highlights": [
+      "13 tools: Linux, Docker, CI/CD, AWS, Terraform, Kubernetes and more",
+      "Hands-on labs, real configs and production incidents",
+      "120+ interview questions with answers"
+    ],
+    "editions": [
+      {
+        "label": "Job-Switch",
+        "pages": 364
+      }
+    ],
+    "chapters": [
+      "1. DevOps and the Job Switch Roadmap",
+      "2. Linux for DevOps",
+      "3. Bash Scripting",
+      "4. Python for DevOps",
+      "5. Networking for DevOps",
+      "6. Git and GitHub for DevOps",
+      "7. Docker",
+      "8. CI/CD with GitHub Actions",
+      "9. AWS for DevOps",
+      "10. Terraform",
+      "11. Ansible",
+      "12. Kubernetes I: Core Concepts",
+      "13. Kubernetes II: Production",
+      "14. Monitoring with Prometheus",
+      "15. Dashboards and Alerting with Grafana",
+      "16. Real-World Projects and Incident Scenarios",
+      "17. DevOps Interview Question Bank",
+      "Appendix A: Command Cheat Sheet",
+      "Appendix B: Config Templates",
+      "Appendix C: Glossary",
+      "Appendix D: Job Switch Toolkit"
+    ],
+    "previewChapters": 2,
+    "previewPages": 40,
+    "seo": {
+      "title": "DevOps Book: Linux to Kubernetes | Shreyash Tripathi",
+      "description": "DevOps job-switch guide: Linux, Docker, CI/CD, AWS, Terraform, Kubernetes, Prometheus and Grafana, with labs and 120+ interview Q&A. Free PDF preview."
+    },
+    "keywords": [
+      "devops book",
+      "devops interview questions",
+      "kubernetes docker terraform guide"
+    ]
+  },
+  {
     "slug": "dbms",
     "title": "Database Management Systems",
     "shortTitle": "DBMS",
