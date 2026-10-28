@@ -60,7 +60,7 @@ function withHead(html, { path: pagePath, title, description, jsonLd, image }) {
 
 const pages = [
   { url: "/", file: "index.html" },
-  // { url: "/hire", file: "hire.html", seo: hireSeo() }, // hire page hidden for now
+  { url: "/hire", file: "hire.html", seo: hireSeo() },
   // Books: /books -> books.html, /books/<slug> -> books/<slug>.html (vercel.json cleanUrls).
   ...bookPages().map((seo) => ({ url: seo.path, file: `${seo.path.slice(1)}.html`, seo })),
   // Case studies: /projects/<slug> is served from projects/<slug>.html (vercel.json cleanUrls).

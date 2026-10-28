@@ -8,8 +8,7 @@ import { AchievementsProvider } from "@/hooks/use-achievements";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ProjectPage from "./pages/ProjectPage";
-// Hire page hidden for now. Restore this import, the route below, the navbar links, the prerender entry and the sitemap entry to bring it back.
-// import HirePage from "./pages/HirePage";
+import HirePage from "./pages/HirePage";
 import BooksPage from "./pages/BooksPage";
 import BookPage from "./pages/BookPage";
 
@@ -32,7 +31,7 @@ export const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Index />} />
     <Route path="/projects/:slug" element={<ProjectPage />} />
-    {/* <Route path="/hire" element={<HirePage />} /> */}
+    <Route path="/hire" element={<HirePage />} />
     <Route path="/books" element={<BooksPage />} />
     <Route path="/books/:slug" element={<BookPage />} />
     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

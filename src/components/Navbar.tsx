@@ -74,7 +74,7 @@ const Navbar = () => {
               </span>
             </span>
           </a>
-          {/* Hire page hidden for now
+          {/* hire_me button hidden from the navbar; the /hire page itself is still live
           <a href="/hire" className="btn-ghost py-2 text-xs">
             hire_me
           </a> */}
@@ -127,7 +127,7 @@ const Navbar = () => {
                 </span>
               </a>
             </li>
-            {/* Hire page hidden for now
+            {/* hire_me button hidden from the navbar; the /hire page itself is still live
             <li className="px-3 pt-2">
               <a href="/hire" className="btn-ghost w-full py-2 text-xs" onClick={() => setOpen(false)}>
                 hire_me: full-time &amp; freelance
