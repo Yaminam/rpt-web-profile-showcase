@@ -124,6 +124,11 @@ const Footer = () => {
                   › seo, aeo &amp; geo services
                 </a>
               </li>
+              <li>
+                <a href="/hire/shopify" className="hover:text-neon-cyan">
+                  › shopify developer
+                </a>
+              </li>
             </ul>
 
             <div className="mt-5 flex items-center gap-3">

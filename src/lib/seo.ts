@@ -1,4 +1,4 @@
-import { caseStudies, hire, profile, seoServices, SITE_URL, type Project } from "@/data/portfolio";
+import { caseStudies, hire, profile, seoServices, shopifyServices, SITE_URL, type Project, type ServiceLandingData } from "@/data/portfolio";
 import { bookCoverJpg, bookPreview, books, SERIES_NAME, type Book } from "@/data/books";
 
 export type PageSeo = {
@@ -268,14 +268,22 @@ export function booksIndexSeo(): PageSeo {
 
 export const bookPages = (): PageSeo[] => [booksIndexSeo(), ...books.map(bookSeo)];
 
-/** Head tags + structured data for /hire/seo (AI-first SEO, AEO and GEO services). */
-export function seoServicesSeo(): PageSeo {
-  const path = "/hire/seo";
+type LandingSeoOptions = {
+  path: string;
+  data: ServiceLandingData;
+  serviceName: string;
+  serviceType: string[];
+  catalogName: string;
+  crumb: string;
+};
+
+/** Head tags + structured data for a secondary hire page (Service + offer catalog + breadcrumbs). */
+function serviceLandingSeo({ path, data, serviceName, serviceType, catalogName, crumb }: LandingSeoOptions): PageSeo {
   const url = `${SITE_URL}${path}`;
   return {
     path,
-    title: seoServices.seo.title,
-    description: seoServices.seo.description,
+    title: data.seo.title,
+    description: data.seo.description,
     jsonLd: {
       "@context": "https://schema.org",
       "@graph": [
@@ -283,8 +291,8 @@ export function seoServicesSeo(): PageSeo {
           "@type": "WebPage",
           "@id": `${url}#webpage`,
           url,
-          name: seoServices.seo.title,
-          description: seoServices.seo.description,
+          name: data.seo.title,
+          description: data.seo.description,
           inLanguage: "en",
           isPartOf: { "@id": `${SITE_URL}/#website` },
           about: { "@id": PERSON_ID },
@@ -294,9 +302,9 @@ export function seoServicesSeo(): PageSeo {
         {
           "@type": "Service",
           "@id": `${url}#service`,
-          name: "AI-first SEO, AEO and GEO",
-          serviceType: ["Search engine optimization", "Answer engine optimization", "Generative engine optimization", "Technical SEO"],
-          description: seoServices.intro,
+          name: serviceName,
+          serviceType,
+          description: data.intro,
           url,
           provider: { "@type": "Person", "@id": PERSON_ID, name: profile.name, url: `${SITE_URL}/` },
           areaServed: [
@@ -305,8 +313,8 @@ export function seoServicesSeo(): PageSeo {
           ],
           hasOfferCatalog: {
             "@type": "OfferCatalog",
-            name: "SEO, AEO and GEO services",
-            itemListElement: seoServices.services.map((svc) => ({
+            name: catalogName,
+            itemListElement: data.services.map((svc) => ({
               "@type": "Offer",
               itemOffered: { "@type": "Service", name: svc.title, description: svc.text },
             })),
@@ -318,10 +326,32 @@ export function seoServicesSeo(): PageSeo {
           itemListElement: [
             { "@type": "ListItem", position: 1, name: profile.name, item: `${SITE_URL}/` },
             { "@type": "ListItem", position: 2, name: "Hire me", item: `${SITE_URL}/hire` },
-            { "@type": "ListItem", position: 3, name: "SEO, AEO & GEO", item: url },
+            { "@type": "ListItem", position: 3, name: crumb, item: url },
           ],
         },
       ],
     },
   };
 }
+
+/** /hire/seo (AI-first SEO, AEO and GEO services). */
+export const seoServicesSeo = (): PageSeo =>
+  serviceLandingSeo({
+    path: "/hire/seo",
+    data: seoServices,
+    serviceName: "AI-first SEO, AEO and GEO",
+    serviceType: ["Search engine optimization", "Answer engine optimization", "Generative engine optimization", "Technical SEO"],
+    catalogName: "SEO, AEO and GEO services",
+    crumb: "SEO, AEO & GEO",
+  });
+
+/** /hire/shopify (Shopify theme development). */
+export const shopifyServicesSeo = (): PageSeo =>
+  serviceLandingSeo({
+    path: "/hire/shopify",
+    data: shopifyServices,
+    serviceName: "Shopify theme development",
+    serviceType: ["Shopify development", "Shopify theme development", "Liquid development", "E-commerce development", "Shopify SEO"],
+    catalogName: "Shopify development services",
+    crumb: "Shopify developer",
+  });

@@ -8,7 +8,7 @@ Name also searched as: Shreyas Tripathi.
 
 Author of the Job-Ready Series (12 interview-prep and job-switch books for developers, about 4,600 pages): https://shreyashtripathi.in/books
 
-Shreyash Tripathi is a full-stack developer and UI/UX engineer with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. He builds web apps with React, Next.js (App Router) and TypeScript, Android apps with React Native and Expo, and systems in Go; he works on DevOps (Docker, Kubernetes, GitHub Actions CI/CD, Prometheus, Grafana) and system design (scalability, caching, durability, concurrency, observability), using Tailwind CSS, Supabase and REST APIs, and is comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration. He is currently a Junior Developer, UI/UX at Garage Collective, promoted from an AI Trainee role.
+Shreyash Tripathi is a full-stack developer and UI/UX engineer with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. He builds web apps with React, Next.js (App Router) and TypeScript, Shopify themes in Liquid (Online Store 2.0), Android apps with React Native and Expo, and systems in Go; he works on DevOps (Docker, Kubernetes, GitHub Actions CI/CD, Prometheus, Grafana) and system design (scalability, caching, durability, concurrency, observability), using Tailwind CSS, Supabase and REST APIs, and is comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration. He is currently a Junior Developer, UI/UX at Garage Collective, promoted from an AI Trainee role.
 
 ## Skills
 
@@ -79,6 +79,7 @@ Shreyash wrote a series of interview and job-preparation books for developers, a
 - [Portfolio](https://shreyashtripathi.in/): Projects, experience, skills, FAQ and contact
 - [Hire me: frontend & full-stack developer](https://shreyashtripathi.in/hire): Available for full-time roles (full-stack, frontend or backend) and freelance full-stack projects (React, Next.js, Node.js, PostgreSQL) in Noida, Delhi NCR, Uttar Pradesh, Gujarat (Ahmedabad) or remote anywhere; services, process and contact
 - [AI-first SEO, AEO & GEO services](https://shreyashtripathi.in/hire/seo): Technical SEO, structured data, llms.txt and AI-crawler tracking so sites appear in Google and in ChatGPT, Perplexity and Gemini answers. Proof: this site's own results.
+- [Hire a Shopify developer](https://shreyashtripathi.in/hire/shopify): Custom Online Store 2.0 themes in Liquid, metafield-driven product pages, theme refactors, product-page conversion work and store SEO, proven on two D2C brand stores.
 - [PurrCase case study](https://shreyashtripathi.in/projects/purrcase): What he built, features and tech stack
 - [SketchRace case study](https://shreyashtripathi.in/projects/sketchrace): What he built, features and tech stack
 - [Asset & Credential Vault case study](https://shreyashtripathi.in/projects/asset-credential-vault): Internal zero-knowledge asset, credential and billing manager, encryption design and features
@@ -87,6 +88,8 @@ Shreyash wrote a series of interview and job-preparation books for developers, a
 - [Affiliate-Marketing SaaS case study](https://shreyashtripathi.in/projects/affiliate-marketing-saas): A SaaS where brands run affiliate programs: tracked links, attribution, fraud scoring, GST/TDS invoicing and payouts.
 - [Spirits-Brand Corporate Website case study](https://shreyashtripathi.in/projects/spirits-brand-website): A motion-led corporate site for a global spirits group, with a scroll-driven 3D glass bottle and cinematic transitions.
 - [Boarding-School Website case study](https://shreyashtripathi.in/projects/school-website): A redesigned school website built around the parent's decision: campus-finder quiz, 3D intro, site search and a prospectus.
+- [Ayurvedic Wellness Store case study](https://shreyashtripathi.in/projects/ayurvedic-shopify-store): Refactored and redesigned a live Shopify wellness store: cleaner theme code, new metafield sections and a rebuilt product page.
+- [Ethnic-Wear Shopify Theme case study](https://shreyashtripathi.in/projects/ethnic-wear-shopify-theme): A from-scratch Shopify theme and launch catalogue for an ethnic-wear label: metafield product pages, size finder, COD check and SEO listings.
 - [Job Portal case study](https://shreyashtripathi.in/projects/mern-job-portal): What he built, features and tech stack
 - [Resume (PDF)](https://shreyashtripathi.in/Shreyash_Tripathi_Resume.pdf): Full resume
 - [GitHub](https://github.com/Yaminam): Source code and side projects

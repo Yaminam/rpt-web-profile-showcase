@@ -829,6 +829,172 @@ export const projects: Project[] = [
     accent: "magenta"
   },
   {
+    name: "Ayurvedic Wellness Store",
+    slug: "ayurvedic-shopify-store",
+    image: {
+      src: "/project-shots/ayurvedic-shopify-store.webp",
+      alt: "Shopify wellness store case study: theme refactor and redesign, global CSS cut almost in half"
+    },
+    build: [
+      "Audit the live theme",
+      "Pull inline CSS/JS into assets",
+      "Scope styles per page",
+      "New sections + mega menu",
+      "Rebuild the product page",
+      "Metafield-driven content"
+    ],
+    seo: {
+      title: "Shopify Store Redesign Case Study | Shreyash Tripathi",
+      description: "How I refactored and redesigned a live Shopify wellness store: CSS cut in half, new metafield sections, a rebuilt product page and a pack-pricing fix."
+    },
+    caseStudy: {
+      overview: [
+        "A live Shopify store for an Ayurvedic wellness brand selling herbal supplements, teas and skin products in ritual packs. The theme had grown hard to change: hand-written CSS sat inside the vendor build file and many sections carried their own inline styles and scripts.",
+        "Shreyash Tripathi refactored the theme and then redesigned the key pages in 92 commits over three days, keeping the store running throughout."
+      ],
+      howItWorks: [
+        {
+          title: "Refactor",
+          text: "Moved 2,114 lines of hand-written CSS out of the vendor Tailwind build, pulled inline CSS and JS out of more than 20 sections into named asset files, and removed dead code. Global CSS went from 1,267 to 680 lines."
+        },
+        {
+          title: "Scoped styles",
+          text: "Stylesheets now load only on the pages that use them, documented in a codebase and CSS architecture guide."
+        },
+        {
+          title: "New sections",
+          text: "A wellness assessment, concern finder, comparison and benefit tables, a claims strip and a press strip, all editable in the theme editor."
+        },
+        {
+          title: "Navigation",
+          text: "A restyled header and a shoppable mega menu, plus one shared scroll-reveal motion layer."
+        },
+        {
+          title: "Product page",
+          text: "A rebuilt product page with a sticky gallery, accordions and a pack selector; 21 sections and snippets read product metafields such as benefits, ingredients, how-to steps and FAQs."
+        }
+      ],
+      challenges: [
+        {
+          problem: "Add to Cart always sent quantity 1: the page showed the price for a pack of 3 but charged for a single unit.",
+          solution: "Synced pack and quantity both ways, capped quantity at the largest pack, and moved tier pricing to a Shopify automatic discount (0, 15 and 20%)."
+        },
+        {
+          problem: "The homepage quiz and the find-your-ritual page each had their own copy of 40 weighted rules, so they could disagree.",
+          solution: "Merged them into one shared ritual engine and checked all 32,768 answer combinations give identical results."
+        },
+        {
+          problem: "Splitting a CSS file by line range caused horizontal scroll on phones, and a closed mega menu was still laid out about 5,300px wide.",
+          solution: "Extracted CSS by selector instead of by line, and stopped the closed menu from taking up layout width."
+        }
+      ],
+      results: [
+        "Global CSS cut from 1,267 to 680 lines with the store live throughout.",
+        "Product page height reduced from 10,164 to 9,457px at desktop width.",
+        "Pack pricing now charges correctly, and the quiz gives one consistent answer everywhere."
+      ]
+    },
+    tagline: "Shopify Theme Refactor & Redesign",
+    description: "Refactored and redesigned a live Shopify wellness store: cleaner theme code, new metafield sections and a rebuilt product page.",
+    tech: [
+      "Shopify",
+      "Liquid",
+      "Online Store 2.0",
+      "Metafields",
+      "Tailwind CSS",
+      "JavaScript"
+    ],
+    highlights: [
+      "Global CSS cut nearly in half.",
+      "Rebuilt product page and new sections.",
+      "Fixed pack pricing and unified the quiz."
+    ],
+    accent: "green"
+  },
+  {
+    name: "Ethnic-Wear Shopify Theme",
+    slug: "ethnic-wear-shopify-theme",
+    image: {
+      src: "/project-shots/ethnic-wear-shopify-theme.webp",
+      alt: "Custom Shopify theme case study: 43 sections, 11 templates, 20 metafields, 32 SEO listings"
+    },
+    build: [
+      "Competitor research (11 stores)",
+      "Catalogue + naming system",
+      "Custom OS 2.0 theme",
+      "Metafield-driven product pages",
+      "Photo pipeline (255 images)",
+      "32 SEO listings + bulk import"
+    ],
+    seo: {
+      title: "Custom Shopify Theme Case Study | Shreyash Tripathi",
+      description: "How I built a custom Online Store 2.0 Shopify theme for an ethnic-wear label: 43 sections, 20 metafields, size finder, COD check and 32 SEO listings."
+    },
+    caseStudy: {
+      overview: [
+        "A launch-ready Shopify store for an Indian women's ethnic-wear label: kurta sets, co-ords, anarkalis and dresses at a mid-premium price point.",
+        "Shreyash Tripathi built the theme from scratch on Online Store 2.0 and prepared the catalogue around it: competitor research, collection structure, product photography and SEO-ready listings."
+      ],
+      howItWorks: [
+        {
+          title: "Custom theme",
+          text: "43 sections, 11 snippets and 11 JSON templates, with header and footer section groups and 26 sections that come with presets for the theme editor."
+        },
+        {
+          title: "Homepage",
+          text: "Hero slideshow, category tiles, a craft atlas and craft process, artisan spotlight, shoppable looks and reels, shop-by-price, countdown and offers."
+        },
+        {
+          title: "Product page",
+          text: "Pincode delivery and COD check, a size chart and find-my-size, WhatsApp stylist, sticky add-to-cart, colour siblings, recently viewed, notify-me and Product JSON-LD."
+        },
+        {
+          title: "Metafields",
+          text: "20 product metafields (fabric, technique, size chart, model info, colour siblings, complete-the-look) so every product page fills in from data."
+        },
+        {
+          title: "Catalogue",
+          text: "717 photos audited and 255 edited (8 per product), 23 styles in 32 colourways, and 32 listings with SEO titles, meta descriptions, URLs and alt text, ready as a bulk import."
+        }
+      ],
+      challenges: [
+        {
+          problem: "Craft names like Ikat or Chikankari can be protected Geographical Indications, so using them loosely is a legal risk.",
+          solution: "Listings say 'ikat-inspired' and similar until the brand confirms the technique, and verified craft facts are added through metafields."
+        },
+        {
+          problem: "Launching without real reviews, press or artisan stories risks showing fake-looking proof.",
+          solution: "Built a one-step pass that hides reviews, press and artisan sections and marks unconfirmed facts, so nothing invented goes live."
+        },
+        {
+          problem: "Product photos had to look true to the fabric colour.",
+          solution: "A photo pipeline that estimates white balance only from neutral surfaces and caps the correction at 6%, keeping originals untouched."
+        }
+      ],
+      results: [
+        "A complete Online Store 2.0 theme with 43 sections and 20 metafields.",
+        "32 SEO-ready product listings and a bulk-import file.",
+        "Pricing positioned against research on 11 competitor stores (about 15,600 products)."
+      ]
+    },
+    tagline: "Custom Online Store 2.0 Theme from Scratch",
+    description: "A from-scratch Shopify theme and launch catalogue for an ethnic-wear label: metafield product pages, size finder, COD check and SEO listings.",
+    tech: [
+      "Shopify",
+      "Liquid",
+      "Online Store 2.0",
+      "Metafields",
+      "JSON-LD",
+      "Python"
+    ],
+    highlights: [
+      "43 sections, 11 templates, 20 metafields.",
+      "Size finder, pincode and COD check.",
+      "32 SEO-ready listings."
+    ],
+    accent: "magenta"
+  },
+  {
     name: "Portfolio Website",
     image: { src: "/project-shots/portfolio.webp", alt: "shreyashtripathi.in home page with terminal-style hero" },
     links: { demo: "https://shreyashtripathi.in" },
@@ -902,6 +1068,11 @@ export const skillGroups: SkillGroup[] = [
     label: "AI Integration",
     prompt: "ai --list",
     items: ["OpenAI API", "Anthropic Claude SDK", "AI Content & Automation Pipelines"],
+  },
+  {
+    label: "Shopify & E-commerce",
+    prompt: "shopify --list",
+    items: ["Shopify themes (Liquid)", "Online Store 2.0", "Metafields", "Section Rendering API", "Product JSON-LD", "Stripe", "Razorpay"],
   },
   {
     label: "DevOps & Cloud",
@@ -1041,8 +1212,28 @@ export const SITE_URL = "https://shreyashtripathi.in";
 /** Projects that have their own /projects/<slug> case-study page. */
 export const caseStudies = projects.filter((p): p is Project & { slug: string } => Boolean(p.slug));
 
+/** Shape of the secondary hire pages (/hire/seo, /hire/shopify), rendered by components/ServiceLanding. */
+export type ServiceLandingData = {
+  seo: { title: string; description: string };
+  headline: string;
+  intro: string;
+  terms: { title: string; text: string }[];
+  services: { title: string; text: string }[];
+  proofHeading: string;
+  proofIntro: string;
+  proof: string[];
+  caseStudies?: { href: string; label: string }[];
+  faqs: { q: string; a: string }[];
+  ctaHeading: string;
+  ctaText: string;
+};
+
 /** /hire/seo: secondary hire page for AI-first SEO, AEO and GEO work. Facts only: the proof is this site's own results. */
-export const seoServices = {
+export const seoServices: ServiceLandingData = {
+  proofHeading: "Proof: this website",
+  proofIntro: "I did all of this on shreyashtripathi.in, a brand-new domain, in its first month.",
+  ctaHeading: "Want to be found?",
+  ctaText: "Send your site and what you want to rank for.",
   seo: {
     title: "AI-First SEO, AEO & GEO Services | Shreyash Tripathi",
     description:
@@ -1081,6 +1272,106 @@ export const seoServices = {
   ],
 };
 
+/** /hire/shopify: secondary hire page for Shopify theme development. Facts from the two store projects; brand names kept private. */
+export const shopifyServices: ServiceLandingData = {
+  seo: {
+    title: "Hire a Shopify Developer in India | Shreyash Tripathi",
+    description: "Shopify theme developer for Online Store 2.0: custom Liquid sections, metafields, fast product pages and store SEO. Freelance or full-time in India."
+  },
+  headline: "Hire a Shopify developer who also writes the code behind the theme",
+  intro: "I'm Shreyash Tripathi, a full-stack developer who builds and fixes Shopify stores: custom Online Store 2.0 themes, Liquid sections your team can edit, metafield-driven product pages, and the SEO and performance work that turns visits into orders. I've built a store theme from scratch and refactored and redesigned a live one.",
+  terms: [
+    {
+      title: "Liquid",
+      text: "Shopify's template language. Custom sections and snippets written in Liquid control exactly how your store looks and behaves."
+    },
+    {
+      title: "Online Store 2.0",
+      text: "Shopify's modern theme system: JSON templates, sections on every page and theme blocks, so you can rearrange pages without a developer."
+    },
+    {
+      title: "Metafields",
+      text: "Custom fields on products and collections (fabric, ingredients, size charts, FAQs) that feed product pages automatically instead of hard-coded text."
+    }
+  ],
+  services: [
+    {
+      title: "Custom theme development",
+      text: "A theme built for your brand on Online Store 2.0, with sections and presets your team can edit in the theme editor."
+    },
+    {
+      title: "Theme refactor & redesign",
+      text: "Clean up a slow, tangled theme: pull inline CSS and JS into assets, remove dead code and redesign key pages without breaking the store."
+    },
+    {
+      title: "Product pages that convert",
+      text: "Sticky galleries, accordions, pack and size selectors, colour siblings, sticky add-to-cart, delivery and COD checks."
+    },
+    {
+      title: "Metafield-driven content",
+      text: "Benefits, ingredients, comparisons, size charts and FAQs pulled from metafields, so new products fill in without code."
+    },
+    {
+      title: "Quizzes & guided shopping",
+      text: "Product finders and quizzes that recommend the right product, with one shared logic engine."
+    },
+    {
+      title: "Store SEO",
+      text: "SEO titles, meta descriptions, clean URLs, alt text and Product structured data (JSON-LD) for every listing."
+    },
+    {
+      title: "Apps & integrations",
+      text: "Reviews, shipping, WhatsApp support, currency and cart updates via the Section Rendering API."
+    },
+    {
+      title: "Speed & mobile fixes",
+      text: "Scoped stylesheets, lighter pages and fixes for horizontal scroll and layout bugs on phones."
+    }
+  ],
+  proofHeading: "Proof: two Shopify stores",
+  proofIntro: "Work on two Indian D2C brands (names kept private): one theme refactor and redesign, one theme built from scratch.",
+  proof: [
+    "Refactored and redesigned an Ayurvedic wellness store in 92 commits over three days: global CSS cut from 1,267 to 680 lines and 2,114 lines moved out of the vendor build.",
+    "Fixed a pack-pricing bug where a pack of 3 was charged as one unit, and unified two copies of a 40-rule product quiz, verified across all 32,768 answer combinations.",
+    "Built a custom Online Store 2.0 theme for an ethnic-wear label: 43 sections, 11 JSON templates and 20 product metafields.",
+    "Wrote 32 SEO-ready product listings (titles, meta descriptions, URLs, alt text) and a bulk-import file, after researching 11 competitor stores."
+  ],
+  caseStudies: [
+    {
+      href: "/projects/ayurvedic-shopify-store",
+      label: "case_study: wellness store redesign"
+    },
+    {
+      href: "/projects/ethnic-wear-shopify-theme",
+      label: "case_study: custom ethnic-wear theme"
+    }
+  ],
+  faqs: [
+    {
+      q: "What does a Shopify developer do?",
+      a: "A Shopify developer builds and customises the store's theme in Liquid, HTML, CSS and JavaScript: custom sections, product pages, metafield-driven content, app integrations, speed and SEO. Store owners then manage content in the theme editor without touching code."
+    },
+    {
+      q: "Can you build a custom Shopify theme from scratch?",
+      a: "Yes. I built a full Online Store 2.0 theme from scratch for an ethnic-wear label, with 43 sections, 11 JSON templates, 20 product metafields, a size finder, pincode and COD checks and Product structured data."
+    },
+    {
+      q: "Can you fix or redesign my existing Shopify store?",
+      a: "Yes. On a live wellness store I refactored the theme's CSS and JavaScript, redesigned the header, menu and product page, added new sections and fixed a pricing bug, without taking the store offline."
+    },
+    {
+      q: "Do you do Shopify SEO?",
+      a: "Yes: product SEO titles and meta descriptions, clean URLs, image alt text, collection structure and Product JSON-LD, plus the technical side like page speed and mobile layout."
+    },
+    {
+      q: "Are you available for freelance Shopify work?",
+      a: "Yes, for freelance projects and full-time roles, from Noida, Delhi NCR or remotely anywhere in India and worldwide."
+    }
+  ],
+  ctaHeading: "Building or fixing a Shopify store?",
+  ctaText: "Send your store link and what you want to change."
+};
+
 /** /hire page: open to full-time roles and freelance work. Facts only — no invented prices, clients or reviews. */
 export const hire = {
   seo: {
@@ -1099,6 +1390,7 @@ export const hire = {
     { title: "Node.js / Backend Developer", text: "Node.js and Express APIs, JWT auth, Socket.IO real-time servers, PostgreSQL, Supabase and MongoDB." },
     { title: "UI/UX Engineer", text: "Turning designs into pixel-accurate, accessible UI, and improving UX with motion and mobile-first layouts." },
     { title: "Web Developer", text: "Marketing sites, landing pages and SEO for agencies and brands, including AI-powered features." },
+    { title: "Shopify Developer", text: "Custom Online Store 2.0 themes in Liquid, metafield-driven product pages, theme refactors and store SEO, as on two D2C brand stores." },
     { title: "DevOps Engineer", text: "Docker images, Kubernetes manifests, GitHub Actions CI/CD, Prometheus metrics, Grafana dashboards and incident runbooks, as shipped with goredis." },
     { title: "Backend & System Design", text: "Designing services for scale and failure: caching, persistence and durability trade-offs, concurrency, observability and APIs. I also wrote a System Design book." },
     { title: "Go Developer", text: "Systems programming in Go: a Redis-compatible database server with a TCP protocol parser, TTLs, crash-safe persistence and benchmarks." },

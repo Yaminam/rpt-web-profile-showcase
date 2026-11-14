@@ -216,6 +216,10 @@ const BookPage = () => {
         ·{" "}
         <a href="/hire/seo" className="hover:text-foreground">
           seo, aeo &amp; geo services
+        </a>{" "}
+        ·{" "}
+        <a href="/hire/shopify" className="hover:text-foreground">
+          shopify developer
         </a>
       </footer>
     </div>

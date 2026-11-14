@@ -83,7 +83,7 @@ const SkillsSection = () => {
                 ./currently-learning
               </p>
               <div className="flex flex-wrap gap-2">
-                {["Motion & WebGL (Three.js)", "Design Systems at Scale", "AI-Native UX Patterns", "Accessibility (WCAG)"].map((s) => (
+                {["System Design", "DevOps (Docker, Kubernetes, CI/CD)", "Motion & WebGL (Three.js)", "Design Systems at Scale", "AI-Native UX Patterns", "Accessibility (WCAG)"].map((s) => (
                   <span key={s} className="chip-magenta">
                     {s}
                   </span>
