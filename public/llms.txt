@@ -8,7 +8,7 @@ Name also searched as: Shreyas Tripathi.
 
 Author of the Job-Ready Series (12 interview-prep and job-switch books for developers, about 4,600 pages): https://shreyashtripathi.in/books
 
-Shreyash Tripathi is a full-stack developer and UI/UX engineer with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. He builds web apps with React, Next.js (App Router) and TypeScript, Android apps with React Native and Expo, using Tailwind CSS, Supabase and REST APIs, and is comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration. He is currently a Junior Developer, UI/UX at Garage Collective, promoted from an AI Trainee role.
+Shreyash Tripathi is a full-stack developer and UI/UX engineer with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. He builds web apps with React, Next.js (App Router) and TypeScript, Android apps with React Native and Expo, and systems in Go; he works on DevOps (Docker, Kubernetes, GitHub Actions CI/CD, Prometheus, Grafana) and system design (scalability, caching, durability, concurrency, observability), using Tailwind CSS, Supabase and REST APIs, and is comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration. He is currently a Junior Developer, UI/UX at Garage Collective, promoted from an AI Trainee role.
 
 ## Skills
 

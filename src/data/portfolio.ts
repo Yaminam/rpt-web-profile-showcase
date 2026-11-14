@@ -548,6 +548,16 @@ export const skillGroups: SkillGroup[] = [
     items: ["OpenAI API", "Anthropic Claude SDK", "AI Content & Automation Pipelines"],
   },
   {
+    label: "DevOps & Cloud",
+    prompt: "devops --list",
+    items: ["Docker", "Kubernetes", "GitHub Actions CI/CD", "Prometheus", "Grafana", "Linux", "Vercel"],
+  },
+  {
+    label: "System Design",
+    prompt: "design --list",
+    items: ["Scalability & caching", "Persistence & durability", "Concurrency & locking", "Observability & SLOs", "API design", "Incident runbooks"],
+  },
+  {
     label: "Tools & Deployment",
     prompt: "tools --list",
     items: ["Git", "GitHub", "Vercel", "Turborepo", "Stripe", "Razorpay", "Postman", "VS Code"],
@@ -733,10 +743,13 @@ export const hire = {
     { title: "Node.js / Backend Developer", text: "Node.js and Express APIs, JWT auth, Socket.IO real-time servers, PostgreSQL, Supabase and MongoDB." },
     { title: "UI/UX Engineer", text: "Turning designs into pixel-accurate, accessible UI, and improving UX with motion and mobile-first layouts." },
     { title: "Web Developer", text: "Marketing sites, landing pages and SEO for agencies and brands, including AI-powered features." },
+    { title: "DevOps Engineer", text: "Docker images, Kubernetes manifests, GitHub Actions CI/CD, Prometheus metrics, Grafana dashboards and incident runbooks, as shipped with goredis." },
+    { title: "Backend & System Design", text: "Designing services for scale and failure: caching, persistence and durability trade-offs, concurrency, observability and APIs. I also wrote a System Design book." },
+    { title: "Go Developer", text: "Systems programming in Go: a Redis-compatible database server with a TCP protocol parser, TTLs, crash-safe persistence and benchmarks." },
     { title: "AI Integration Developer", text: "Adding OpenAI and Anthropic Claude features to products: content agents, chat and automation." },
   ],
   intro:
-    "I'm Shreyash Tripathi, a frontend and full-stack developer with a strong UI/UX eye: React, Next.js and TypeScript on the frontend; Node.js, Express, REST APIs, Socket.IO and PostgreSQL/Supabase on the backend. I build complete products for AI-integrated SaaS platforms and marketing sites, and I'm open to full-time roles and freelance projects in Noida, Delhi NCR, Uttar Pradesh and Gujarat, or remotely from anywhere.",
+    "I'm Shreyash Tripathi, a frontend and full-stack developer with a strong UI/UX eye: React, Next.js and TypeScript on the frontend; Node.js, Express, REST APIs, Socket.IO and PostgreSQL/Supabase on the backend; Go, Docker, Kubernetes and CI/CD for systems and DevOps work, with a solid grounding in system design. I build complete products for AI-integrated SaaS platforms and marketing sites, and I'm open to full-time roles and freelance projects in Noida, Delhi NCR, Uttar Pradesh and Gujarat, or remotely from anywhere.",
   /** Places served, shown on the page and in the Service schema (areaServed). */
   locations: [
     { name: "Noida", text: "Where I'm based today: on-site, hybrid or freelance." },
