@@ -44,3 +44,24 @@ document.addEventListener(
   },
   true
 );
+
+// Microsoft Clarity: heatmaps, scroll depth and session recordings (where visitors leave a page).
+// Loaded after window load like gtag. Paste the Project ID from clarity.microsoft.com below;
+// while it is empty nothing loads.
+(function () {
+  var CLARITY_ID = "zde1zvil9b";
+  if (!CLARITY_ID) return;
+  window.clarity =
+    window.clarity ||
+    function () {
+      (window.clarity.q = window.clarity.q || []).push(arguments);
+    };
+  function loadClarity() {
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.clarity.ms/tag/" + CLARITY_ID;
+    document.head.appendChild(s);
+  }
+  if (document.readyState === "complete") loadClarity();
+  else window.addEventListener("load", loadClarity);
+})();
