@@ -119,6 +119,10 @@ export type Project = {
   /** URL slug for the /projects/<slug> case-study page (omit = no page). */
   slug?: string;
   links?: { demo?: string; repo?: string; article?: string };
+  /** Screenshot (or visual) shown on the card and the case-study page, 960x600 webp in /public/project-shots. */
+  image?: { src: string; alt: string };
+  /** "How it's built": the main flow, left to right, shown as a diagram on the case-study page. */
+  build?: string[];
   /** Team project: what Shreyash owned. Omit for solo projects. */
   team?: { part: "frontend" | "backend"; role: string };
   /** <title> / meta description for the case-study page (keep ≤ 60 / ≤ 155 chars). */
@@ -144,6 +148,8 @@ export const projects: Project[] = [
   {
     name: "PurrCase",
     slug: "purrcase",
+    image: { src: "/project-shots/purrcase.webp", alt: "PurrCase storefront: custom phone case designer home page" },
+    build: ["Upload a photo","Case designer: drag, resize, canvas crop","Pick model, material, finish","Stripe checkout","Webhook verifies payment","Order saved (Prisma + Postgres) + email"],
     team: {
       part: "frontend",
       role: "Frontend: built the storefront UI and responsive design with Tailwind CSS and Radix UI, working with a teammate on the full-stack app.",
@@ -217,6 +223,8 @@ export const projects: Project[] = [
   {
     name: "SketchRace",
     slug: "sketchrace",
+    image: { src: "/project-shots/sketchrace.webp", alt: "SketchRace lobby: create or join a multiplayer drawing room" },
+    build: ["Players join a room","Socket.IO game server","Drawer streams strokes","Server relays to every player","Server-timed rounds and hints","Speed-based scoring"],
     team: {
       part: "backend",
       role: "Backend: built the real-time Socket.IO game server behind live drawing sync, turn rotation, hints and scoring, working with a teammate who built the Next.js frontend.",
@@ -291,6 +299,8 @@ export const projects: Project[] = [
   {
     name: "Job Portal",
     slug: "mern-job-portal",
+    image: { src: "/project-shots/mern-job-portal.webp", alt: "Job Portal home page with job search" },
+    build: ["Next.js 15 pages","REST route handlers","bcrypt + JWT auth","Jobs, applications, profiles","PostgreSQL (8 tables)"],
     seo: {
       title: "Job Portal & Job Board App Case Study | Shreyash Tripathi",
       description: "Job portal and job board app by Shreyash Tripathi, built with Next.js 15, TypeScript, JWT auth and REST APIs: job search, applications and a dashboard.",
@@ -363,6 +373,8 @@ export const projects: Project[] = [
     // Internal tool built at work: kept anonymous on purpose (no product/company name, no repo or live link).
     name: "Asset & Credential Vault",
     slug: "asset-credential-vault",
+    image: { src: "/project-shots/asset-credential-vault.webp", alt: "Zero-knowledge vault encryption flow: password, PBKDF2, AES-256-GCM, ciphertext-only database" },
+    build: ["Master password (never sent)","PBKDF2 key in the browser","AES-256-GCM encryption","Database stores ciphertext only"],
     links: { article: "https://dev.to/shreyashtripathi/building-a-zero-knowledge-vault-in-the-browser-with-webcrypto-no-crypto-libraries-51k4" },
     seo: {
       title: "Zero-Knowledge Asset & Credential Vault | Shreyash Tripathi",
@@ -434,6 +446,8 @@ export const projects: Project[] = [
   {
     name: "goredis",
     slug: "goredis",
+    image: { src: "/project-shots/goredis.webp", alt: "goredis terminal session: redis-cli commands and benchmark throughput" },
+    build: ["redis-cli / any Redis client","TCP + RESP2 parser","Command engine","In-memory store + TTL heap","Append-only file (group commit)","Prometheus metrics → Grafana"],
     seo: {
       title: "goredis: Redis-Inspired Database in Go | Shreyash Tripathi",
       description: "How I built goredis, a Redis-compatible in-memory database in Go: RESP2 over TCP, TTLs, AOF persistence, Prometheus metrics, Docker and Kubernetes.",
@@ -476,6 +490,8 @@ export const projects: Project[] = [
   },
   {
     name: "Portfolio Website",
+    image: { src: "/project-shots/portfolio.webp", alt: "shreyashtripathi.in home page with terminal-style hero" },
+    links: { demo: "https://shreyashtripathi.in" },
     tagline: "TypeScript Personal Site",
     description:
       "A performant, SEO-optimized personal site to showcase skills, projects and resume — the one you're on right now.",

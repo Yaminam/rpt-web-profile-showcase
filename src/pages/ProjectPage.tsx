@@ -116,6 +116,43 @@ const ProjectPage = () => {
             </div>
           </div>
 
+          {project.image && (
+            <figure className="overflow-hidden rounded-lg border border-border">
+              <img
+                src={project.image.src}
+                alt={project.image.alt}
+                width={960}
+                height={600}
+                decoding="async"
+                className="aspect-[16/10] w-full object-cover object-top"
+              />
+              <figcaption className="border-t border-border bg-muted/30 px-4 py-2 font-mono text-xs text-muted-foreground">
+                {project.image.alt}
+              </figcaption>
+            </figure>
+          )}
+
+          {project.build && (
+            <section className="cyber-card p-6 md:p-8">
+              <h2 className="mb-5 font-display text-xl font-bold md:text-2xl">How it's built</h2>
+              <ol className="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-stretch">
+                {project.build.map((step, i) => (
+                  <li key={step} className="flex items-center gap-3 md:flex-1 md:basis-[30%]">
+                    <span className="flex h-full w-full items-center gap-3 rounded-md border border-border bg-muted/30 px-4 py-3 text-sm">
+                      <span className={`font-mono text-xs ${accent}`}>{String(i + 1).padStart(2, "0")}</span>
+                      <span className="text-foreground/90">{step}</span>
+                    </span>
+                    {i < project.build!.length - 1 && (
+                      <span className={`font-mono ${accent} md:hidden`} aria-hidden>
+                        ↓
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )}
+
           {project.caseStudy && (
             <>
               <section className="cyber-card p-6 md:p-8">

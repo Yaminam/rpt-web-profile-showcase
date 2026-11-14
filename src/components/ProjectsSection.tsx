@@ -1,9 +1,9 @@
 import React from "react";
-import { Folder, ChevronRight, Github, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import TiltCard from "@/components/TiltCard";
-import { projects, profile, type Project } from "@/data/portfolio";
+import { projects, type Project } from "@/data/portfolio";
 
 const accentMap: Record<
   Project["accent"],
@@ -76,64 +76,77 @@ const ProjectsSection = () => {
                       {String(i + 1).padStart(2, "0")}
                     </span>
 
-                    <div className="relative mb-4 flex items-center justify-between">
-                      <span
-                        className={`flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-muted/40 ${accent.text} transition-transform duration-300 group-hover:scale-110`}
-                      >
-                        <Folder className="h-5 w-5" />
-                      </span>
+                    {project.image && (
                       <a
-                        href={profile.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${project.name} on GitHub`}
-                        className="flex items-center gap-1 font-mono text-[11px] text-muted-foreground transition-colors hover:text-foreground"
+                        href={project.slug ? `/projects/${project.slug}` : project.links?.demo}
+                        className="relative -mx-6 -mt-6 mb-5 block overflow-hidden border-b border-border/60"
+                        tabIndex={-1}
+                        aria-hidden
                       >
-                        <Github className="h-4 w-4" />
-                        <ArrowUpRight className="h-3.5 w-3.5 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+                        <img
+                          src={project.image.src}
+                          alt={project.image.alt}
+                          width={960}
+                          height={600}
+                          loading="lazy"
+                          decoding="async"
+                          className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                        />
                       </a>
-                    </div>
+                    )}
 
                     <h3 className="relative font-display text-xl font-bold text-foreground">
                       {project.name}
                     </h3>
-                    <p className={`relative mb-3 font-mono text-xs ${accent.text}`}>
+                    <p className={`relative mb-2 font-mono text-xs ${accent.text}`}>
                       {project.tagline}
-                      {project.team && <span className="text-muted-foreground"> · team project, {project.team.part}</span>}
+                      {project.team && <span className="text-muted-foreground"> · team, {project.team.part}</span>}
                     </p>
 
-                    <p className="relative mb-4 text-sm leading-relaxed text-muted-foreground">
+                    <p className="relative mb-4 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
                       {project.description}
                     </p>
 
-                    <ul className="relative mb-5 space-y-1.5">
-                      {project.highlights.map((h, idx) => (
-                        <li key={idx} className="flex gap-2 text-xs text-muted-foreground">
-                          <ChevronRight className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${accent.text}`} />
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {project.slug && (
-                      <a
-                        href={`/projects/${project.slug}`}
-                        className={`relative mb-4 inline-flex items-center gap-1 font-mono text-xs ${accent.text} hover:underline`}
-                      >
-                        read_case_study <ArrowUpRight className="h-3.5 w-3.5" />
-                        <span className="sr-only"> for {project.name}</span>
-                      </a>
-                    )}
-
-                    <div className="relative mt-auto flex flex-wrap gap-1.5 border-t border-border/60 pt-4">
-                      {project.tech.map((t) => (
+                    <div className="relative mb-4 flex flex-wrap gap-1.5">
+                      {project.tech.slice(0, 5).map((t) => (
                         <span
                           key={t}
-                          className="rounded border border-border bg-muted/40 px-2 py-0.5 font-mono text-[10px] text-muted-foreground transition-colors group-hover:border-border/80"
+                          className="rounded border border-border bg-muted/40 px-2 py-0.5 font-mono text-[10px] text-muted-foreground"
                         >
                           {t}
                         </span>
                       ))}
+                    </div>
+
+                    <div className="relative mt-auto flex flex-wrap items-center gap-4 border-t border-border/60 pt-4 font-mono text-xs">
+                      {project.slug && (
+                        <a href={`/projects/${project.slug}`} className={`inline-flex items-center gap-1 ${accent.text} hover:underline`}>
+                          how_i_built_it <ArrowUpRight className="h-3.5 w-3.5" />
+                          <span className="sr-only"> ({project.name} case study)</span>
+                        </a>
+                      )}
+                      {project.links?.demo && (
+                        <a
+                          href={project.links.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground"
+                        >
+                          <ExternalLink className="h-3.5 w-3.5" /> live
+                          <span className="sr-only"> {project.name}</span>
+                        </a>
+                      )}
+                      {project.links?.repo && (
+                        <a
+                          href={project.links.repo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground"
+                        >
+                          <Github className="h-3.5 w-3.5" /> code
+                          <span className="sr-only"> for {project.name}</span>
+                        </a>
+                      )}
                     </div>
                   </article>
                 </TiltCard>
