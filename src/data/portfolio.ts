@@ -557,7 +557,6 @@ export const projects: Project[] = [
         "20 screens, 5 role-based homes and 6 home-screen widgets.",
         "APK size cut by building only phone CPU architectures and enabling R8 code shrinking."
       ],
-      note: "Built for a client; product name and screenshots are withheld."
     },
     tagline: "React Native Finance App for Service Businesses",
     description: "An Android app where founders and finance teams see revenue, cash and risk per client, and approve bills and payments in one tap.",
@@ -645,7 +644,6 @@ export const projects: Project[] = [
         "41 pages, 31 SQL migrations, 4 portals.",
         "Zero service-role keys in the app: every privileged action is a narrow, audited database function."
       ],
-      note: "Built at a digital product agency; product name withheld."
     },
     tagline: "Multi-Tenant Affiliate Tracking, Commissions & Payouts",
     description: "A SaaS where brands run affiliate programs: tracked links, attribution, fraud scoring, GST/TDS invoicing and payouts.",
@@ -731,7 +729,6 @@ export const projects: Project[] = [
         "16 routes, 66 brand pages and 59 components on the team site.",
         "Smooth on mid-range hardware after the 3D performance work."
       ],
-      note: "Client project; brand name and screenshots are withheld."
     },
     tagline: "Cinematic 3D Corporate Website",
     description: "A motion-led corporate site for a global spirits group, with a scroll-driven 3D glass bottle and cinematic transitions.",
@@ -814,7 +811,6 @@ export const projects: Project[] = [
         "CSS cut by about a third with no visual change, verified by screenshot tests.",
         "Media weight down by 32%, camera photos down 91%."
       ],
-      note: "Client project; school name and screenshots are withheld."
     },
     tagline: "Parent-First Redesign for a Two-Campus School",
     description: "A redesigned school website built around the parent's decision: campus-finder quiz, 3D intro, site search and a prospectus.",
