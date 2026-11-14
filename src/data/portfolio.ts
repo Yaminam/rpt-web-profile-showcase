@@ -432,6 +432,49 @@ export const projects: Project[] = [
     accent: "yellow",
   },
   {
+    name: "goredis",
+    slug: "goredis",
+    seo: {
+      title: "goredis: Redis-Inspired Database in Go | Shreyash Tripathi",
+      description: "How I built goredis, a Redis-compatible in-memory database in Go: RESP2 over TCP, TTLs, AOF persistence, Prometheus metrics, Docker and Kubernetes.",
+    },
+    caseStudy: {
+      overview: [
+        "goredis is a Redis-inspired, in-memory key-value server written from scratch in Go. It speaks the Redis wire protocol (RESP2) over TCP, so redis-cli and standard Redis client libraries work with it for the commands it supports.",
+        "Shreyash Tripathi built it solo as a systems project: the protocol parser, the command engine, the storage layer with expiry, crash-safe append-only-file persistence, and the full production setup around it (metrics, health probes, Docker, Kubernetes, CI, dashboards and incident runbooks).",
+      ],
+      howItWorks: [
+        { title: "Protocol", text: "A RESP2 parser and encoder over TCP with pipelining and inline commands, plus request size limits so a malformed or oversized request can't exhaust memory." },
+        { title: "Commands", text: "21 Redis commands, including SET with EX, PX, EXAT, PXAT, NX, XX, KEEPTTL and GET, EXPIRE with NX, XX, GT and LT, TTL, PERSIST, AUTH, SELECT and BGREWRITEAOF." },
+        { title: "Storage and expiry", text: "A map guarded by a read-write lock, with exact TTLs (an expired key is never visible), a min-heap so DBSIZE excludes expired keys cheaply, and one bounded background sweeper." },
+        { title: "Persistence", text: "An append-only file with always, everysec or no fsync, group commit, safe recovery from a crash mid-write, AOF rewrite for compaction, an OS file lock against two writers, and a repair tool." },
+        { title: "Operations", text: "Structured logs, Prometheus metrics, health and readiness endpoints, graceful shutdown, password auth, protected mode and maxmemory, with a Grafana dashboard, alerts and incident runbooks." },
+        { title: "Delivery", text: "A multi-stage, distroless, non-root Docker image; Kubernetes manifests with a persistent volume, probes, NetworkPolicy and a security context; and GitHub Actions CI that builds, scans and deploys to a test cluster." },
+      ],
+      challenges: [
+        { problem: "A crash in the middle of a write can leave a half-written record at the end of the append-only file, and blindly loading it would corrupt the data.", solution: "Recovery detects a truncated final record and loads everything before it, refuses to load files that are corrupt elsewhere, and ships a goredis-check-aof tool to repair them." },
+        { problem: "fsync on every write is durable but slow: each acknowledged write waits for the disk.", solution: "Group commit batches concurrent writes into one fsync. Measured under the always policy, 449,756 writes needed only 59,752 fsyncs, about 7.5 writes per fsync." },
+        { problem: "Expired keys must never be returned, but scanning the whole dataset to delete them is expensive.", solution: "Every read checks expiry exactly, while a min-heap tracks the next keys to expire so one bounded background sweeper and DBSIZE stay cheap." },
+      ],
+      results: [
+        "137,509 commands/s for a 1:1 GET/SET mix, and 375,831 commands/s with pipelining (everysec fsync, 50 clients, 2-vCPU Linux CI runner).",
+        "21 Redis commands working with redis-cli and standard client libraries, about 7,300 lines of Go, with unit, fuzz, integration and end-to-end tests.",
+        "CI builds and smoke-tests the Docker image (0 known vulnerabilities in the scan) and deploys the Kubernetes manifests to a test cluster, checking auth, probes and data surviving a pod restart.",
+      ],
+      note: "goredis is an independent learning and portfolio project, not a Redis fork. It implements a documented subset of Redis (strings, database 0, RESP2, no TLS or ACLs), and its benchmarks were not compared with Redis.",
+    },
+    tagline: "Redis-Inspired In-Memory Database in Go",
+    description:
+      "A Redis-compatible key-value server written from scratch in Go, with TTLs, crash-safe AOF persistence, Prometheus metrics, Docker, Kubernetes and CI.",
+    tech: ["Go", "RESP2 / TCP", "Prometheus", "Grafana", "Docker", "Kubernetes", "GitHub Actions"],
+    highlights: [
+      "Built a Redis-compatible server in Go: 21 commands, TTLs and append-only-file persistence with group commit.",
+      "Measured 137k commands/s (375k/s pipelined) on a 2-vCPU Linux runner.",
+      "Shipped with Prometheus metrics, a Grafana dashboard, Docker, Kubernetes manifests and CI.",
+    ],
+    accent: "cyan",
+  },
+  {
     name: "Portfolio Website",
     tagline: "TypeScript Personal Site",
     description:
@@ -486,7 +529,7 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Backend & APIs",
     prompt: "backend --list",
-    items: ["Node.js", "Express.js", "Hono", "REST API Design"],
+    items: ["Node.js", "Express.js", "Go", "Hono", "REST API Design"],
   },
   {
     label: "Databases & Auth",
@@ -677,7 +720,7 @@ export const hire = {
   seo: {
     title: "Hire a Frontend & Full-Stack Developer | Shreyash Tripathi",
     description:
-      "Hire Shreyash Tripathi, React & Next.js frontend and full-stack developer, for full-time or freelance work in Noida, Delhi NCR, Gujarat or remote.",
+      "Need a React or Next.js developer? Hire Shreyash Tripathi, frontend & full-stack, for full-time or freelance work in Noida, Delhi NCR, Gujarat or remote.",
   },
   headline: "Hire a Frontend & Full-Stack Developer in India",
   /** Job titles he fits, written out on the page so searches for each title can match. Facts only. */

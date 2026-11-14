@@ -194,8 +194,8 @@ export const books: Book[] = [
     "previewChapters": 2,
     "previewPages": 43,
     "seo": {
-      "title": "DSA in Python Book for Placements | Shreyash Tripathi",
-      "description": "DSA in Python for placements and coding interviews: Python basics, 20 patterns, dry runs, clean code and Big-O. Free PDF preview."
+      "title": "DSA with Python Book for Placements | Shreyash Tripathi",
+      "description": "DSA with Python book for placements, written for Indian students: Python basics, 20 patterns, dry runs, clean code and Big-O. Free PDF preview."
     },
     "keywords": [
       "dsa in python book",
@@ -250,8 +250,8 @@ export const books: Book[] = [
     "previewChapters": 2,
     "previewPages": 34,
     "seo": {
-      "title": "DSA in C++ Book for Placements | Shreyash Tripathi",
-      "description": "DSA in C++ for placements and coding interviews: C++ and STL basics, 20 patterns, 100 must-do problems, dry runs and Big-O. Free PDF preview."
+      "title": "DSA with C++ Book for Placements | Shreyash Tripathi",
+      "description": "DSA with C++ book for placements: C++ and STL basics, 20 patterns, 100 must-do problems with answers, dry runs and Big-O. Free PDF preview."
     },
     "keywords": [
       "dsa in c++ book",

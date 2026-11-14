@@ -82,6 +82,7 @@ Shreyash wrote a series of interview and job-preparation books for developers, a
 - [PurrCase case study](https://shreyashtripathi.in/projects/purrcase): What he built, features and tech stack
 - [SketchRace case study](https://shreyashtripathi.in/projects/sketchrace): What he built, features and tech stack
 - [Asset & Credential Vault case study](https://shreyashtripathi.in/projects/asset-credential-vault): Internal zero-knowledge asset, credential and billing manager, encryption design and features
+- [goredis case study](https://shreyashtripathi.in/projects/goredis): A Redis-compatible in-memory database he built solo in Go: RESP2 over TCP, 21 commands, TTLs, crash-safe AOF persistence with group commit, Prometheus metrics, Docker, Kubernetes and CI; measured 137k commands/s (375k/s pipelined).
 - [Job Portal case study](https://shreyashtripathi.in/projects/mern-job-portal): What he built, features and tech stack
 - [Resume (PDF)](https://shreyashtripathi.in/Shreyash_Tripathi_Resume.pdf): Full resume
 - [GitHub](https://github.com/Yaminam): Source code and side projects
