@@ -489,6 +489,350 @@ export const projects: Project[] = [
     accent: "cyan",
   },
   {
+    name: "Finance Mobile App",
+    slug: "finance-mobile-app",
+    image: {
+      src: "/project-shots/finance-mobile-app.webp",
+      alt: "Finance mobile app case study: 20 screens, 5 role-based homes, 6 home-screen widgets"
+    },
+    build: [
+      "Sign in + biometric app lock",
+      "Role-based home (5 roles)",
+      "Finance inbox: swipe to approve",
+      "Live API + encrypted offline cache",
+      "Invoice PDFs and reminders",
+      "Push notifications + home-screen widgets"
+    ],
+    seo: {
+      title: "React Native Finance App Case Study | Shreyash Tripathi",
+      description: "How I built an Android finance app with React Native and Expo: role-based homes, swipe-to-approve, invoice PDFs, offline mode, widgets and SSL pinning."
+    },
+    caseStudy: {
+      overview: [
+        "A read-first Android companion app for a client-profitability and cash platform used by service businesses. Founders and finance leads use it to see revenue, cash and risk client by client, know who owes what, and approve bills, payments and reimbursements in one tap.",
+        "Shreyash Tripathi built the app on his own, from the first screens through live data, roles, quick actions, push notifications, app lock, home-screen widgets and a security audit, shipping 15 versions in under two weeks."
+      ],
+      howItWorks: [
+        {
+          title: "Role-based homes",
+          text: "Five roles (admin and finance manager, department head, accountant, employee and more) each get their own home screen, with demo accounts to switch between."
+        },
+        {
+          title: "Finance inbox",
+          text: "A mail-style approvals inbox sorted by urgency, with swipe-to-approve, multi-select and a card-by-card Review mode."
+        },
+        {
+          title: "Money and clients",
+          text: "Overdue invoices grouped by client, a needs-attention carousel, client ledgers and invoice PDFs with a GST breakdown."
+        },
+        {
+          title: "Reminders",
+          text: "Invoice reminder stages at 15, 30 and 45 days, plus daily, tax-deadline and festival reminders and push notifications."
+        },
+        {
+          title: "Widgets",
+          text: "Six Android home-screen widgets: Approvals, Next deadline, Quick actions, Collections, My requests and Today."
+        },
+        {
+          title: "Security",
+          text: "Certificate pinning, an encrypted offline cache and widget data (XChaCha20-Poly1305), biometric app lock, blocked screenshots and a rooted-device warning."
+        }
+      ],
+      challenges: [
+        {
+          problem: "The home-screen widgets never drew: the React Compiler rewrote components in a way that broke when the widget library called them as plain functions.",
+          solution: "Opted the widget files out of the compiler. Test renders went from 0 of 216 working to 216 of 216."
+        },
+        {
+          problem: "The app crashed at startup because the PDF library needs a text decoder the Hermes engine doesn't have.",
+          solution: "Wrote a small polyfill and loaded the PDF code only when an invoice PDF is first requested."
+        },
+        {
+          problem: "Each role sees and can do different things, and edge cases slip through: acting on already-decided requests, financial-year maths in January to March, cache-restore races.",
+          solution: "Ran a full role audit and fixed 40 issues in one pass, then hardened security in the next release."
+        }
+      ],
+      results: [
+        "Shipped to testers as an Android APK, versions 1.0.1 to 1.0.15.",
+        "20 screens, 5 role-based homes and 6 home-screen widgets.",
+        "APK size cut by building only phone CPU architectures and enabling R8 code shrinking."
+      ],
+      note: "Built for a client; product name and screenshots are withheld."
+    },
+    tagline: "React Native Finance App for Service Businesses",
+    description: "An Android app where founders and finance teams see revenue, cash and risk per client, and approve bills and payments in one tap.",
+    tech: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "TanStack Query",
+      "SSL pinning",
+      "Android widgets"
+    ],
+    highlights: [
+      "Built solo: 20 screens, 5 role-based homes, 6 widgets.",
+      "Swipe-to-approve inbox, invoice PDFs, offline mode.",
+      "Security hardening: pinning, encrypted cache, biometric lock."
+    ],
+    accent: "cyan"
+  },
+  {
+    name: "Affiliate-Marketing SaaS",
+    slug: "affiliate-marketing-saas",
+    image: {
+      src: "/project-shots/affiliate-marketing-saas.webp",
+      alt: "Affiliate-marketing SaaS case study: 41 pages, 31 SQL migrations, 4 portals"
+    },
+    build: [
+      "Affiliate shares /go/ link",
+      "Click tracked + UTM auto-tagged",
+      "Store order webhook",
+      "Attribution + fraud score",
+      "Commission, GST/TDS invoice",
+      "Payout"
+    ],
+    seo: {
+      title: "Affiliate-Marketing SaaS Case Study | Shreyash Tripathi",
+      description: "How I built a multi-tenant affiliate-marketing SaaS: link tracking, attribution, fraud scoring, GST/TDS invoicing and payouts on Next.js and Supabase."
+    },
+    caseStudy: {
+      overview: [
+        "An India-first affiliate-marketing platform for D2C and Shopify brands: affiliates share tracked links, the platform attributes sales, scores fraud, calculates commissions with GST and TDS, and handles invoices and payouts.",
+        "Shreyash Tripathi built it on his own: first a complete frontend simulation, then the real Supabase backend, the Cloudflare Workers deployment, UTM auto-tagging and promo-platform capture."
+      ],
+      howItWorks: [
+        {
+          title: "Four portals",
+          text: "41 pages across a merchant app, an affiliate portal, an admin console and auth."
+        },
+        {
+          title: "Tracked links",
+          text: "A /go/[code] redirect records each click and adds UTM tags automatically before sending the visitor on."
+        },
+        {
+          title: "Orders and attribution",
+          text: "Shopify order webhooks come in, sales are attributed to affiliates, and outbound webhooks notify other systems."
+        },
+        {
+          title: "Money",
+          text: "A GST/TDS invoice engine, refund clawback, disputes and payouts."
+        },
+        {
+          title: "Trust and safety",
+          text: "A fraud-scoring engine and KYC data encrypted at rest."
+        },
+        {
+          title: "Security model",
+          text: "31 SQL migrations with row-level security and no service-role key anywhere: privileged actions go through narrow database functions."
+        }
+      ],
+      challenges: [
+        {
+          problem: "The app crashed on Cloudflare Workers: Turbopack builds broke the runtime and the cache revalidation deadlocked.",
+          solution: "Forced the Cloudflare build onto webpack, removed the incompatible middleware file and made routes dynamic to avoid the deadlock."
+        },
+        {
+          problem: "A null-handling bug in a database function would have let staff of one tenant read another tenant's KYC data.",
+          solution: "Caught it in review and fixed the function before release, so tenant isolation holds."
+        },
+        {
+          problem: "Dashboards showed zero for today in India, and the scheduled webhook job sent some deliveries twice.",
+          solution: "Aligned day buckets and lookups on the same time zone, and fixed the dispatch race with a migration so in-flight deliveries aren't picked again."
+        }
+      ],
+      results: [
+        "Deployed to Cloudflare Workers with a real Supabase backend.",
+        "41 pages, 31 SQL migrations, 4 portals.",
+        "Zero service-role keys in the app: every privileged action is a narrow, audited database function."
+      ],
+      note: "Built at a digital product agency; product name withheld."
+    },
+    tagline: "Multi-Tenant Affiliate Tracking, Commissions & Payouts",
+    description: "A SaaS where brands run affiliate programs: tracked links, attribution, fraud scoring, GST/TDS invoicing and payouts.",
+    tech: [
+      "Next.js 16",
+      "Supabase",
+      "Postgres RLS",
+      "Cloudflare Workers",
+      "Tailwind CSS"
+    ],
+    highlights: [
+      "Built solo: 41 pages, 4 portals.",
+      "Tracked links with auto UTM, fraud scoring.",
+      "31 migrations, no service-role key."
+    ],
+    accent: "green"
+  },
+  {
+    name: "Spirits-Brand Corporate Website",
+    slug: "spirits-brand-website",
+    image: {
+      src: "/project-shots/spirits-brand-website.webp",
+      alt: "Spirits-brand corporate website case study: scroll-driven 3D glass bottle, 16 routes, 59 components"
+    },
+    team: {
+      part: "frontend",
+      role: "Frontend and 3D: built the scroll-driven 3D glass bottle, the cinematic intro, page transitions and the custom cursor on a team-built site."
+    },
+    build: [
+      "Cinematic intro (curtain wipe)",
+      "Scroll-driven 3D glass bottle",
+      "Gold-edged page transitions",
+      "Heritage reel + history timeline",
+      "Brand pages + careers form"
+    ],
+    seo: {
+      title: "3D Brand Website (React Three Fiber) | Shreyash Tripathi",
+      description: "How I built a scroll-driven 3D glass bottle, cinematic intro and custom cursor for a global spirits brand's corporate site with Next.js and three.js."
+    },
+    caseStudy: {
+      overview: [
+        "The Indian corporate website for a global wine and spirits group, built as a cinematic, motion-led experience rather than a product catalogue.",
+        "Shreyash Tripathi built the signature interactions: a 3D glass bottle that rotates and travels as you scroll, the intro, the page transitions, the cursor and several content bands."
+      ],
+      howItWorks: [
+        {
+          title: "3D bottle",
+          text: "A pinned glass bottle on the home page (three.js via React Three Fiber) rotates with scroll and travels from cap to base, with a fallback when WebGL isn't available."
+        },
+        {
+          title: "Intro and transitions",
+          text: "A cinematic intro with a curtain wipe and gold-edged transitions between pages."
+        },
+        {
+          title: "Custom cursor",
+          text: "A wine-glass cursor that releases droplets on click."
+        },
+        {
+          title: "Storytelling",
+          text: "A brand-highlights band on every page, a horizontal heritage reel and a history timeline."
+        },
+        {
+          title: "Scale",
+          text: "16 page routes, 66 brand detail pages and 59 components, with smooth scrolling (Lenis) and Framer Motion."
+        }
+      ],
+      challenges: [
+        {
+          problem: "The custom cursor drifted out of place over the fixed navbar.",
+          solution: "It was inside the smooth-scroll wrapper; moving it to be a direct child of the page body fixed the offset."
+        },
+        {
+          problem: "Dense navigation links fired rapid hover events and made the glass cursor jitter.",
+          solution: "Removed the hover scale on the cursor so it stays steady."
+        },
+        {
+          problem: "A real-time 3D glass material is expensive on mid-range devices.",
+          solution: "Used a lighter glass material, paused the canvas when off screen and lowered the pixel ratio."
+        }
+      ],
+      results: [
+        "A scroll-driven 3D centrepiece with a graceful fallback.",
+        "16 routes, 66 brand pages and 59 components on the team site.",
+        "Smooth on mid-range hardware after the 3D performance work."
+      ],
+      note: "Client project; brand name and screenshots are withheld."
+    },
+    tagline: "Cinematic 3D Corporate Website",
+    description: "A motion-led corporate site for a global spirits group, with a scroll-driven 3D glass bottle and cinematic transitions.",
+    tech: [
+      "Next.js 15",
+      "React Three Fiber",
+      "three.js",
+      "Framer Motion",
+      "Lenis"
+    ],
+    highlights: [
+      "Scroll-driven 3D glass bottle.",
+      "Cinematic intro and page transitions.",
+      "3D performance tuning."
+    ],
+    accent: "yellow"
+  },
+  {
+    name: "Boarding-School Website",
+    slug: "school-website",
+    image: {
+      src: "/project-shots/school-website.webp",
+      alt: "Heritage boarding-school website case study: about 50 routes, campus-finder quiz, CSS and media cut"
+    },
+    build: [
+      "3D photo-globe intro",
+      "Parent journey + mega-menu",
+      "6-question campus finder",
+      "In-page site search + prospectus",
+      "Responsive overhaul (9 phases)",
+      "Playwright visual + a11y tests"
+    ],
+    seo: {
+      title: "School Website Redesign Case Study | Shreyash Tripathi",
+      description: "How I rebuilt a heritage boarding school's website: campus-finder quiz, 3D globe intro, 50 routes, CSS cut by a third and media cut by 32%, with Next.js."
+    },
+    caseStudy: {
+      overview: [
+        "A full redesign of a heritage boarding school's website with two campuses, organised around how parents actually decide: from first impression to finding the right campus to downloading the prospectus.",
+        "Shreyash Tripathi led the build across several iterations (more than 750 commits), from the first redesign to the go-live version, including testing and performance work."
+      ],
+      howItWorks: [
+        {
+          title: "Parent journey",
+          text: "About 50 page routes organised around the parent's decision, with a mega-menu and a prospectus download."
+        },
+        {
+          title: "Campus finder",
+          text: "An adaptive, branching 6-question quiz that recommends the right campus."
+        },
+        {
+          title: "First impression",
+          text: "A 3D rotating photo-globe intro with a loading screen."
+        },
+        {
+          title: "Search",
+          text: "Site search that looks inside page content, not just titles."
+        },
+        {
+          title: "Quality",
+          text: "About 30 Playwright test files with visual baselines for desktop, touch and page families, plus accessibility tests and a 519-screenshot device report."
+        }
+      ],
+      challenges: [
+        {
+          problem: "The stylesheet had grown to over 30,000 lines.",
+          solution: "Cut it from 30,843 to 21,111 lines (7,065 to 4,822 rules) and split a 4,300-line file into 13, with every page staying screenshot-identical under the visual tests."
+        },
+        {
+          problem: "Heavy media slowed the site down.",
+          solution: "Reduced site media from 1.1 GB to 751 MB, and the client's camera photos from 212 MB to 25 MB (about 91% smaller)."
+        },
+        {
+          problem: "The client asked to stop screenshots of photos, but screen-capture blanking can't really block them and blanked the page when visitors switched tabs.",
+          solution: "Dropped it and kept only the protections that actually work, so normal browsing isn't broken."
+        }
+      ],
+      results: [
+        "Taken to go-live with about 50 routes.",
+        "CSS cut by about a third with no visual change, verified by screenshot tests.",
+        "Media weight down by 32%, camera photos down 91%."
+      ],
+      note: "Client project; school name and screenshots are withheld."
+    },
+    tagline: "Parent-First Redesign for a Two-Campus School",
+    description: "A redesigned school website built around the parent's decision: campus-finder quiz, 3D intro, site search and a prospectus.",
+    tech: [
+      "Next.js 16",
+      "Tailwind CSS",
+      "GSAP",
+      "Lenis",
+      "Playwright"
+    ],
+    highlights: [
+      "Campus-finder quiz and 3D intro.",
+      "CSS cut by a third, screenshot-verified.",
+      "Media down 32%."
+    ],
+    accent: "magenta"
+  },
+  {
     name: "Portfolio Website",
     image: { src: "/project-shots/portfolio.webp", alt: "shreyashtripathi.in home page with terminal-style hero" },
     links: { demo: "https://shreyashtripathi.in" },
