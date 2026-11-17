@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
@@ -42,8 +42,20 @@ const accentMap: Record<
 };
 
 /** Home shows the first `limit` projects with a link to /projects; the /projects page shows all. */
-const ProjectsSection = ({ limit }: { limit?: number }) => {
-  const shown = limit ? projects.slice(0, limit) : projects;
+const filters = [
+  { id: "all", label: "All" },
+  { id: "web", label: "Web apps" },
+  { id: "mobile", label: "Mobile" },
+  { id: "shopify", label: "Shopify" },
+  { id: "backend", label: "Backend & systems" },
+  { id: "client", label: "Client work" },
+] as const;
+type FilterId = (typeof filters)[number]["id"];
+
+const ProjectsSection = ({ limit, filterable }: { limit?: number; filterable?: boolean }) => {
+  const [filter, setFilter] = useState<FilterId>("all");
+  const matching = filter === "all" ? projects : projects.filter((p) => p.categories?.includes(filter));
+  const shown = limit ? projects.slice(0, limit) : matching;
   return (
     <section id="projects" className="section-padding">
       <div className="container mx-auto">
@@ -56,7 +68,31 @@ const ProjectsSection = ({ limit }: { limit?: number }) => {
           />
         </Reveal>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {filterable && (
+          <div role="group" aria-label="Filter projects" className="mb-8 flex flex-wrap gap-2">
+            {filters.map((f) => {
+              const count = f.id === "all" ? projects.length : projects.filter((p) => p.categories?.includes(f.id)).length;
+              const active = filter === f.id;
+              return (
+                <button
+                  key={f.id}
+                  type="button"
+                  onClick={() => setFilter(f.id)}
+                  aria-pressed={active}
+                  className={`rounded-full border px-4 py-1.5 font-mono text-xs transition-all duration-300 ${
+                    active
+                      ? "border-neon-cyan bg-neon-cyan/15 text-neon-cyan shadow-neon-cyan"
+                      : "border-border text-muted-foreground hover:border-neon-cyan/50 hover:text-foreground"
+                  }`}
+                >
+                  {f.label} <span className="opacity-60">{count}</span>
+                </button>
+              );
+            })}
+          </div>
+        )}
+
+        <div key={filter} className="grid gap-6 animate-fade-in md:grid-cols-2 lg:grid-cols-3">
           {shown.map((project, i) => {
             const accent = accentMap[project.accent];
             return (

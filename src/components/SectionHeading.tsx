@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useContext } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 import { useScramble } from "@/hooks/use-scramble";
 
@@ -9,10 +9,18 @@ type SectionHeadingProps = {
   subtitle?: string;
 };
 
+/** On a standalone section page the PageHero holds the <h1>, so the section's own heading is hidden. */
+const HiddenHeadingContext = createContext(false);
+export const HideSectionHeading = ({ children }: { children: React.ReactNode }) => (
+  <HiddenHeadingContext.Provider value={true}>{children}</HiddenHeadingContext.Provider>
+);
+
 /** Terminal-styled section heading: `~/section $ command` + glowing title that decrypts in view. */
 const SectionHeading = ({ index, command, title, subtitle }: SectionHeadingProps) => {
+  const hidden = useContext(HiddenHeadingContext);
   const { ref, isVisible } = useReveal<HTMLHeadingElement>({ threshold: 0.5 });
   const decoded = useScramble(title, { active: isVisible, speed: 26, revealEvery: 2 });
+  if (hidden) return null;
 
   return (
     <div className="mb-12 md:mb-16">

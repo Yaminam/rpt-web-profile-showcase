@@ -70,7 +70,7 @@ export const stats = [
   { value: "2+", label: "Years coding" },
   { value: "40%", label: "Manual work cut by automation" },
   { value: "30+", label: "Tech & tools" },
-  { value: "10+", label: "Production features shipped" },
+  { value: "20+", label: "Client & SaaS builds" },
 ];
 
 export const strengths = [
@@ -121,6 +121,8 @@ export type Project = {
   links?: { demo?: string; repo?: string; article?: string };
   /** Screenshot (or visual) shown on the card and the case-study page, 960x600 webp in /public/project-shots. */
   image?: { src: string; alt: string };
+  /** Filter groups on the /projects page. */
+  categories?: ("web" | "mobile" | "shopify" | "backend" | "client")[];
   /** "How it's built": the main flow, left to right, shown as a diagram on the case-study page. */
   build?: string[];
   /** Team project: what Shreyash owned. Omit for solo projects. */
@@ -148,6 +150,7 @@ export const projects: Project[] = [
   {
     name: "PurrCase",
     slug: "purrcase",
+    categories: ["web"],
     image: { src: "/project-shots/purrcase.webp", alt: "PurrCase storefront: custom phone case designer home page" },
     build: ["Upload a photo","Case designer: drag, resize, canvas crop","Pick model, material, finish","Stripe checkout","Webhook verifies payment","Order saved (Prisma + Postgres) + email"],
     team: {
@@ -223,6 +226,7 @@ export const projects: Project[] = [
   {
     name: "SketchRace",
     slug: "sketchrace",
+    categories: ["web","backend"],
     image: { src: "/project-shots/sketchrace.webp", alt: "SketchRace lobby: create or join a multiplayer drawing room" },
     build: ["Players join a room","Socket.IO game server","Drawer streams strokes","Server relays to every player","Server-timed rounds and hints","Speed-based scoring"],
     team: {
@@ -299,6 +303,7 @@ export const projects: Project[] = [
   {
     name: "Job Portal",
     slug: "mern-job-portal",
+    categories: ["web","backend"],
     image: { src: "/project-shots/mern-job-portal.webp", alt: "Job Portal home page with job search" },
     build: ["Next.js 15 pages","REST route handlers","bcrypt + JWT auth","Jobs, applications, profiles","PostgreSQL (8 tables)"],
     seo: {
@@ -373,6 +378,7 @@ export const projects: Project[] = [
     // Internal tool built at work: kept anonymous on purpose (no product/company name, no repo or live link).
     name: "Asset & Credential Vault",
     slug: "asset-credential-vault",
+    categories: ["web","client"],
     image: { src: "/project-shots/asset-credential-vault.webp", alt: "Zero-knowledge vault encryption flow: password, PBKDF2, AES-256-GCM, ciphertext-only database" },
     build: ["Master password (never sent)","PBKDF2 key in the browser","AES-256-GCM encryption","Database stores ciphertext only"],
     links: { article: "https://dev.to/shreyashtripathi/building-a-zero-knowledge-vault-in-the-browser-with-webcrypto-no-crypto-libraries-51k4" },
@@ -446,6 +452,7 @@ export const projects: Project[] = [
   {
     name: "goredis",
     slug: "goredis",
+    categories: ["backend"],
     image: { src: "/project-shots/goredis.webp", alt: "goredis terminal session: redis-cli commands and benchmark throughput" },
     build: ["redis-cli / any Redis client","TCP + RESP2 parser","Command engine","In-memory store + TTL heap","Append-only file (group commit)","Prometheus metrics → Grafana"],
     seo: {
@@ -491,6 +498,7 @@ export const projects: Project[] = [
   {
     name: "Finance Mobile App",
     slug: "finance-mobile-app",
+    categories: ["mobile","client"],
     image: {
       src: "/project-shots/finance-mobile-app.webp",
       alt: "Finance mobile app case study: 20 screens, 5 role-based homes, 6 home-screen widgets"
@@ -578,6 +586,7 @@ export const projects: Project[] = [
   {
     name: "Affiliate-Marketing SaaS",
     slug: "affiliate-marketing-saas",
+    categories: ["web","backend","client"],
     image: {
       src: "/project-shots/affiliate-marketing-saas.webp",
       alt: "Affiliate-marketing SaaS case study: 41 pages, 31 SQL migrations, 4 portals"
@@ -664,6 +673,7 @@ export const projects: Project[] = [
   {
     name: "Spirits-Brand Corporate Website",
     slug: "spirits-brand-website",
+    categories: ["web","client"],
     image: {
       src: "/project-shots/spirits-brand-website.webp",
       alt: "Spirits-brand corporate website case study: scroll-driven 3D glass bottle, 16 routes, 59 components"
@@ -749,6 +759,7 @@ export const projects: Project[] = [
   {
     name: "Boarding-School Website",
     slug: "school-website",
+    categories: ["web","client"],
     image: {
       src: "/project-shots/school-website.webp",
       alt: "Heritage boarding-school website case study: about 50 routes, campus-finder quiz, CSS and media cut"
@@ -831,6 +842,7 @@ export const projects: Project[] = [
   {
     name: "Ayurvedic Wellness Store",
     slug: "ayurvedic-shopify-store",
+    categories: ["shopify","client"],
     image: {
       src: "/project-shots/ayurvedic-shopify-store.webp",
       alt: "Shopify wellness store case study: theme refactor and redesign, global CSS cut almost in half"
@@ -914,6 +926,7 @@ export const projects: Project[] = [
   {
     name: "Ethnic-Wear Shopify Theme",
     slug: "ethnic-wear-shopify-theme",
+    categories: ["shopify","client"],
     image: {
       src: "/project-shots/ethnic-wear-shopify-theme.webp",
       alt: "Custom Shopify theme case study: 43 sections, 11 templates, 20 metafields, 32 SEO listings"
@@ -996,6 +1009,7 @@ export const projects: Project[] = [
   },
   {
     name: "Portfolio Website",
+    categories: ["web"],
     image: { src: "/project-shots/portfolio.webp", alt: "shreyashtripathi.in home page with terminal-style hero" },
     links: { demo: "https://shreyashtripathi.in" },
     tagline: "TypeScript Personal Site",
@@ -1173,36 +1187,85 @@ export const achievements: Achievement[] = [
 
 /** Sections that also live on their own page (/about, /experience, ...): title + description for SEO, blurb for the home link strip. */
 export type SectionPageId = "about" | "experience" | "skills" | "projects" | "education" | "contact";
-export const sectionPages: Record<SectionPageId, { title: string; description: string; blurb: string }> = {
+export type SectionPageHero = {
+  command: string;
+  h1: string;
+  lead: string;
+  stats: { value: string; label: string }[];
+  accent: "cyan" | "magenta" | "green" | "purple" | "yellow";
+};
+export const sectionPages: Record<SectionPageId, { title: string; description: string; blurb: string; hero: SectionPageHero }> = {
   about: {
     title: "About Shreyash Tripathi: Full-Stack Developer in Noida",
     description: "Shreyash Tripathi is a full-stack developer and UI/UX engineer in Noida: React, Next.js, Node.js, Go and Shopify. How he works, and what leaders say.",
-    blurb: "Who I am, how I work, what leaders say"
+    blurb: "Who I am, how I work, what leaders say",
+    hero: {
+      command: "cat about.md",
+      h1: "About Shreyash Tripathi",
+      lead: "I'm a full-stack developer and UI/UX engineer in Noida. I build web apps with React, Next.js and TypeScript, Android apps with React Native, backends in Node.js and Go, and Shopify stores, and I make them fast and easy to find. Right now I ship AI-integrated SaaS products and client sites at a digital product agency, and I'm going deeper into system design and DevOps.",
+      stats: [{ value: "20+", label: "client & SaaS builds" }, { value: "11", label: "case studies" }, { value: "12", label: "books written" }, { value: "4", label: "technical articles" }],
+      accent: "cyan",
+    },
   },
   experience: {
     title: "Work Experience | Shreyash Tripathi",
     description: "Shreyash Tripathi's work at a digital product agency: a React Native finance app, SaaS dashboards, design systems, AI agents and 20+ client builds.",
-    blurb: "What I've shipped at a product agency"
+    blurb: "What I've shipped at a product agency",
+    hero: {
+      command: "cat experience.log",
+      h1: "Work Experience",
+      lead: "At a digital product agency I went from AI Trainee to Junior Developer, UI/UX, working across more than 20 client and SaaS builds: a React Native finance app, multi-tenant dashboards and design systems, AI content agents, Shopify stores and marketing sites.",
+      stats: [{ value: "20+", label: "client & SaaS builds" }, { value: "15", label: "app releases in 2 weeks" }, { value: "40%", label: "content work automated" }, { value: "41", label: "pages in a SaaS I built solo" }],
+      accent: "magenta",
+    },
   },
   skills: {
     title: "Skills & Tech Stack | Shreyash Tripathi",
     description: "Shreyash Tripathi's tech stack: React, Next.js, TypeScript, Node.js, Go, React Native, Shopify, PostgreSQL, Docker, Kubernetes, AI SDKs and SEO.",
-    blurb: "Languages, frameworks, DevOps and more"
+    blurb: "Languages, frameworks, DevOps and more",
+    hero: {
+      command: "ls ./skills --all",
+      h1: "Skills & Tech Stack",
+      lead: "My stack covers the whole product: interfaces in React, Next.js and TypeScript; mobile apps in React Native and Expo; APIs and systems in Node.js and Go; data in PostgreSQL and Supabase; stores in Shopify Liquid; and shipping with Docker, Kubernetes and CI/CD. Every area below links to a project that proves it.",
+      stats: [{ value: "30+", label: "tech & tools" }, { value: "7", label: "programming languages" }, { value: "4", label: "platforms: web, mobile, Shopify, servers" }, { value: "100", label: "Lighthouse SEO score" }],
+      accent: "green",
+    },
   },
   projects: {
     title: "Projects & Case Studies | Shreyash Tripathi",
     description: "Projects and case studies by Shreyash Tripathi: SaaS platforms, a React Native finance app, Shopify stores, a Go database, 3D websites and more.",
-    blurb: "Every project, with how I built it"
+    blurb: "Every project, with how I built it",
+    hero: {
+      command: "ls ./projects --all",
+      h1: "Projects & Case Studies",
+      lead: "Things I've designed and built, from SaaS platforms and a React Native finance app to Shopify stores, a Redis-compatible database in Go and 3D brand websites. Each case study shows what it does, how it's built, the hard problems and the results. Filter by what you're hiring for.",
+      stats: [{ value: "12", label: "projects" }, { value: "11", label: "in-depth case studies" }, { value: "6", label: "client builds" }, { value: "137k", label: "commands/s (goredis)" }],
+      accent: "purple",
+    },
   },
   education: {
     title: "Education & Achievements | Shreyash Tripathi",
     description: "Shreyash Tripathi's education and achievements: B.Tech in Computer Science (CGPA 8.1), Smart India Hackathon top 10 finalist and certifications.",
-    blurb: "Degree, hackathons and certifications"
+    blurb: "Degree, hackathons and certifications",
+    hero: {
+      command: "cat education.md",
+      h1: "Education & Achievements",
+      lead: "B.Tech in Computer Science from JECRC University (2022 to 2026, CGPA 8.1), a top-10 finish at the Smart India Hackathon, and a habit of learning by building and writing: four technical articles and twelve interview-prep books.",
+      stats: [{ value: "8.1", label: "CGPA, B.Tech CSE" }, { value: "Top 10", label: "Smart India Hackathon" }, { value: "200+", label: "teams competed" }, { value: "12", label: "books written" }],
+      accent: "yellow",
+    },
   },
   contact: {
     title: "Contact Shreyash Tripathi: Hire or Freelance",
     description: "Contact Shreyash Tripathi for full-time roles or freelance projects: React, Next.js, full-stack, Shopify and SEO work. Email, LinkedIn and FAQs.",
-    blurb: "Email, LinkedIn and common questions"
+    blurb: "Email, LinkedIn and common questions",
+    hero: {
+      command: "./contact --connect",
+      h1: "Contact Shreyash Tripathi",
+      lead: "Open to full-time roles (frontend, full-stack or backend) and freelance projects: web apps, mobile apps, Shopify stores and SEO. I work from Noida and Delhi NCR, and remotely with teams anywhere. Email is the fastest way to reach me.",
+      stats: [{ value: "Open", label: "to full-time roles" }, { value: "Open", label: "to freelance projects" }, { value: "NCR", label: "Noida, Delhi, Gurugram" }, { value: "Remote", label: "India and worldwide" }],
+      accent: "cyan",
+    },
   }
 };
 
