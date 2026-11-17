@@ -11,7 +11,7 @@ import AboutSection from "@/components/AboutSection";
 import ExperienceDetail from "@/components/ExperienceDetail";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import EducationSection from "@/components/EducationSection";
+import EducationDetail from "@/components/EducationDetail";
 import ContactDetail from "@/components/ContactDetail";
 import FaqSection from "@/components/FaqSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -26,7 +26,7 @@ const sectionFor: Record<SectionPageId, React.ReactNode> = {
   experience: <ExperienceDetail />,
   skills: <SkillsSection />,
   projects: <ProjectsSection filterable />,
-  education: <EducationSection />,
+  education: <EducationDetail />,
   contact: <ContactDetail />,
 };
 

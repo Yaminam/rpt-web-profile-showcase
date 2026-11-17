@@ -1,6 +1,7 @@
 import React from "react";
-import { ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, Briefcase, Rocket } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Briefcase, Rocket } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import { cn } from "@/lib/utils";
 import { caseStudies, hire, sectionPages, type SectionPageId } from "@/data/portfolio";
 
 const order: SectionPageId[] = ["about", "experience", "skills", "projects", "education", "contact"];
@@ -119,32 +120,6 @@ const SkillsExtras = () => (
   </Block>
 );
 
-/** Education: the books are part of how I learn. */
-const EducationExtras = () => (
-  <Block kicker="./learning" title="Learning by writing">
-    <Reveal>
-      <a
-        href="/books"
-        className="cyber-card group flex flex-col gap-4 p-6 hover:border-neon-magenta/60 md:flex-row md:items-center md:justify-between md:p-8"
-      >
-        <span className="flex items-start gap-4">
-          <BookOpen className="mt-1 h-6 w-6 shrink-0 text-neon-magenta" />
-          <span>
-            <span className="block font-display text-xl font-bold">The Job-Ready Series</span>
-            <span className="mt-1 block text-muted-foreground">
-              12 interview and job-switch books I wrote, on DSA, DBMS, OS, networks, system design, DevOps, cloud and more, with free
-              chapter previews.
-            </span>
-          </span>
-        </span>
-        <span className="btn-ghost shrink-0 text-xs">
-          browse_books <ArrowUpRight className="h-3.5 w-3.5" />
-        </span>
-      </a>
-    </Reveal>
-  </Block>
-);
-
 /** Contact: how we can work together, and the three hire pages. */
 const ContactExtras = () => (
   <Block kicker="./availability" title="Ways to work together">
@@ -179,39 +154,116 @@ export const pageExtras: Partial<Record<SectionPageId, () => JSX.Element>> = {
   about: AboutExtras,
   experience: ExperienceExtras,
   skills: SkillsExtras,
-  education: EducationExtras,
   contact: ContactExtras,
 };
 
-/** Previous / next section page, so every page leads somewhere. */
+/** Accent → classes for the "up next" card. */
+const accentCls: Record<string, { text: string; border: string; glow: string; bg: string }> = {
+  cyan: { text: "text-neon-cyan", border: "hover:border-neon-cyan/70", glow: "rgba(0,240,255,0.22)", bg: "bg-neon-cyan" },
+  magenta: { text: "text-neon-magenta", border: "hover:border-neon-magenta/70", glow: "rgba(255,43,214,0.2)", bg: "bg-neon-magenta" },
+  green: { text: "text-neon-green", border: "hover:border-neon-green/70", glow: "rgba(57,255,20,0.16)", bg: "bg-neon-green" },
+  purple: { text: "text-neon-purple", border: "hover:border-neon-purple/70", glow: "rgba(168,85,247,0.22)", bg: "bg-neon-purple" },
+  yellow: { text: "text-neon-yellow", border: "hover:border-neon-yellow/70", glow: "rgba(253,224,71,0.16)", bg: "bg-neon-yellow" },
+};
+
+/**
+ * End-of-page navigator: where you are in the six pages, a big "up next" card and a smaller
+ * "previous" card. Wraps around, so every page has both.
+ */
 export const PageNav = ({ id }: { id: SectionPageId }) => {
   const i = order.indexOf(id);
-  const prev = i > 0 ? order[i - 1] : null;
-  const next = i < order.length - 1 ? order[i + 1] : null;
+  const prev = order[(i - 1 + order.length) % order.length];
+  const next = order[(i + 1) % order.length];
+  const a = accentCls[sectionPages[next].hero.accent] ?? accentCls.cyan;
+
   return (
-    <nav aria-label="More pages" className="container mx-auto grid gap-4 px-5 pb-16 sm:grid-cols-2">
-      {prev ? (
-        <a href={`/${prev}`} className="cyber-card group flex items-center gap-3 p-5 hover:border-neon-cyan/60">
-          <ArrowLeft className="h-5 w-5 text-neon-cyan transition-transform group-hover:-translate-x-1" />
-          <span>
-            <span className="block font-mono text-xs text-muted-foreground">previous</span>
-            <span className="font-display font-bold">/{prev}</span>
-            <span className="block text-sm text-muted-foreground">{sectionPages[prev].blurb}</span>
-          </span>
-        </a>
-      ) : (
-        <span />
-      )}
-      {next && (
-        <a href={`/${next}`} className="cyber-card group flex items-center justify-end gap-3 p-5 text-right hover:border-neon-cyan/60">
-          <span>
-            <span className="block font-mono text-xs text-muted-foreground">next</span>
-            <span className="font-display font-bold">/{next}</span>
-            <span className="block text-sm text-muted-foreground">{sectionPages[next].blurb}</span>
-          </span>
-          <ArrowRight className="h-5 w-5 text-neon-cyan transition-transform group-hover:translate-x-1" />
-        </a>
-      )}
+    <nav aria-label="More pages" className="container mx-auto px-5 pb-20 pt-4">
+      <Reveal>
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-terminal-bg/70 p-5 backdrop-blur md:p-8">
+          <div className="bg-grid-lines pointer-events-none absolute inset-0 bg-[length:40px_40px] opacity-20" aria-hidden />
+          <div
+            className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 animate-aurora"
+            style={{ background: `radial-gradient(circle, ${a.glow} 0%, transparent 70%)` }}
+            aria-hidden
+          />
+
+          {/* where you are */}
+          <div className="relative flex flex-wrap items-center justify-between gap-3">
+            <p className="font-mono text-xs uppercase tracking-widest text-neon-magenta">./continue_exploring</p>
+            <p className="font-mono text-xs text-muted-foreground">
+              <span className="text-foreground">{String(i + 1).padStart(2, "0")}</span> / {String(order.length).padStart(2, "0")}
+            </p>
+          </div>
+          <ol className="relative mt-4 grid grid-cols-6 gap-1.5 md:gap-2">
+            {order.map((p, k) => (
+              <li key={p}>
+                <a href={`/${p}`} aria-current={p === id ? "page" : undefined} className="group block" title={sectionPages[p].hero.h1}>
+                  <span
+                    className={cn(
+                      "block h-1.5 rounded-full transition-all duration-300",
+                      p === id
+                        ? "bg-gradient-to-r from-neon-cyan to-neon-magenta shadow-[0_0_12px_rgba(0,240,255,0.7)]"
+                        : k < i
+                          ? "bg-neon-cyan/40 group-hover:bg-neon-cyan/70"
+                          : "bg-muted group-hover:bg-muted-foreground/50"
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      "mt-2 hidden truncate font-mono text-[11px] transition-colors sm:block",
+                      p === id ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
+                    )}
+                  >
+                    /{p}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ol>
+
+          <div className="relative mt-6 grid gap-4 md:grid-cols-[1fr_2fr]">
+            <a
+              href={`/${prev}`}
+              className="group flex items-center gap-4 rounded-2xl border border-border bg-muted/10 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-neon-cyan/50 md:flex-col md:items-start md:justify-between"
+            >
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground transition-all group-hover:-translate-x-1 group-hover:border-neon-cyan/60 group-hover:text-neon-cyan">
+                <ArrowLeft className="h-4 w-4" />
+              </span>
+              <span className="min-w-0">
+                <span className="block font-mono text-[11px] uppercase tracking-widest text-muted-foreground">previous</span>
+                <span className="block font-display text-lg font-bold">{sectionPages[prev].hero.h1}</span>
+                <span className="block text-sm text-muted-foreground">{sectionPages[prev].blurb}</span>
+              </span>
+            </a>
+
+            <a
+              href={`/${next}`}
+              className={cn(
+                "group relative flex items-center justify-between gap-6 overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-muted/30 to-transparent p-6 transition-all duration-300 hover:-translate-y-0.5 md:p-8",
+                a.border
+              )}
+            >
+              <span
+                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/5 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+                aria-hidden
+              />
+              <span className="relative min-w-0">
+                <span className={cn("block font-mono text-[11px] uppercase tracking-widest", a.text)}>up next · /{next}</span>
+                <span className="mt-2 block font-display text-2xl font-extrabold leading-tight md:text-4xl">{sectionPages[next].hero.h1}</span>
+                <span className="mt-2 block text-sm text-muted-foreground md:text-base">{sectionPages[next].blurb}</span>
+              </span>
+              <span
+                className={cn(
+                  "relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-terminal-bg shadow-[0_0_30px_-6px_currentColor] transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-110 md:h-16 md:w-16",
+                  a.bg
+                )}
+              >
+                <ArrowRight className="h-6 w-6" />
+              </span>
+            </a>
+          </div>
+        </div>
+      </Reveal>
     </nav>
   );
 };

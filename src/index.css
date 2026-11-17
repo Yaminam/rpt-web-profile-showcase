@@ -455,3 +455,68 @@
     }
   }
 }
+
+/* Progress ring that draws itself in (set --ring-c to the circle's circumference). */
+@keyframes ring-draw {
+  from {
+    stroke-dashoffset: var(--ring-c);
+  }
+}
+.ring-draw {
+  animation: ring-draw 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+/* Gradient line that flows along a timeline. */
+@keyframes line-flow {
+  to {
+    background-position: 200% 0;
+  }
+}
+.line-flow {
+  background-size: 200% 100%;
+  animation: line-flow 4s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ring-draw,
+  .line-flow {
+    animation: none;
+  }
+}
+
+/* Full-screen mobile menu: panel and staggered links. */
+@keyframes menu-sheet-in {
+  from {
+    opacity: 0;
+    clip-path: circle(0% at calc(100% - 2.5rem) 2.5rem);
+  }
+  to {
+    opacity: 1;
+    clip-path: circle(150% at calc(100% - 2.5rem) 2.5rem);
+  }
+}
+.menu-sheet-in {
+  animation: menu-sheet-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes menu-item-in {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.menu-item-in {
+  animation: menu-item-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-sheet-in,
+  .menu-item-in {
+    animation: none;
+  }
+}
+
+/* Toasts (e.g. the welcome hint) stay out of the way while the mobile menu is open. */
+body.menu-open [data-sonner-toaster] {
+  display: none;
+}

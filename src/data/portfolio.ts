@@ -1271,6 +1271,34 @@ export const achievements: Achievement[] = [
   },
 ];
 
+/** Technical articles on dev.to (shown on /education). */
+export const articles = [
+  {
+    title: "How I made my React portfolio 2x faster",
+    about: "Prerendering a Vite + React app: Lighthouse performance from 30 to 80.",
+    tags: ["React", "Vite", "Performance"],
+    url: "https://dev.to/shreyashtripathi/how-i-made-my-react-portfolio-2x-faster-lighthouse-30-to-80-by-prerendering-a-vite-app-3j03",
+  },
+  {
+    title: "Building a real-time multiplayer drawing game with Socket.IO",
+    about: "The SketchRace game server: rooms, timers, scoring and the bugs along the way.",
+    tags: ["Socket.IO", "Node.js", "Real-time"],
+    url: "https://dev.to/shreyashtripathi/building-a-real-time-multiplayer-drawing-game-with-socketio-rooms-timers-scoring-and-the-bugs-3i4j",
+  },
+  {
+    title: "Building a zero-knowledge vault in the browser with WebCrypto",
+    about: "PBKDF2, AES-256-GCM, key envelopes and recipient-bound share links, with no crypto libraries.",
+    tags: ["WebCrypto", "Security", "TypeScript"],
+    url: "https://dev.to/shreyashtripathi/building-a-zero-knowledge-vault-in-the-browser-with-webcrypto-no-crypto-libraries-51k4",
+  },
+  {
+    title: "Building a job portal with Next.js 15 route handlers",
+    about: "bcrypt + JWT auth, REST route handlers and a PostgreSQL schema with UNIQUE and CHECK constraints.",
+    tags: ["Next.js", "PostgreSQL", "Auth"],
+    url: "https://dev.to/shreyashtripathi/building-a-job-portal-with-nextjs-15-route-handlers-auth-applications-and-the-schema-behind-them-4of4",
+  },
+];
+
 /** Sections that also live on their own page (/about, /experience, ...): title + description for SEO, blurb for the home link strip. */
 export type SectionPageId = "about" | "experience" | "skills" | "projects" | "education" | "contact";
 export type SectionPageHero = {
