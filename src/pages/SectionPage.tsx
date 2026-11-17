@@ -8,11 +8,11 @@ import PageHero from "@/components/PageHero";
 import { PageNav, pageExtras } from "@/components/PageExtras";
 import { HideSectionHeading } from "@/components/SectionHeading";
 import AboutSection from "@/components/AboutSection";
-import ExperienceSection from "@/components/ExperienceSection";
+import ExperienceDetail from "@/components/ExperienceDetail";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import EducationSection from "@/components/EducationSection";
-import ContactSection from "@/components/ContactSection";
+import ContactDetail from "@/components/ContactDetail";
 import FaqSection from "@/components/FaqSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { sectionPages, type SectionPageId } from "@/data/portfolio";
@@ -23,11 +23,11 @@ const InteractiveLayer = lazy(() => import("@/components/InteractiveLayer"));
 /** The section itself (its heading is hidden: PageHero carries the page's <h1>). */
 const sectionFor: Record<SectionPageId, React.ReactNode> = {
   about: <AboutSection />,
-  experience: <ExperienceSection />,
+  experience: <ExperienceDetail />,
   skills: <SkillsSection />,
   projects: <ProjectsSection filterable />,
   education: <EducationSection />,
-  contact: <ContactSection />,
+  contact: <ContactDetail />,
 };
 
 /** Sections that follow, with their own visible headings. */

@@ -114,6 +114,92 @@ export const experience: Experience[] = [
   },
 ];
 
+/** /experience page: the work behind the role, grouped by stream (same facts as the bullets above). */
+export type WorkStream = {
+  area: "mobile" | "design systems" | "AI" | "SaaS" | "web" | "security" | "toolbox";
+  title: string;
+  text: string;
+  stack: string[];
+  metric?: { value: string; label: string };
+  /** Case-study slug, when there is one. */
+  slug?: string;
+  /** Takes two columns on wide screens. */
+  wide?: boolean;
+};
+
+export const workStreams: WorkStream[] = [
+  {
+    area: "mobile",
+    title: "Finance mobile app",
+    text: "Built and shipped the Android companion to a client-profitability and cash platform for service businesses: role-based homes, a finance inbox with swipe-to-approve, invoice PDFs and reminders, offline mode and push notifications, hardened with SSL pinning, secure storage and a biometric lock.",
+    stack: ["React Native", "Expo", "TypeScript"],
+    metric: { value: "6", label: "home-screen widgets" },
+    slug: "finance-mobile-app",
+    wide: true,
+  },
+  {
+    area: "AI",
+    title: "Daily AI content agent",
+    text: "Built and deployed an agent that generates Instagram, LinkedIn and blog content every day.",
+    stack: ["AI agent", "Instagram", "LinkedIn", "Blog"],
+    metric: { value: "~40%", label: "less manual content work" },
+  },
+  {
+    area: "design systems",
+    title: "Agency work-management platform",
+    text: "Redesigned it end to end on one design system: director and team-lead dashboards, a team capacity board, project and issue views, attendance, dark mode, an email pipeline and tickets, plus its CRM landing page with a request-access flow.",
+    stack: ["React", "Supabase"],
+  },
+  {
+    area: "design systems",
+    title: "Startup & investor platform",
+    text: "Led a dashboard UI overhaul and design-system pass: investor dashboards brought to parity with the founder one, new marketing and campaign landing pages, rebuilt blog typography and build-breaking TypeScript errors fixed.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    area: "AI",
+    title: "AI search-visibility tracker",
+    text: "Worked on the dashboard UI of a tracker that measures how ChatGPT, Gemini, Claude, Perplexity and Grok mention, rank and describe brands.",
+    stack: ["Next.js", "Supabase", "Anthropic SDK"],
+  },
+  {
+    area: "SaaS",
+    title: "Affiliate-marketing SaaS",
+    text: "Shipped UTM auto-tagging and partner-portal link generation on a multi-tenant platform, plus a new analytics dashboard module for an internal campaign-management platform.",
+    stack: ["Multi-tenant", "Analytics", "Dashboards"],
+    slug: "affiliate-marketing-saas",
+  },
+  {
+    area: "security",
+    title: "Zero-knowledge asset & credential vault",
+    text: "Built an internal asset, credential and billing manager where secrets are encrypted in the browser, with QR asset labels, invoice OCR and multi-currency spend tracking.",
+    stack: ["Next.js", "Supabase", "WebCrypto"],
+    slug: "asset-credential-vault",
+    wide: true,
+  },
+  {
+    area: "web",
+    title: "K-12 school website",
+    text: "Rebuilt a school marketing site with a mobile-layout overhaul, fixing horizontal scroll, tap targets and navigation.",
+    stack: ["Responsive UI", "Accessibility"],
+    metric: { value: "45", label: "pages rebuilt" },
+    slug: "school-website",
+  },
+  {
+    area: "web",
+    title: "Fixes across products",
+    text: "Delivered dark mode, responsiveness and TypeScript fixes on a social-listening platform and an AI call-screening product.",
+    stack: ["TypeScript", "Dark mode"],
+  },
+  {
+    area: "toolbox",
+    title: "Across 20+ client and SaaS builds",
+    text: "From cinematic 3D/WebGL marketing sites to multi-tenant dashboards and AI content pipelines.",
+    stack: ["Three.js", "GSAP", "Framer Motion", "Stripe", "Razorpay", "Clerk", "Turborepo", "OpenAI SDK", "Anthropic SDK"],
+    metric: { value: "20+", label: "builds" },
+  },
+];
+
 export type Project = {
   name: string;
   /** URL slug for the /projects/<slug> case-study page (omit = no page). */
