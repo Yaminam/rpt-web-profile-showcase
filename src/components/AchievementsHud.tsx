@@ -17,12 +17,28 @@ const AchievementsHud = () => {
   useEffect(() => {
     if (unlocked.has("explorer")) return;
     const ids = navItems.map((n) => n.id);
-    const seen = new Set<string>();
+    // Sections live on separate pages, so remember what was seen across page loads.
+    const KEY = "explorer-seen";
+    let stored: string[] = [];
+    try {
+      stored = JSON.parse(sessionStorage.getItem(KEY) || "[]");
+    } catch {
+      /* storage unavailable */
+    }
+    const seen = new Set<string>(stored);
+    const remember = () => {
+      try {
+        sessionStorage.setItem(KEY, JSON.stringify([...seen]));
+      } catch {
+        /* storage unavailable */
+      }
+    };
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) seen.add(e.target.id);
         });
+        remember();
         if (ids.every((id) => seen.has(id))) {
           unlock("explorer");
           observer.disconnect();

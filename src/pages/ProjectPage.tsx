@@ -43,7 +43,7 @@ const ProjectPage = () => {
             Shreyash <span className="text-neon-cyan">Tripathi</span>
           </span>
         </a>
-        <a href="/#projects" className="btn-ghost py-2 text-xs">
+        <a href="/projects" className="btn-ghost py-2 text-xs">
           <ArrowLeft className="h-4 w-4" /> all_projects
         </a>
       </header>
@@ -54,7 +54,7 @@ const ProjectPage = () => {
             ~/portfolio
           </a>
           <span className="text-neon-cyan"> / </span>
-          <a href="/#projects" className="hover:text-foreground">
+          <a href="/projects" className="hover:text-foreground">
             projects
           </a>
           <span className="text-neon-cyan"> / </span>

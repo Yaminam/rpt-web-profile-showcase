@@ -150,7 +150,11 @@ const CommandTerminal = () => {
       }
       print(<span><Cyan>→</Cyan> navigating to /{id} ...</span>);
       setOpen(false);
-      setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), 260);
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+        else window.location.href = id === "home" ? "/" : `/${id}`;
+      }, 260);
     },
     [print]
   );

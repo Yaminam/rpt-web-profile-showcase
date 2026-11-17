@@ -41,7 +41,9 @@ const accentMap: Record<
   },
 };
 
-const ProjectsSection = () => {
+/** Home shows the first `limit` projects with a link to /projects; the /projects page shows all. */
+const ProjectsSection = ({ limit }: { limit?: number }) => {
+  const shown = limit ? projects.slice(0, limit) : projects;
   return (
     <section id="projects" className="section-padding">
       <div className="container mx-auto">
@@ -55,7 +57,7 @@ const ProjectsSection = () => {
         </Reveal>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, i) => {
+          {shown.map((project, i) => {
             const accent = accentMap[project.accent];
             return (
               <Reveal key={project.name} delay={i * 110}>
@@ -154,6 +156,14 @@ const ProjectsSection = () => {
             );
           })}
         </div>
+
+        {limit && projects.length > limit && (
+          <div className="mt-8 text-center">
+            <a href="/projects" className="btn-ghost text-xs">
+              view_all_{projects.length}_projects <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

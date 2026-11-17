@@ -1171,6 +1171,41 @@ export const achievements: Achievement[] = [
   },
 ];
 
+/** Sections that also live on their own page (/about, /experience, ...): title + description for SEO, blurb for the home link strip. */
+export type SectionPageId = "about" | "experience" | "skills" | "projects" | "education" | "contact";
+export const sectionPages: Record<SectionPageId, { title: string; description: string; blurb: string }> = {
+  about: {
+    title: "About Shreyash Tripathi: Full-Stack Developer in Noida",
+    description: "Shreyash Tripathi is a full-stack developer and UI/UX engineer in Noida: React, Next.js, Node.js, Go and Shopify. How he works, and what leaders say.",
+    blurb: "Who I am, how I work, what leaders say"
+  },
+  experience: {
+    title: "Work Experience | Shreyash Tripathi",
+    description: "Shreyash Tripathi's work at a digital product agency: a React Native finance app, SaaS dashboards, design systems, AI agents and 20+ client builds.",
+    blurb: "What I've shipped at a product agency"
+  },
+  skills: {
+    title: "Skills & Tech Stack | Shreyash Tripathi",
+    description: "Shreyash Tripathi's tech stack: React, Next.js, TypeScript, Node.js, Go, React Native, Shopify, PostgreSQL, Docker, Kubernetes, AI SDKs and SEO.",
+    blurb: "Languages, frameworks, DevOps and more"
+  },
+  projects: {
+    title: "Projects & Case Studies | Shreyash Tripathi",
+    description: "Projects and case studies by Shreyash Tripathi: SaaS platforms, a React Native finance app, Shopify stores, a Go database, 3D websites and more.",
+    blurb: "Every project, with how I built it"
+  },
+  education: {
+    title: "Education & Achievements | Shreyash Tripathi",
+    description: "Shreyash Tripathi's education and achievements: B.Tech in Computer Science (CGPA 8.1), Smart India Hackathon top 10 finalist and certifications.",
+    blurb: "Degree, hackathons and certifications"
+  },
+  contact: {
+    title: "Contact Shreyash Tripathi: Hire or Freelance",
+    description: "Contact Shreyash Tripathi for full-time roles or freelance projects: React, Next.js, full-stack, Shopify and SEO work. Email, LinkedIn and FAQs.",
+    blurb: "Email, LinkedIn and common questions"
+  }
+};
+
 export const navItems = [
   { id: "home", label: "home" },
   { id: "about", label: "about" },

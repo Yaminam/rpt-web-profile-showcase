@@ -11,8 +11,12 @@ import ProjectPage from "./pages/ProjectPage";
 import HirePage from "./pages/HirePage";
 import SeoServicesPage from "./pages/SeoServicesPage";
 import ShopifyServicesPage from "./pages/ShopifyServicesPage";
+import SectionPage from "./pages/SectionPage";
 import BooksPage from "./pages/BooksPage";
 import BookPage from "./pages/BookPage";
+import type { SectionPageId } from "@/data/portfolio";
+
+const sectionIds: SectionPageId[] = ["about", "experience", "skills", "projects", "education", "contact"];
 
 const queryClient = new QueryClient();
 
@@ -33,6 +37,9 @@ export const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Index />} />
     <Route path="/projects/:slug" element={<ProjectPage />} />
+    {sectionIds.map((id) => (
+      <Route key={id} path={`/${id}`} element={<SectionPage id={id} />} />
+    ))}
     <Route path="/hire" element={<HirePage />} />
     <Route path="/hire/seo" element={<SeoServicesPage />} />
     <Route path="/hire/shopify" element={<ShopifyServicesPage />} />

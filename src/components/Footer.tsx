@@ -52,7 +52,7 @@ const Footer = () => {
         {/* Columns */}
         <div className="grid gap-10 border-t border-neon-cyan/10 py-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-2">
-            <a href="#home" className="font-mono text-xl font-bold text-foreground">
+            <a href="/" className="font-mono text-xl font-bold text-foreground">
               Shreyash <span className="text-neon-cyan">Tripathi</span>
             </a>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
@@ -76,7 +76,7 @@ const Footer = () => {
               {navItems.map((item) => (
                 <li key={item.id}>
                   <a
-                    href={`#${item.id}`}
+                    href={item.id === "home" ? "/" : `/${item.id}`}
                     className="group inline-flex items-center gap-2 font-mono text-sm text-muted-foreground transition-colors hover:text-neon-cyan"
                   >
                     <span className="text-neon-magenta/60 transition-transform group-hover:translate-x-1">
@@ -166,7 +166,7 @@ const Footer = () => {
             © {new Date().getFullYear()} {profile.name} — all rights reserved.
           </p>
           <a
-            href="#home"
+            href="/"
             aria-label="Back to top"
             className="group flex items-center gap-2 rounded-md border border-neon-cyan/30 bg-neon-cyan/5 px-3 py-1.5 text-neon-cyan transition-all hover:bg-neon-cyan hover:text-terminal-bg"
           >

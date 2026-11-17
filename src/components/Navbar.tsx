@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X, Terminal, FileDown, BookOpen } from "lucide-react";
 import { navItems, profile } from "@/data/portfolio";
-import { useActiveSection } from "@/hooks/use-active-section";
+import { useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
-const sectionIds = navItems.map((n) => n.id);
+const pathFor = (id: string) => (id === "home" ? "/" : `/${id}`);
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const active = useActiveSection(sectionIds);
+  const { pathname } = useLocation();
+  const active = navItems.find((item) => pathFor(item.id) === pathname)?.id;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -29,7 +30,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex h-16 items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="group flex shrink-0 items-center gap-2 whitespace-nowrap font-mono font-bold">
+        <a href="/" className="group flex shrink-0 items-center gap-2 whitespace-nowrap font-mono font-bold">
           <Terminal className="h-5 w-5 text-neon-cyan transition-transform group-hover:rotate-12" />
           <span className="text-foreground">
             Shreyash <span className="text-neon-cyan">Tripathi</span>
@@ -41,10 +42,10 @@ const Navbar = () => {
           {navItems.map((item) => (
             <a
               key={item.id}
-              href={`#${item.id}`}
+              href={pathFor(item.id)}
               className={cn("nav-link", active === item.id && "active", (item.id === "experience" || item.id === "education") && "hidden 2xl:inline")}
             >
-              <span className="text-neon-magenta/70">#</span>
+              <span className="text-neon-magenta/70">/</span>
               {item.label}
             </a>
           ))}
@@ -100,14 +101,14 @@ const Navbar = () => {
             {navItems.map((item) => (
               <li key={item.id}>
                 <a
-                  href={`#${item.id}`}
+                  href={pathFor(item.id)}
                   onClick={() => setOpen(false)}
                   className={cn(
                     "block rounded-md px-3 py-2 font-mono text-sm text-muted-foreground transition-colors hover:bg-neon-cyan/5 hover:text-neon-cyan",
                     active === item.id && "bg-neon-cyan/5 text-neon-cyan"
                   )}
                 >
-                  <span className="text-neon-magenta/70">#</span>
+                  <span className="text-neon-magenta/70">/</span>
                   {item.label}
                 </a>
               </li>

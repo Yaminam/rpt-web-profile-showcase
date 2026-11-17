@@ -118,7 +118,7 @@ const HeroSection = () => {
 
                 {/* Actions */}
                 <div className="flex flex-wrap gap-3 pt-1">
-                  <a href="#projects" className="btn-neon">
+                  <a href="/projects" className="btn-neon">
                     <Sparkles className="h-4 w-4" /> view_projects
                   </a>
                   <button
@@ -130,7 +130,7 @@ const HeroSection = () => {
                   >
                     <TerminalSquare className="h-4 w-4" /> init_terminal
                   </button>
-                  <a href="#contact" className="btn-ghost">
+                  <a href="/contact" className="btn-ghost">
                     <Mail className="h-4 w-4" /> get_in_touch
                   </a>
                   <a href={profile.resume} download className="btn-ghost">

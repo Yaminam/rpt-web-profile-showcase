@@ -1,4 +1,4 @@
-import { caseStudies, hire, profile, seoServices, shopifyServices, SITE_URL, type Project, type ServiceLandingData } from "@/data/portfolio";
+import { caseStudies, hire, profile, sectionPages, seoServices, shopifyServices, SITE_URL, type Project, type SectionPageId, type ServiceLandingData } from "@/data/portfolio";
 import { bookCoverJpg, bookPreview, books, SERIES_NAME, type Book } from "@/data/books";
 
 export type PageSeo = {
@@ -355,3 +355,52 @@ export const shopifyServicesSeo = (): PageSeo =>
     catalogName: "Shopify development services",
     crumb: "Shopify developer",
   });
+
+const sectionCrumb: Record<SectionPageId, string> = {
+  about: "About",
+  experience: "Experience",
+  skills: "Skills",
+  projects: "Projects",
+  education: "Education",
+  contact: "Contact",
+};
+
+/** Head tags + structured data for one section page (/about, /experience, ...). */
+export function sectionPageSeo(id: SectionPageId): PageSeo {
+  const path = `/${id}`;
+  const url = `${SITE_URL}${path}`;
+  const page = sectionPages[id];
+  const type = id === "about" ? "AboutPage" : id === "contact" ? "ContactPage" : id === "projects" ? "CollectionPage" : "WebPage";
+  return {
+    path,
+    title: page.title,
+    description: page.description,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": type,
+          "@id": `${url}#webpage`,
+          url,
+          name: page.title,
+          description: page.description,
+          inLanguage: "en",
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          about: { "@id": PERSON_ID },
+          ...(id === "about" || id === "contact" ? { mainEntity: { "@id": PERSON_ID } } : {}),
+          breadcrumb: { "@id": `${url}#breadcrumb` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${url}#breadcrumb`,
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: profile.name, item: `${SITE_URL}/` },
+            { "@type": "ListItem", position: 2, name: sectionCrumb[id], item: url },
+          ],
+        },
+      ],
+    },
+  };
+}
+
+export const sectionPagesSeo = (): PageSeo[] => (Object.keys(sectionPages) as SectionPageId[]).map(sectionPageSeo);

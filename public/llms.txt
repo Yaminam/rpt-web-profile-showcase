@@ -77,6 +77,12 @@ Shreyash wrote a series of interview and job-preparation books for developers, a
 ## Links
 
 - [Portfolio](https://shreyashtripathi.in/): Projects, experience, skills, FAQ and contact
+- [About](https://shreyashtripathi.in/about): Who he is, how he works, and praise from leaders
+- [Experience](https://shreyashtripathi.in/experience): Work at a digital product agency
+- [Skills](https://shreyashtripathi.in/skills): Full tech stack, DevOps, system design and Shopify
+- [Projects](https://shreyashtripathi.in/projects): All projects and case studies
+- [Education](https://shreyashtripathi.in/education): Degree, hackathons and certifications
+- [Contact](https://shreyashtripathi.in/contact): Email, LinkedIn and FAQs
 - [Hire me: frontend & full-stack developer](https://shreyashtripathi.in/hire): Available for full-time roles (full-stack, frontend or backend) and freelance full-stack projects (React, Next.js, Node.js, PostgreSQL) in Noida, Delhi NCR, Uttar Pradesh, Gujarat (Ahmedabad) or remote anywhere; services, process and contact
 - [AI-first SEO, AEO & GEO services](https://shreyashtripathi.in/hire/seo): Technical SEO, structured data, llms.txt and AI-crawler tracking so sites appear in Google and in ChatGPT, Perplexity and Gemini answers. Proof: this site's own results.
 - [Hire a Shopify developer](https://shreyashtripathi.in/hire/shopify): Custom Online Store 2.0 themes in Liquid, metafield-driven product pages, theme refactors, product-page conversion work and store SEO, proven on two D2C brand stores.
