@@ -234,6 +234,105 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "Garage Productions",
+    slug: "garage-productions",
+    categories: [
+      "web",
+      "client"
+    ],
+    image: {
+      src: "/project-shots/garage-productions.webp",
+      alt: "Garage Productions website: the 3D 'Our Work' film carousel"
+    },
+    build: [
+      "Showreel hero + client marquee",
+      "Scroll-driven story (GSAP + Lenis)",
+      "6 service pages",
+      "3D carousel of 9 films",
+      "Lead magnets: brief kit, video review, cost estimator",
+      "Brief form + 'Let's talk'"
+    ],
+    links: {
+      demo: "https://www.garageproductions.in"
+    },
+    seo: {
+      title: "Film Studio Website (Next.js, GSAP) | Shreyash Tripathi",
+      description: "Garage Productions' website, designed and built end to end by Shreyash Tripathi with Next.js, GSAP and Lenis: a 3D film carousel and a live cost estimator."
+    },
+    caseStudy: {
+      overview: [
+        "Garage Productions is a film and ad production house in Delhi NCR that has made work for brands such as Sony, Unilever, Jio, BlackBerry and Virgin Atlantic. Its website has two jobs: feel like a film studio, and turn visitors into briefs.",
+        "Shreyash Tripathi designed and built it end to end: the art direction, typography and motion, the page structure, and the Next.js code, SEO and forms. It's the website he's proudest of so far."
+      ],
+      howItWorks: [
+        {
+          title: "Showreel opening",
+          text: "A quiet, editorial hero (\"Hello. We're Garage.\") over a running client marquee, then a full-screen statement and a full-bleed showreel with a play button."
+        },
+        {
+          title: "Scroll-driven story",
+          text: "GSAP ScrollTrigger drives the reveals and pinned sections and Lenis smooths the scroll. Numbered section labels (001 / Showreel, 002 / Studio...) keep a long page easy to follow."
+        },
+        {
+          title: "Services",
+          text: "Six services (ad films, cinematography, photography, corporate videos, explainers and micro drama) as numbered cards, each with its own page."
+        },
+        {
+          title: "Work carousel",
+          text: "A 3D carousel of nine films with arrow and dot controls, so the work is the centre of the page."
+        },
+        {
+          title: "Three lead magnets",
+          text: "A kit of 12 brief templates for a newsletter sign-up, a free \"send a video, we'll tell you what's broken\" review, and a cost estimator, each with its own accent colour."
+        },
+        {
+          title: "Live cost estimator",
+          text: "Pick the project type, shoot days, locations and whether a known face is on screen, and a ballpark rupee range updates instantly. It's labelled \"not a quote\", with a real-quote form underneath."
+        },
+        {
+          title: "Clients and contact",
+          text: "Client names stay blurred until you tap or hover. A brief form and a floating \"Let's talk\" button are always one click away."
+        }
+      ],
+      challenges: [
+        {
+          problem: "Visitors arrive at different stages: some only want to watch, some want a price, and few are ready to fill in a contact form.",
+          solution: "The page offers steps of different sizes: watch the work, get a free template kit, send a video for review, check a live price range, then brief the team."
+        },
+        {
+          problem: "A production house has to rank for searches like \"production house in Delhi\" while still looking like a film studio, not a brochure.",
+          solution: "Server-rendered Next.js pages, a page per service, a blog and FAQ, structured data (10 JSON-LD blocks on the home page) and a 37-URL sitemap, all behind the cinematic design."
+        },
+        {
+          problem: "A long, motion-heavy page can turn into one endless scroll.",
+          solution: "Numbered section labels, alternating light and dark bands and a different accent colour for each lead magnet give the page clear chapters."
+        }
+      ],
+      results: [
+        "Live at garageproductions.in.",
+        "Lighthouse SEO score of 100 on the home page.",
+        "37 URLs in the sitemap: 6 service pages, a blog, FAQ, careers and legal pages.",
+        "Three lead-capture flows plus a full brief form on one page."
+      ]
+    },
+    tagline: "Film Production House Website, Designed & Built End to End",
+    description: "The website for a Delhi NCR film and ad production house, designed and built end to end with Next.js, GSAP and Lenis: a 3D film carousel, three lead magnets and a live cost estimator.",
+    tech: [
+      "Next.js",
+      "React",
+      "GSAP",
+      "ScrollTrigger",
+      "Lenis",
+      "SEO"
+    ],
+    highlights: [
+      "Designed and developed end to end: art direction, motion and code",
+      "3D carousel of 9 films, a live cost estimator and 3 lead magnets",
+      "6 service pages, a blog, FAQ and careers; Lighthouse SEO 100"
+    ],
+    accent: "green"
+  },
+  {
     name: "PurrCase",
     slug: "purrcase",
     categories: ["web"],
@@ -1317,7 +1416,7 @@ export const sectionPages: Record<SectionPageId, { title: string; description: s
       command: "cat about.md",
       h1: "About Shreyash Tripathi",
       lead: "I'm a full-stack developer and UI/UX engineer in Noida. I build web apps with React, Next.js and TypeScript, Android apps with React Native, backends in Node.js and Go, and Shopify stores, and I make them fast and easy to find. Right now I ship AI-integrated SaaS products and client sites at a digital product agency, and I'm going deeper into system design and DevOps.",
-      stats: [{ value: "20+", label: "client & SaaS builds" }, { value: "11", label: "case studies" }, { value: "12", label: "books written" }, { value: "4", label: "technical articles" }],
+      stats: [{ value: "20+", label: "client & SaaS builds" }, { value: String(projects.filter((p) => p.slug).length), label: "case studies" }, { value: "12", label: "books written" }, { value: "4", label: "technical articles" }],
       accent: "cyan",
     },
   },
@@ -1352,8 +1451,8 @@ export const sectionPages: Record<SectionPageId, { title: string; description: s
     hero: {
       command: "ls ./projects --all",
       h1: "Projects & Case Studies",
-      lead: "Things I've designed and built, from SaaS platforms and a React Native finance app to Shopify stores, a Redis-compatible database in Go and 3D brand websites. Each case study shows what it does, how it's built, the hard problems and the results. Filter by what you're hiring for.",
-      stats: [{ value: "12", label: "projects" }, { value: "11", label: "in-depth case studies" }, { value: "6", label: "client builds" }, { value: "137k", label: "commands/s (goredis)" }],
+      lead: "Things I've designed and built, from SaaS platforms and a React Native finance app to Shopify stores, a film studio website, a Redis-compatible database in Go and 3D brand websites. Each case study shows what it does, how it's built, the hard problems and the results. Filter by what you're hiring for.",
+      stats: [{ value: String(projects.length), label: "projects" }, { value: String(projects.filter((p) => p.slug).length), label: "in-depth case studies" }, { value: String(projects.filter((p) => p.categories?.includes("client")).length), label: "client builds" }, { value: "137k", label: "commands/s (goredis)" }],
       accent: "purple",
     },
   },
