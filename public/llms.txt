@@ -6,7 +6,7 @@ Name also searched as: Shreyas Tripathi.
 
 ## Summary
 
-Author of the Job-Ready Series (14 interview-prep and job-switch books for developers, about 4,800 pages): https://shreyashtripathi.in/books
+Author of the Job-Ready Series (15 interview-prep and job-switch books for developers, about 4,900 pages): https://shreyashtripathi.in/books
 
 Shreyash Tripathi is a full-stack developer and UI/UX engineer with production experience shipping features on AI-integrated SaaS platforms and marketing sites at a digital product agency. He builds web apps with React, Next.js (App Router) and TypeScript, Shopify themes in Liquid (Online Store 2.0), Android apps with React Native and Expo, and systems in Go; he works on DevOps (Docker, Kubernetes, GitHub Actions CI/CD, Prometheus, Grafana) and system design (scalability, caching, durability, concurrency, observability), using Tailwind CSS, Supabase and REST APIs, and is comfortable owning components end-to-end — from responsive layout and design-system consistency through backend integration. He is currently a Junior Developer, UI/UX at Garage Collective, promoted from an AI Trainee role.
 
@@ -54,6 +54,7 @@ Shreyash wrote a series of interview and job-preparation books for developers, a
 - [Computer Networks](https://shreyashtripathi.in/books/computer-networks): Complete 364 pages, Short 164 pages. OSI and TCP/IP to TLS; Worked subnetting numericals; 100+ interview questions with answers. Free preview PDF.
 - [Operating Systems](https://shreyashtripathi.in/books/operating-systems): Short 192 pages. Processes to containers and Linux; Worked scheduling and paging numericals; 90+ interview questions with answers. Free preview PDF.
 - [Full-Stack TypeScript and Next.js](https://shreyashtripathi.in/books/fullstack-typescript-nextjs): Compact 362 pages. TypeScript, React and Next.js; Node.js APIs, databases, auth and Docker; 100 interview questions with answers. Free preview PDF.
+- [Go: The Job-Switch Guide](https://shreyashtripathi.in/books/go): Job-Switch 52 pages. Goroutines, channels, context and testing; build a tiny Redis-style key-value server; 73 interview questions with answers. Free preview PDF.
 - [Excel for Interviews](https://shreyashtripathi.in/books/excel): Mini-book 83 pages. SUMIFS, XLOOKUP and INDEX-MATCH; PivotTables, dashboards and Power Query; 60+ questions and 5 practical tests. Free preview PDF.
 - [SQL for Interviews](https://shreyashtripathi.in/books/sql): Mini-book 95 pages. Joins, CTEs and window functions; 22 classic problems solved step by step; 60+ theory questions with answers. Free preview PDF.
 

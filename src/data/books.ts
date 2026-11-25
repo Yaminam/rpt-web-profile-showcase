@@ -774,6 +774,52 @@ export const books: Book[] = [
       "sql joins",
       "sql for data analyst interview"
     ]
+  },
+  {
+    "slug": "go",
+    "title": "Go: The Job-Switch Guide",
+    "shortTitle": "Go",
+    "tagline": "Job-Ready Series, Job-Switch edition",
+    "blurb": "Everything a Go backend interview asks about, in simple language: syntax, slices and maps, interfaces, errors and generics, goroutines, channels and context, net/http and testing, with real code that compiles, a tiny Redis-style key-value server you build yourself and 73 interview questions with answers.",
+    "highlights": [
+      "Goroutines, channels, context and testing",
+      "Build a tiny Redis-style key-value server",
+      "73 interview questions with answers"
+    ],
+    "editions": [
+      {
+        "label": "Job-Switch",
+        "pages": 52
+      }
+    ],
+    "chapters": [
+      "1. Getting Started with Go",
+      "2. Syntax and Control Flow",
+      "3. Functions, defer and Errors",
+      "4. Slices, Maps and Structs",
+      "5. Pointers, Methods, Interfaces and Generics",
+      "6. Concurrency",
+      "7. The Standard Library for Servers",
+      "8. Testing",
+      "9. Mini Project: A Tiny Key-Value Server",
+      "10. Gotchas",
+      "11. Go Interview Question Bank",
+      "Appendix A: Answer Key",
+      "Appendix B: Cheat Sheet",
+      "Appendix C: Glossary and Where to Go Next"
+    ],
+    "previewChapters": 2,
+    "previewPages": 8,
+    "seo": {
+      "title": "Go (Golang) Interview Book (PDF) | Shreyash Tripathi",
+      "description": "Go for backend interviews: goroutines, channels, context and testing, a tiny Redis clone you build and 73 questions with answers. Free PDF preview."
+    },
+    "keywords": [
+      "golang interview questions",
+      "go programming book",
+      "goroutines and channels",
+      "golang for backend developers"
+    ]
   }
 ];
 

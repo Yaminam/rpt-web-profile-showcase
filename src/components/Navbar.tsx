@@ -256,7 +256,7 @@ const Navbar = () => {
                 <span className="mt-1 font-mono text-sm font-semibold">
                   <span className="text-neon-magenta">/</span>books
                 </span>
-                <span className="text-[11px] text-muted-foreground">14 interview books</span>
+                <span className="text-[11px] text-muted-foreground">15 interview books</span>
               </a>
               <a
                 href={profile.resume}
