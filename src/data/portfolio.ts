@@ -333,6 +333,102 @@ export const projects: Project[] = [
     accent: "green"
   },
   {
+    name: "Real-Estate Developer Website",
+    slug: "real-estate-developer-website",
+    categories: [
+      "web",
+      "client"
+    ],
+    image: {
+      src: "/project-shots/real-estate-developer-website.webp",
+      alt: "Real-estate developer concept website: 3D satellite view of Mumbai behind the 'Built for generations' headline"
+    },
+    build: [
+      "3D satellite Mumbai (Sentinel-2 + OpenStreetMap)",
+      "Scroll flight across the city's regions",
+      "Residences: map finder + tower explorer",
+      "3D enquiry flow: your floors light up",
+      "Legacy time machine + NRI globe",
+      "Building-rise page transitions"
+    ],
+    seo: {
+      title: "3D Real-Estate Website: Next.js + R3F | Shreyash Tripathi",
+      description: "How Shreyash Tripathi built a 3D concept site for a Mumbai real-estate developer: a satellite city hero, a lift-panel menu and a 3D enquiry flow."
+    },
+    caseStudy: {
+      overview: [
+        "A concept website for a Mumbai real-estate developer with decades of projects across Mumbai, Thane and Pune. The goal was a site that feels like the city it builds in: you arrive above a 3D Mumbai and fly down to the neighbourhoods where the homes are.",
+        "Shreyash Tripathi designed and built it on his own in Next.js 16 with React Three Fiber, three.js, MapLibre, GSAP and Lenis: 16 routes, 80 components and about 24,000 lines of TypeScript."
+      ],
+      howItWorks: [
+        {
+          title: "A real city as the hero",
+          text: "The home page opens on a 3D Mumbai built from Sentinel-2 satellite imagery and OpenStreetMap buildings, with custom GLSL colour grading and a live Mumbai clock. Google Photorealistic 3D Tiles load only when an API key is set and the device can handle them."
+        },
+        {
+          title: "Fly through the regions",
+          text: "Scrolling flies the camera from South Mumbai to the suburbs and Thane, with each region's story and addresses appearing as you arrive."
+        },
+        {
+          title: "Find a residence",
+          text: "A residences browser with segmented filters, a MapLibre map finder, a 3D tower explorer with floor bands, and \"see it at any hour\": one render re-lit live from sunrise to late night, with windows switching on through the evening."
+        },
+        {
+          title: "A 3D enquiry flow",
+          text: "Booking a site visit is four steps: residence, home, visit and details. Choosing a residence raises its tower in 3D, and your home type and budget highlight the band of floors that fits."
+        },
+        {
+          title: "Legacy and NRI pages",
+          text: "A draggable time machine that snaps to milestones, a family tree of projects, and for overseas buyers a 3D globe of the cities they write from, with live world clocks showing the gap to Mumbai time."
+        },
+        {
+          title: "Details that feel like a building",
+          text: "Page changes are a building going up: slats rise floor by floor with a floor counter, then lift away. On phones the menu is a lift panel, top floor first."
+        },
+        {
+          title: "Everything else a developer site needs",
+          text: "Insights magazine with article pages, searchable FAQ, investor document library, careers openings, CSR causes, a loyalty-benefits calculator and a draggable strip of the brand's latest social posts."
+        }
+      ],
+      challenges: [
+        {
+          problem: "A whole city in 3D is heavy for phones and mid-range laptops.",
+          solution: "Satellite imagery and OpenStreetMap buildings render by default; the photorealistic 3D tiles are lazy-loaded only when the device can take them. Per-frame values like the hour and globe rotation are written straight to the scene or the DOM, never through React state."
+        },
+        {
+          problem: "The night skyline needed real building heights without loading map data at runtime.",
+          solution: "A Python script bakes OpenStreetMap building heights into a small data file, which the night skyline draws as a grid of lit windows."
+        },
+        {
+          problem: "A design-heavy site can break on small screens: overflow, tiny labels, sticky elements in the way.",
+          solution: "Every screen got a pass: a 13.5px minimum text size from tablets up, no horizontal overflow, stacked labels, non-sticky filters on phones and a compact lift-panel footer."
+        }
+      ],
+      results: [
+        "16 routes, including prerendered residence and article pages.",
+        "80 components and about 24,000 lines of TypeScript, built solo.",
+        "Works on phones with a dedicated lift-panel menu and mobile layouts."
+      ]
+    },
+    tagline: "3D City Concept Site for a Mumbai Real-Estate Developer",
+    description: "A concept site for a Mumbai real-estate developer that opens above a 3D city: satellite Mumbai in three.js, a scroll flight across the regions, a 3D enquiry flow and building-rise page transitions.",
+    tech: [
+      "Next.js 16",
+      "React Three Fiber",
+      "three.js",
+      "MapLibre",
+      "GSAP",
+      "Lenis",
+      "TypeScript"
+    ],
+    highlights: [
+      "3D satellite Mumbai from Sentinel-2 imagery and OpenStreetMap buildings",
+      "3D enquiry flow, residence map finder and tower explorer",
+      "16 routes, 80 components, about 24,000 lines, built solo"
+    ],
+    accent: "yellow"
+  },
+  {
     name: "PurrCase",
     slug: "purrcase",
     categories: ["web"],
