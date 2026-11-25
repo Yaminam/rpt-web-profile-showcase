@@ -162,8 +162,8 @@ const HirePage = () => {
               <p className="mt-2 max-w-3xl text-muted-foreground">
                 The {SERIES_NAME}: {books.length} books and about{" "}
                 {(Math.floor(books.reduce((n, b) => n + b.editions[0].pages, 0) / 100) * 100).toLocaleString("en-IN")}{" "}
-                pages on System Design, DSA, DBMS, Computer Networks, Operating Systems, DevOps, Cloud, AI Engineering, Salesforce and Full-Stack
-                TypeScript, written for developers preparing for interviews and job switches.
+                pages on System Design, DSA, DBMS, Computer Networks, Operating Systems, DevOps, Cloud, AI Engineering, Salesforce, Full-Stack
+                TypeScript, Excel and SQL, written for developers preparing for interviews and job switches.
               </p>
             </div>
             <a href="/books" className="btn-ghost text-xs">

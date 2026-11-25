@@ -686,6 +686,94 @@ export const books: Book[] = [
       "full stack development book",
       "react interview questions"
     ]
+  },
+  {
+    "slug": "excel",
+    "title": "Excel for Interviews",
+    "shortTitle": "Excel",
+    "tagline": "Job-Ready Series, Mini-book",
+    "blurb": "Every Excel skill interviews test, from references and SUMIFS to XLOOKUP, PivotTables, dashboards and Power Query, for analyst, MIS, operations, finance, HR and data roles, with a 60+ question bank and 5 practical test tasks.",
+    "highlights": [
+      "SUMIFS, XLOOKUP and INDEX-MATCH",
+      "PivotTables, dashboards and Power Query",
+      "60+ questions and 5 practical tests"
+    ],
+    "editions": [
+      {
+        "label": "Mini-book",
+        "pages": 83
+      }
+    ],
+    "chapters": [
+      "1. Excel Basics Every Interviewer Checks",
+      "2. Essential Formulas",
+      "3. Lookups: VLOOKUP, INDEX-MATCH and XLOOKUP",
+      "4. Data Cleaning, Validation and Conditional Formatting",
+      "5. PivotTables, Charts and Dashboards",
+      "6. Modern Excel: Dynamic Arrays, LET and LAMBDA",
+      "7. Power Query, Power Pivot and Automation",
+      "8. Excel Interview Question Bank and Practical Tests",
+      "Appendix A: Keyboard Shortcuts Cheat Sheet",
+      "Appendix B: Formula Cheat Sheet",
+      "Appendix C: Glossary"
+    ],
+    "previewChapters": 2,
+    "previewPages": 20,
+    "seo": {
+      "title": "Excel Interview Questions Book (PDF) | Shreyash Tripathi",
+      "description": "Excel for interviews: SUMIFS, XLOOKUP, PivotTables, dashboards, Power Query, a 60+ question bank and 5 practical test tasks. Free PDF preview."
+    },
+    "keywords": [
+      "excel interview questions",
+      "excel test for jobs",
+      "xlookup",
+      "pivot tables",
+      "mis excel interview"
+    ]
+  },
+  {
+    "slug": "sql",
+    "title": "SQL for Interviews",
+    "shortTitle": "SQL",
+    "tagline": "Job-Ready Series, Mini-book",
+    "blurb": "The SQL every interview tests: joins, GROUP BY, subqueries, CTEs and window functions, plus 22 classic interview problems solved step by step (Nth highest salary, consecutive logins, gaps and islands, retention, median) and a 60+ theory question bank.",
+    "highlights": [
+      "Joins, CTEs and window functions",
+      "22 classic problems solved step by step",
+      "60+ theory questions with answers"
+    ],
+    "editions": [
+      {
+        "label": "Mini-book",
+        "pages": 95
+      }
+    ],
+    "chapters": [
+      "1. SQL Basics and How a Query Runs",
+      "2. Aggregation, GROUP BY and CASE",
+      "3. Joins",
+      "4. Subqueries and CTEs",
+      "5. Window Functions",
+      "6. Classic Interview Problems I",
+      "7. Classic Interview Problems II: Analytics",
+      "8. SQL Theory, Performance and Question Bank",
+      "Appendix A: SQL Syntax Cheat Sheet",
+      "Appendix B: Practice Schema and Sample Data",
+      "Appendix C: Glossary"
+    ],
+    "previewChapters": 2,
+    "previewPages": 24,
+    "seo": {
+      "title": "SQL Interview Questions Book (PDF) | Shreyash Tripathi",
+      "description": "SQL for interviews: joins, CTEs, window functions and 22 classic problems like Nth highest salary, solved step by step. Free PDF preview."
+    },
+    "keywords": [
+      "sql interview questions",
+      "sql window functions",
+      "nth highest salary",
+      "sql joins",
+      "sql for data analyst interview"
+    ]
   }
 ];
 

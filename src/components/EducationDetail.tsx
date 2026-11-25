@@ -276,7 +276,7 @@ const EducationDetail = () => {
                 free_previews <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
             </div>
-            <ul className="mt-6 grid grid-cols-3 gap-4 sm:grid-cols-4 lg:grid-cols-6">
+            <ul className="mt-6 grid grid-cols-3 gap-4 sm:grid-cols-4 lg:grid-cols-7">
               {books.map((b, i) => (
                 <li key={b.slug} className="opacity-0 animate-fade-in" style={{ animationDelay: `${i * 50}ms` }}>
                   <a href={`/books/${b.slug}`} className="group block" title={b.title}>

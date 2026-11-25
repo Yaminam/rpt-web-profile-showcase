@@ -65,7 +65,7 @@ const BookPage = () => {
           />
           <div className="space-y-5">
             <p className="font-mono text-xs uppercase tracking-wider text-neon-cyan">
-              {SERIES_NAME} · {book.tagline}
+              {book.tagline.startsWith(SERIES_NAME) ? book.tagline : `${SERIES_NAME} · ${book.tagline}`}
             </p>
             <h1 className="font-display text-3xl font-extrabold leading-tight md:text-5xl">{book.title}</h1>
             <p className="font-mono text-sm text-muted-foreground">

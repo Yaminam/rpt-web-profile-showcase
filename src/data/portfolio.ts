@@ -1416,7 +1416,7 @@ export const sectionPages: Record<SectionPageId, { title: string; description: s
       command: "cat about.md",
       h1: "About Shreyash Tripathi",
       lead: "I'm a full-stack developer and UI/UX engineer in Noida. I build web apps with React, Next.js and TypeScript, Android apps with React Native, backends in Node.js and Go, and Shopify stores, and I make them fast and easy to find. Right now I ship AI-integrated SaaS products and client sites at a digital product agency, and I'm going deeper into system design and DevOps.",
-      stats: [{ value: "20+", label: "client & SaaS builds" }, { value: String(projects.filter((p) => p.slug).length), label: "case studies" }, { value: "12", label: "books written" }, { value: "4", label: "technical articles" }],
+      stats: [{ value: "20+", label: "client & SaaS builds" }, { value: String(projects.filter((p) => p.slug).length), label: "case studies" }, { value: "14", label: "books written" }, { value: "4", label: "technical articles" }],
       accent: "cyan",
     },
   },
@@ -1463,8 +1463,8 @@ export const sectionPages: Record<SectionPageId, { title: string; description: s
     hero: {
       command: "cat education.md",
       h1: "Education & Achievements",
-      lead: "B.Tech in Computer Science from JECRC University (2022 to 2026, CGPA 8.1), a top-10 finish at the Smart India Hackathon, and a habit of learning by building and writing: four technical articles and twelve interview-prep books.",
-      stats: [{ value: "8.1", label: "CGPA, B.Tech CSE" }, { value: "Top 10", label: "Smart India Hackathon" }, { value: "200+", label: "teams competed" }, { value: "12", label: "books written" }],
+      lead: "B.Tech in Computer Science from JECRC University (2022 to 2026, CGPA 8.1), a top-10 finish at the Smart India Hackathon, and a habit of learning by building and writing: four technical articles and fourteen interview-prep books.",
+      stats: [{ value: "8.1", label: "CGPA, B.Tech CSE" }, { value: "Top 10", label: "Smart India Hackathon" }, { value: "200+", label: "teams competed" }, { value: "14", label: "books written" }],
       accent: "yellow",
     },
   },
@@ -1786,7 +1786,7 @@ export const hire = {
     },
     {
       q: "Has Shreyash Tripathi written any books?",
-      a: "Yes. He wrote the Job-Ready Series, twelve books for developers preparing for interviews and job switches: System Design, DSA in Java, DSA in Python, DSA in C++, DevOps, Cloud (AWS, Azure, GCP), Salesforce, AI Engineering (RAG, GraphRAG, agents), DBMS, Computer Networks, Operating Systems and Full-Stack TypeScript with Next.js. Free previews are at shreyashtripathi.in/books.",
+      a: "Yes. He wrote the Job-Ready Series, fourteen books for developers preparing for interviews and job switches: System Design, DSA in Java, DSA in Python, DSA in C++, DevOps, Cloud (AWS, Azure, GCP), Salesforce, AI Engineering (RAG, GraphRAG, agents), DBMS, Computer Networks, Operating Systems, Full-Stack TypeScript with Next.js, Excel and SQL. Free previews are at shreyashtripathi.in/books.",
     },
     {
       q: "What kind of freelance projects does he take on?",

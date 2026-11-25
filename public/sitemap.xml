@@ -268,5 +268,21 @@
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>  <url>
+    <loc>https://shreyashtripathi.in/books/excel</loc>
+    <image:image>
+      <image:loc>https://shreyashtripathi.in/book-files/excel-cover.jpg</image:loc>
+    </image:image>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>  <url>
+    <loc>https://shreyashtripathi.in/books/sql</loc>
+    <image:image>
+      <image:loc>https://shreyashtripathi.in/book-files/sql-cover.jpg</image:loc>
+    </image:image>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
