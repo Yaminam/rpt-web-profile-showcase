@@ -65,11 +65,11 @@ const PageHero = ({ crumb, command, title, lead, stats, accent }: PageHeroProps)
         <span className="ml-1 inline-block h-4 w-2 translate-y-0.5 bg-neon-cyan animate-blink" />
       </p>
 
-      <h1 className="mt-4 max-w-4xl font-display text-4xl font-extrabold leading-[1.05] tracking-tight opacity-0 animate-fade-in-delay-1 md:text-6xl lg:text-7xl">
+      <h1 className="mt-4 max-w-4xl font-display text-4xl font-extrabold leading-[1.05] tracking-tight animate-rise-in md:text-6xl lg:text-7xl">
         <span className="shimmer-text">{title}</span>
       </h1>
 
-      <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground opacity-0 animate-fade-in-delay-2 md:text-xl">
+      <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground animate-rise-in md:text-xl">
         {lead}
       </p>
 

@@ -66,7 +66,7 @@ const HeroSection = () => {
       <div className="container mx-auto">
         <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
           {/* Left: terminal */}
-          <div className="opacity-0 animate-fade-in">
+          <div className="animate-rise-in">
             <div className="terminal-window animated-border group">
               <span className="sheen-overlay" aria-hidden />
               <div className="terminal-bar">

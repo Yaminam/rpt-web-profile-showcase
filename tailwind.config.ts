@@ -109,6 +109,11 @@ export default {
 					'0%': { opacity: '0', transform: 'translateY(16px)' },
 					'100%': { opacity: '1', transform: 'translateY(0)' }
 				},
+				// Slide up without starting invisible, so the text counts as painted at once (LCP).
+				'rise-in': {
+					'0%': { transform: 'translateY(16px)' },
+					'100%': { transform: 'translateY(0)' }
+				},
 				'fade-in-right': {
 					'0%': { opacity: '0', transform: 'translateX(-24px)' },
 					'100%': { opacity: '1', transform: 'translateX(0)' }
@@ -197,6 +202,7 @@ export default {
 				'fade-in-delay-1': 'fade-in 0.6s ease-out 0.15s forwards',
 				'fade-in-delay-2': 'fade-in 0.6s ease-out 0.3s forwards',
 				'fade-in-delay-3': 'fade-in 0.6s ease-out 0.45s forwards',
+				'rise-in': 'rise-in 0.6s ease-out both',
 				'fade-in-right': 'fade-in-right 0.6s ease-out forwards',
 				'blink': 'blink 1s step-end infinite',
 				'glitch': 'glitch 0.4s ease-in-out infinite',

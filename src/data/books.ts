@@ -81,8 +81,8 @@ export const books: Book[] = [
     "previewChapters": 2,
     "previewPages": 62,
     "seo": {
-      "title": "System Design Zero to Hero Book | Shreyash Tripathi",
-      "description": "System Design: From Zero to Hero, a book for placements and interviews: 25+ case studies, simple language, question bank. Free PDF preview."
+      "title": "System Design Zero to Hero Book (PDF) | Shreyash Tripathi",
+      "description": "System Design: From Zero to Hero, 796 pages for placements and interviews: 25+ real case studies, simple language and a question bank. Free PDF preview."
     },
     "keywords": [
       "system design book",
@@ -302,8 +302,8 @@ export const books: Book[] = [
     "previewChapters": 2,
     "previewPages": 40,
     "seo": {
-      "title": "DevOps Book: Linux to Kubernetes | Shreyash Tripathi",
-      "description": "DevOps job-switch guide: Linux, Docker, CI/CD, AWS, Terraform, Kubernetes, Prometheus and Grafana, with labs and 120+ interview Q&A. Free PDF preview."
+      "title": "DevOps Book (PDF): Linux to Kubernetes | Shreyash Tripathi",
+      "description": "Free PDF preview of a DevOps job-switch book: Linux, Docker, CI/CD, AWS, Terraform, Kubernetes and Grafana, with labs and 120+ interview Q&A."
     },
     "keywords": [
       "devops book",

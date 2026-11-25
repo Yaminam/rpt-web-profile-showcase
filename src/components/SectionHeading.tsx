@@ -20,7 +20,8 @@ const SectionHeading = ({ index, command, title, subtitle }: SectionHeadingProps
   const hidden = useContext(HiddenHeadingContext);
   const { ref, isVisible } = useReveal<HTMLHeadingElement>({ threshold: 0.5 });
   const decoded = useScramble(title, { active: isVisible, speed: 26, revealEvery: 2 });
-  if (hidden) return null;
+  // Keep an <h2> for screen readers and the heading outline (h1 → h2 → h3) without showing it.
+  if (hidden) return <h2 className="sr-only">{title}</h2>;
 
   return (
     <div className="mb-12 md:mb-16">

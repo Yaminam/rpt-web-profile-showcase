@@ -46,8 +46,9 @@ document.addEventListener(
 );
 
 // Microsoft Clarity: heatmaps, scroll depth and session recordings (where visitors leave a page).
-// Loaded after window load like gtag. Paste the Project ID from clarity.microsoft.com below;
-// while it is empty nothing loads.
+// Loaded on the first scroll, tap or key press, so no third-party cookies are set while the page
+// loads (keeps Lighthouse best practices at 100; heatmaps only need visitors who interact anyway).
+// Paste the Project ID from clarity.microsoft.com below; while it is empty nothing loads.
 (function () {
   var CLARITY_ID = "zde1zvil9b";
   if (!CLARITY_ID) return;
@@ -56,12 +57,19 @@ document.addEventListener(
     function () {
       (window.clarity.q = window.clarity.q || []).push(arguments);
     };
+  var events = ["scroll", "pointerdown", "keydown", "touchstart"];
   function loadClarity() {
+    events.forEach(function (e) {
+      window.removeEventListener(e, loadClarity, true);
+    });
+    if (window.__clarityLoaded) return;
+    window.__clarityLoaded = true;
     var s = document.createElement("script");
     s.async = true;
     s.src = "https://www.clarity.ms/tag/" + CLARITY_ID;
     document.head.appendChild(s);
   }
-  if (document.readyState === "complete") loadClarity();
-  else window.addEventListener("load", loadClarity);
+  events.forEach(function (e) {
+    window.addEventListener(e, loadClarity, { capture: true, passive: true });
+  });
 })();
